@@ -11,18 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username, placeholder: "Name" %>
-  </div>
+  <% email = nil if local_assigns[:email].nil? %>
+
+  <% if @user.active %>
+    <div class="field">
+      <%= f.label :username %><br>
+      <%= f.text_field :username, placeholder: "Name" %>
+    </div>
+  <% end %>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email, placeholder: "Email" %>
+    <% if email %>
+      <%= f.text_field :email, value: email %>
+    <% else %>
+      <%= f.text_field :email, placeholder: "Email" %>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone, placeholder: "Phone" %>
-  </div>
+  <% if @user.active %>
+    <div class="field">
+      <%= f.label :phone %><br>
+      <%= f.text_field :phone, placeholder: "Phone" %>
+    </div>
+  <% end %>
   <div class="field">
     <%= f.label :password %><br>
     <%= f.password_field :password, placeholder: "Password" %>
