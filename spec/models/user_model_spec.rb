@@ -9,7 +9,7 @@ describe User do
     pick = user.picks.create(
       number: "342047591204",
       game: "powerball",
-      draw_date: "01/01/15")
+      draw_date: "2015-01-12 03:11:34")
     expect(pick).to be_truthy
   end
 
