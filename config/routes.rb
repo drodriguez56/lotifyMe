@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :users
+  root 'application#landing'
 
+  resources :users
   resources :picks
+
   get  'login',  to: 'sessions#login'
   post 'login',  to: 'sessions#begin'
   get  'logout', to: 'sessions#end'
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
   get  'signup', to: 'users#new', as: 'signup'
   post 'signup', to: 'users#create'
 
-  get  'landing',  to: 'pick#landing'
+  get  'landing',  to: 'application#landing'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
