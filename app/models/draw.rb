@@ -3,7 +3,7 @@ require 'net/http'
 class Draw < ActiveRecord::Base
   validates :number, presence: true
   validates :game, presence: true
-  validates :draw_date, presence: true
+  validates :draw_date, presence: true, uniqueness: true
 
   def get_data_powerball
     uri = URI("https://data.ny.gov/api/views/d6yy-54nr/rows.json?accessType=DOWNLOAD")
