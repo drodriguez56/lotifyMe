@@ -14,7 +14,7 @@ describe User do
   end
 
   it "is invalid without an email address" do
-    user = User.new(
+    user = User.create(
       username:"honeybadger",
       password_digest: "ilikedacoco",
       email: nil)
@@ -24,8 +24,13 @@ describe User do
 
 
   it "is valid because password is long enough" do
-    user = User.create(username: Faker::Name.name, phone: Faker::Number.number(10), password: '123', email: Faker::Internet.email, active: false)
-    user.save
+    user = User.create(
+      username:"honeybadger",
+      password_digest: "123456",
+      email: "hbd@gang.com",
+      phone: Faker::PhoneNumber.phone_number,
+      active: true)
+    user.valid?
     expect(User.all).to include user
   end
 end
