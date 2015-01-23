@@ -14,4 +14,13 @@ describe User do
     user.valid?
     expect(User.all).not_to include user
   end
+
+
+  it "is valid because password is long enough" do
+    user = User.create(
+      username:"lemons",
+      password_digest: "peelinglemons",
+      email: 2)
+    expect(User.all).to include user
+  end
 end
