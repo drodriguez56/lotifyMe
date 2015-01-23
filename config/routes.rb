@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :picks
   get  'login',  to: 'sessions#login'
   post 'login',  to: 'sessions#begin'
   get  'logout', to: 'sessions#end'
