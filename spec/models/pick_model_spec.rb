@@ -33,5 +33,17 @@ describe Pick do
     expect(Pick.all).not_to include pick
    end
 
-   it "does not allow duplicate emails"
+   xit "does not allow duplicate emails" do
+    pick = Pick.new(
+      numbers: "042017591202",
+      game: "powerball",
+      draw_date: "01/01/15",
+      email: "pickTest@test.com")
+    picky = Pick.new(
+      numbers: "342047591204",
+      game: "powerball",
+      draw_date: "01/01/15",
+      email: "pickTest@test.com")
+    expect(Pick.all).not_to include picky
+   end
 end
