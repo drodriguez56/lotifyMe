@@ -1,28 +1,20 @@
-== README
+===========
+Lottify-Me
+===========
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+===========
+DESCRIPTION
+===========
 
-Things you may want to cover:
+A web-app that allows you to:
 
-* Ruby version
+ -  Input your lottery number(s)
+ -  Notifies you if you have a winning number
+(-) Tells you the nearest place to collect your money
 
-* System dependencies
+======
+TRELLO
+======
 
-* Configuration
+https://trello.com/b/j7Kdz6lX/lotify-me
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
