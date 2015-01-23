@@ -7,7 +7,10 @@ describe User do
   end
 
   it "is invalid without an email address" do
-    user = User.new(email: nil)
+    user = User.new(
+      username:"honeybadger",
+      password_digest: "ilikedacoco",
+      email: nil)
     user.valid?
     expect(User.all).not_to include user
   end
