@@ -2,6 +2,7 @@
   
    def new
      @pick = Pick.new
+     @user = User.new
    end
 
    def create
