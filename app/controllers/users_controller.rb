@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.find_or_create_by(email: user_params[:email])
     if @user.update(user_params)
+      @user.active = true; @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
@@ -35,7 +36,7 @@ class UsersController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    @user.destroy
+    @user.active = false; @user.save
     redirect_to root_path
   end
 
