@@ -3,13 +3,13 @@ require 'rails_helper'
 describe Draw do
   it "is valid with a number and draw_date" do
     draw = Draw.new(
-      numbers: "11,23,33,04,20,24",
+      number: "11,23,33,04,20,24",
       draw_date: "2015-01-30")
     expect(draw).to be_truthy
   end
 
   it "is invalid without a number" do
-    draw = Draw.new(numbers: nil)
+    draw = Draw.new(number: nil)
     expect(Draw.all).not_to include draw
   end
 
