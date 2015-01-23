@@ -5,7 +5,7 @@ describe Pick do
     pick = Pick.new(
       number:"313577796306",
       game: "powerball",
-      draw_date: "01/13/15")
+      draw_date: "2015-01-12 03:11:34")
     expect(pick).to be_truthy
    end
 
@@ -13,7 +13,7 @@ describe Pick do
     pick = Pick.new(
       number: nil,
       game: "powerball",
-      draw_date: "01/22/15")
+      draw_date: "2015-01-12 03:11:34")
     expect(Pick.all).not_to include pick
    end
 
@@ -21,7 +21,7 @@ describe Pick do
       pick = Pick.new(
       number: "042017591206",
       game: nil,
-      draw_date: "01/22/15")
+      draw_date: "2015-01-12 03:11:34")
     expect(Pick.all).not_to include pick
    end
 
@@ -37,12 +37,12 @@ describe Pick do
     pick = Pick.new(
       number: "042017591202",
       game: "powerball",
-      draw_date: "01/01/15",
+      draw_date: "2015-01-12 03:11:34",
       email: "pickTest@test.com")
     picky = Pick.new(
       number: "342047591204",
       game: "powerball",
-      draw_date: "01/01/15",
+      draw_date: "2015-01-12 03:11:34",
       email: "pickTest@test.com")
     expect(Pick.all).not_to include picky
    end

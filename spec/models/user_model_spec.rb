@@ -9,12 +9,12 @@ describe User do
     pick = user.picks.create(
       number: "342047591204",
       game: "powerball",
-      draw_date: "01/01/15")
+      draw_date: "2015-01-12 03:11:34")
     expect(pick).to be_truthy
   end
 
   it "is invalid without an email address" do
-    user = User.new(
+    user = User.create(
       username:"honeybadger",
       password_digest: "ilikedacoco",
       email: nil)
@@ -25,9 +25,12 @@ describe User do
 
   it "is valid because password is long enough" do
     user = User.create(
-      username:"lemons",
-      password_digest: "peelinglemons",
-      email: 2)
+      username:"honeybadger",
+      password_digest: "123456",
+      email: "hbd@gang.com",
+      phone: Faker::PhoneNumber.phone_number,
+      active: true)
+    user.valid?
     expect(User.all).to include user
   end
 end

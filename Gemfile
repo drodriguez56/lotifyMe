@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -40,7 +40,6 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
   gem 'capybara'
-  gem 'faker'
   gem 'launchy'
 end
 
