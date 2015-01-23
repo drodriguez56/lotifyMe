@@ -8,7 +8,7 @@ FactoryGirl.define do
     multiplier { 3 }
   end
 
-  factory :failed_pick do
+  factory :failed_pick, class: Pick do
     draw_date { Faker::Time.between(30.days.ago, Time.now) }
     password { Faker::Internet.password }
     game { "powerball" }
