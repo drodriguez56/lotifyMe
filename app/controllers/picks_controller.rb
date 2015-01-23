@@ -13,7 +13,7 @@
      if @pick.save 
        @user.picks << @pick
        if params[:commit]=="signup"
-         render new_user_path, locals: {email: params[:email]}
+         redirect_to edit_user_path(@user), locals: {email: params[:email]}
        else
          redirect_to root_path
        end
