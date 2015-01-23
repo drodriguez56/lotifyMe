@@ -11,9 +11,15 @@
     </div>
   <% end %>
 
+  <% email = nil if local_assigns[:email].nil? %>
+
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email, placeholder: "Email" %>
+    <% if email %>
+      <%= f.text_field :email, value: email %>
+    <% else %>
+      <%= f.text_field :email, placeholder: "Email" %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :password %><br>
