@@ -26,7 +26,6 @@ class UsersController < ApplicationController
       if !@user.active
         @user.active = true; @user.save
         session[:user_id] = @user.id
-        redirect_to user_path(@user)
       end
       flash[:success] = "Profile updated."
       redirect_to user_path(@user)
