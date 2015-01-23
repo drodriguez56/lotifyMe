@@ -1,12 +1,5 @@
 require 'rails_helper'
-FactoryGirl.define do
-  factory :user do
-    username "kd35"
-    password "ballislyfe"
-    email "test@gmail.com"
-    phone '510-305-1348'
-  end
-end
+
 
 describe UsersController do
   let(:user) {FactoryGirl.create :user }
