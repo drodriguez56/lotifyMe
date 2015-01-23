@@ -7,7 +7,7 @@
    def create
      @user = User.find_by(email: params[:pick][:email])
      if !@user
-        @user = User.create(email: params[:pick][:email])
+        @user = User.create(email: params[:pick][:email], password: (0...20).map { ('a'..'z').to_a[rand(26)] }.join)
      end
      @pick = Pick.new(pick_params)
      if @pick.save 
