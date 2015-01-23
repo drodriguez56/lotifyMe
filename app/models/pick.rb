@@ -6,7 +6,7 @@ class Pick < ActiveRecord::Base
   validates :game, presence: true
   validates :draw_date, presence: true
   validates_uniqueness_of :user, scope: [:number, :game, :draw_date]
-  
+
   belongs_to :user
 
 	def flush_date
@@ -15,4 +15,24 @@ class Pick < ActiveRecord::Base
 		end
 	end
 
+  def find_winner
+    picks = Pick.all
+    draws = Draw.all
+    picks.each do |pick|
+      pickarr = pick.number.split(' ')
+      power_pick = pickarr.pop
+      if draw = draws.find_by(draw_date: pick.draw_date)
+        drawarr = draw.number.split(' ')
+        power_draw = drawarr.pop
+        match = pickarr & drawarr
+        if power_pick == power_draw
+          result = match.length.to_s + 'P'
+        else
+          result = match.length
+        end
+        pick.update(result: result)
+      end
+    end
+  end
 end
+
