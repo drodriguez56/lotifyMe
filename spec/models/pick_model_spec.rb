@@ -8,7 +8,15 @@ describe Pick do
       draw_date: "01/13/15")
     expect(pick).to be_truthy
    end
-   it "is invalid without numbers"
+
+   it "is invalid without numbers" do
+    pick = Pick.new(
+      numbers: nil,
+      game: "powerball",
+      draw_date: "01/22/15")
+    expect(Pick.all).not_to include pick
+   end
+
    it "is invalid without game"
    it "is invalid with draw_date"
    it "does not allow duplicate emails"
