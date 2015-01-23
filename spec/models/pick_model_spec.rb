@@ -17,7 +17,14 @@ describe Pick do
     expect(Pick.all).not_to include pick
    end
 
-   it "is invalid without game"
+   it "is invalid without game" do
+      pick = Pick.new(
+      numbers: "042017591206",
+      game: nil,
+      draw_date: "01/22/15")
+    expect(Pick.all).not_to include pick
+   end
+
    it "is invalid with draw_date"
    it "does not allow duplicate emails"
 end
