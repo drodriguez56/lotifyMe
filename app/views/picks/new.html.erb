@@ -1,5 +1,7 @@
-<%= form_tag(picks_path, method: "post") do-%>
-  <%= email_field_tag 'pick[email]',nil, placeholder: 'email' %>
+<%= form_tag(picks_path, method: "post") %>
+  <% if !session[:user_id] %>
+    <%= email_field_tag 'pick[email]',nil, placeholder: 'email' %>
+  <% end %>
   <%= number_field_tag 'pick[number]',nil, placeholder:'number' %>
   <%= text_field_tag 'pick[game]',nil, placeholder: 'game' %>
   <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
