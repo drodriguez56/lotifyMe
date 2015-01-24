@@ -43,6 +43,7 @@ describe UsersController do
   end
 
   describe 'DELETE #destroy' do
+  let(:user) { create :user }
     it "deletes the contact" do
       expect{
         delete :destroy, id: user
