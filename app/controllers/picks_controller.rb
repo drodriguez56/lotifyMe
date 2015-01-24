@@ -17,9 +17,11 @@
        if params[:commit]=="signup"
          redirect_to edit_user_path(@user.id), locals: {email: params[:email]}
        else
-         redirect_to root_path
+        flash[:error] = 'email sent'
+        redirect_to root_path
        end
      else
+       flash[:error] = 'failed to create entry.. try again'
        redirect_to root_path
      end
    end
