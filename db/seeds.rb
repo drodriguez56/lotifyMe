@@ -11,7 +11,12 @@ User.create(username: 'daniel', phone: Faker::PhoneNumber.phone_number, password
 User.create(username: 'dan', phone: Faker::PhoneNumber.phone_number, password: '123456', email: 'dan@dan.com', active: true)
 User.create(username: 'carl', phone: Faker::PhoneNumber.phone_number, password: '123456', email: 'carl@carl.com', active: true)
 d = Draw.new
-d.get_data_powerball
+d.get_data(d.powerball)
+d.get_data(d.mega_millions)
+d.get_data(d.nylotto)
+d.get_data(d.cash4life)
+d.get_data(d.take5)
+d.get_data(d.pick10)
 5.times do
   User.create(username: Faker::Name.first_name, phone: Faker::Number.number(10), password: '123456', email: Faker::Internet.email, active: false)
 end
