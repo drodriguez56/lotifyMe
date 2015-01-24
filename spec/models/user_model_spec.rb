@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe User do
-  it "should be associated with picks" do
+  xit "should be associated with picks" do
     user = User.create(
       username:"lemons",
       password_digest: "peelinglemons",
