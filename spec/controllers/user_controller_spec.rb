@@ -18,7 +18,7 @@ describe UsersController do
 
   describe "POST #create" do
     xit "redirects to root_path if user created" do
-      post :create,  attributes_for(:post, user: @user)
+      post :create,  attributes_for(:post, user: :user)
       response.should be_success
     end
   end
