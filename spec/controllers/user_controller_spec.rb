@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 describe UsersController do
-  let(:user) {FactoryGirl.create :user }
+  let(:user) { create :user }
 
   describe 'GET #index' do
     it "assigns a User to @user" do
@@ -18,13 +18,13 @@ describe UsersController do
 
   describe "POST #create" do
     xit "redirects to root_path if user created" do
-      post :create, FactoryGirl.attributes_for(:post, user: @user)
+      post :create,  attributes_for(:post, user: @user)
       response.should be_success
     end
   end
 
   describe 'GET #show' do
-    let(:user) { FactoryGirl.build_stubbed(:user,
+    let(:user) {  build_stubbed(:user,
       username: "kobebryant",
       password_digest: "ballislyfe",
       email: 819913)}
