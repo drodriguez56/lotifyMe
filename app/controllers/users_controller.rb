@@ -10,11 +10,21 @@ class UsersController < ApplicationController
     @user = User.find_or_create_by(email: user_params[:email])
     if @user.update(user_params)
       @user.active = true; @user.save
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      respond_to do |format|
+        format.json { render nothing: true, status:200, location: @user}
+        format.html {
+          redirect_to user_path(@user)
+          session[:user_id] = @user.id
+        }
+      end
     else
-      flash[:failure] = "Signup failed."
-      render :new
+      respond_to do |format|
+        format.json { render nothing: true, status:400 }
+          format.html {
+            render :new
+            flash[:failure] = "Signup failed."
+          }
+      end
     end
   end
 
@@ -51,7 +61,11 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :email, :phone, :password)
+      if params[:user]
+         params.require(:user).permit(:username, :email, :phone, :password)
+      else
+        params.permit(:username, :email, :phone, :password)
+      end
     end
 
 end
