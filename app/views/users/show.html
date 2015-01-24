@@ -18,5 +18,17 @@
   [hidden]
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <div class="user-picks">
+    <% @session_id = session[:user_id] %>
+    <h4> Pick History: </h4>
+    <% @user.picks.each do |pick| %>
+      <%= pick.draw_date %>
+      <%= pick.game %>
+      <%= pick.number %>
+      <%= pick.result %><br>
+    <% end %>
+  </div>
