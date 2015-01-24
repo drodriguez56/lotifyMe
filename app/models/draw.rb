@@ -5,6 +5,8 @@ class Draw < ActiveRecord::Base
   validates :game, presence: true
   validates :draw_date, presence: true, uniqueness: true
 
+  has_many :picks
+
   def get_data_powerball
     uri = URI("https://data.ny.gov/api/views/d6yy-54nr/rows.json?accessType=DOWNLOAD")
     response = Net::HTTP.get_response(uri)
