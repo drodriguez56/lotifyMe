@@ -13,5 +13,5 @@ User.create(username: 'carl', phone: Faker::PhoneNumber.phone_number, password: 
 d = Draw.new
 d.get_data_powerball
 5.times do
-  User.create(username: Faker::Name.name, phone: Faker::Number.number(10), password: '123456', email: Faker::Internet.email, active: false)
+  User.create(username: Faker::Name.first_name, phone: Faker::Number.number(10), password: '123456', email: Faker::Internet.email, active: false)
 end
