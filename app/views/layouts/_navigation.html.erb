@@ -1,16 +1,14 @@
 <nav id="site-navigation">
-  <div id="right-nav">
-    <% if !session[:user_id] %>
-      <a href="/" class="nav-link">Lotify Me</a>
-      <a href="/login" class="nav-link">Login</a>
-      <a href="/signup" class="nav-link">Signup</a>
-    <% else %>
-      <a href="/" class="nav-link">Lotify Me</a>
-      <a href="/users/<%= User.session_user(session[:user_id]).id %>" class="nav-link">
-        <%= User.session_user(session[:user_id]).username %> </a>
-      <a href="/users/<%= User.session_user(session[:user_id]).id/edit %>" class="nav-link">
-        <%= Edit %> </a>
-      <a href="/logout" class="nav-link">Logout / </a>
+<div id="right-nav">
+  <% if !session[:user_id] %>
+    <a href="/" class="nav-link">Lotify Me</a>
+    <a href="/login" class="nav-link">Login</a>
+    <a href="/signup" class="nav-link">Signup</a>
+  <% else %>
+    <% @session_id = session[:user_id] %>
+    <a href="/" class="nav-link">Lotify Me</a>
+    <a href="/users/<%= session[:user_id] %>" class="nav-link"> <%= User.find(@session_id).username %> </a>
+    <a href="/logout" class="nav-link">Logout / </a>
     <% end %>
-  </div>
+</div>
 </nav>
