@@ -39,9 +39,38 @@ class Draw < ActiveRecord::Base
   def nylotto
     return { "url" => "https://data.ny.gov/api/views/6nbc-h7bj/rows.json?accessType=DOWNLOAD",
            "proc" => Proc.new { |drawing|
-        draw = Draw.new(number: (drawing[9] + ' ' + drawing[10]), game: 'mega_millions', draw_date: drawing[8], multiplier: drawing[11])
+        draw = Draw.new(number: (drawing[9] + ' ' + drawing[10]), game: 'nylotto', draw_date: drawing[8])
         draw.save
       }
     }
   end
+
+  def cash4life
+    return { "url" => "https://data.ny.gov/api/views/kwxv-fwze/rows.json?accessType=DOWNLOAD",
+           "proc" => Proc.new { |drawing|
+        draw = Draw.new(number: (drawing[9] + ' ' + drawing[10]), game: 'cash4life', draw_date: drawing[8])
+        draw.save
+      }
+    }
+  end
+
+  def take5
+    return { "url" => "https://data.ny.gov/api/views/dg63-4siq/rows.json?accessType=DOWNLOAD",
+           "proc" => Proc.new { |drawing|
+        draw = Draw.new(number: (drawing[9]), game: 'take5', draw_date: drawing[8])
+        draw.save
+      }
+    }
+  end
+
+  def pick10
+    return { "url" => "https://data.ny.gov/api/views/bycu-cw7c/rows.json?accessType=DOWNLOAD",
+           "proc" => Proc.new { |drawing|
+        draw = Draw.new(number: (drawing[9]), game: 'pick10', draw_date: drawing[8])
+        draw.save
+      }
+    }
+  end
+
+
 end
