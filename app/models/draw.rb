@@ -11,7 +11,7 @@ class Draw < ActiveRecord::Base
     if response.code == "200"
       result = JSON.parse(response.body)
       result["data"].each do |drawing|
-        draw = Draw.new(number: drawing[9], game: 'powerball', draw_date: drawing[8], multiplier: drawing[10])
+        draw = Draw.new(number: drawing[9], game: 2, draw_date: drawing[8], multiplier: drawing[10])
         draw.save
       end
     else

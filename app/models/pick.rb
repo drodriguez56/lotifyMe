@@ -15,6 +15,21 @@ class Pick < ActiveRecord::Base
 		end
 	end
 
+  def gametype
+  #these are simple match type games (take5 and pick10)
+    if self.game == 1
+      p '1'
+  #these are matching type games with a bonus ball ('mega_millions' || 'powerball' || 'nylotto' || 'cash4life')
+    elsif self.game == 2
+      p '2'
+  #these are sum type games ('numbers' || 'win4')
+    else
+      p '3'
+    end
+
+  end
+
+
   def find_winner
     picks = Pick.all
     draws = Draw.all
