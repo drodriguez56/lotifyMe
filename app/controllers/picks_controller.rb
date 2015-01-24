@@ -27,6 +27,6 @@
    private
 
     def pick_params
-      params.require(:pick).permit(:number, :email, :game, :draw_date, :multiplier)
+      params.require(:pick).permit(:number, :game, :draw_date, :multiplier)
     end
  end
