@@ -32,7 +32,6 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'mailcatcher'
 end
 
