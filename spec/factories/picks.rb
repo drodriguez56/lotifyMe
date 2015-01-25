@@ -75,7 +75,7 @@ FactoryGirl.define do
   factory :threep_pick_nylotto, class: Pick do
     draw_date { '17-01-2015' }
     game { "nylotto" }
-    number { '11 12 77 77 77 77 17' }
+    number { '11 12 13 77 77 77 17' }
   end
 
   factory :fivep_pick_nylotto, class: Pick do
