@@ -207,5 +207,32 @@ class Pick < ActiveRecord::Base
     end
   end
 
+  def nylotto(score)
+    case score
+      when '3'
+        winnings = '5th place'
+        self.result = 'You won #{winnings}'
+      when '4'
+        winnings = '4th place'
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '5'
+        winnings = '3rd place'
+        self.result = 'You won #{winnings}'
+      when '5P'
+        winnings = '4th place'
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '6'
+        self.result = 'JACKPOT!!'
+      else
+        self.result = 'You did not win'
+    end
+  end
+
 end
 
