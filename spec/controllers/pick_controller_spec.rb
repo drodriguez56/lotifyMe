@@ -6,7 +6,12 @@ describe PicksController do
     let(:pick_params) do {
       pick: {
         email: "-666@example.com",
-        number: '374321106',
+        number1: '3',
+        number2: '6',
+        number3: '16',
+        number4: '6',
+        number5: '37',
+        number6: '56',
         game: "snapple",
         draw_date: Faker::Time.between(7.days.ago, Time.now),
         multiplier: 2
