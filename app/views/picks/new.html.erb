@@ -1,11 +1,11 @@
 <div class="form-content">
+<div class="row">
   <%= form_tag(picks_path, method: "post") do %>
     <% if !session[:user_id] %>
       <%= email_field_tag 'pick[email]',nil, placeholder: 'email' %>
     <% else %>
       <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
     <% end %>
-<div class="row">
   <%= text_field_tag 'pick[game]',nil, placeholder: 'game' %>
     <div class="row collapse prefix-radius">
       <div class="small-2 columns">
