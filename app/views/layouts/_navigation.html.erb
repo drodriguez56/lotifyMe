@@ -2,7 +2,7 @@
   <ul class="title-area">
     <li class="name">
         <div class="logo">
-      <span><h1><a href="#">Lotify Me</a></h1></span>
+          <span><h1><a href="/">Lotify Me</a></h1></span>
         </div>
     </li>
 </ul>
@@ -10,22 +10,13 @@
   <ul class="right">
     <li class="has-dropdown">
      <% if !session[:user_id] %>
-        <li class="has-dropdown">
-        <a href="#">Menu</a>
-        <ul class="dropdown">
-            <li><%= link_to 'SIGN UP', logout_path %> </li>
-            <li><%= link_to 'LOGIN', login_path %> </li>
-        </ul>
-
+        <li><%= link_to 'LOGIN', signup_path, class: "button small default radius nav-button" %></li> |
+        <li><%= link_to 'SIGN UP', logout_path, class: "button small radius nav-button" %></li>
      <% else %>
         <% @session_id = session[:user_id] %>
         <li class="active" ><a href="/users/<%= session[:user_id] %>"> <%= User.find(@session_id).username %></a></li>
-        <li class="has-dropdown">
-        <a href="#">Menu</a>
-        <ul class="dropdown">
-            <li><%= link_to 'MY PROFILE', pick_path(User.find(@session_id)) %> </li>
-            <li><%= link_to 'LOGOUT', logout_path %> </li>
-        </ul>
+        <li><%= link_to 'MY PROFILE', user_path(@session_id), class: "button small default radius nav-button" %></li> |
+        <li><%= link_to 'LOGOUT', logout_path, class: "button small default radius nav-button" %></li>
     <% end %>
     </li>
    </ul>
