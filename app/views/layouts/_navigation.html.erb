@@ -10,8 +10,8 @@
   <ul class="right">
     <li class="has-dropdown">
      <% if !session[:user_id] %>
-        <li><%= link_to 'LOGIN', signup_path, class: "button small default radius nav-button" %></li>
-        <li><%= link_to 'SIGN UP', logout_path, class: "button small radius nav-button" %></li>
+        <li><%= link_to 'LOGIN', login_path, class: "button small default radius nav-button" %></li>
+        <li><%= link_to 'SIGN UP', signup_path, class: "button small radius nav-button" %></li>
      <% else %>
         <% @session_id = session[:user_id] %>
         <li class="active" ><a href="/users/<%= session[:user_id] %>"> <%= User.find(@session_id).username %></a></li>
