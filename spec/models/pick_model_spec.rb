@@ -90,6 +90,18 @@ describe Pick do
      expect(pick.result).to eq('JACKPOT!!')
    end
 
+   it "updates pick.result to 5th place when 3 match in nylotto" do
+     create(:draw_nylotto)
+     pick = create(:three_pick_nylotto)
+     expect(pick.result).to eq("You won 5th place")
+   end
+
+   it "updates pick.result to 5th place when 3P match in nylotto" do
+     create(:draw_nylotto)
+     pick = create(:threep_pick_nylotto)
+     expect(pick.result).to eq("You won 5th place")
+   end
+
    it "updates pick.result to 2nd place when 5P match in nylotto" do
      create(:draw_nylotto)
      pick = create(:fivep_pick_nylotto)
