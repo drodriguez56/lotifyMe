@@ -150,5 +150,62 @@ class Pick < ActiveRecord::Base
     end
   end
 
+  def mega_millions(score)
+    case score
+      when 'P'
+        winnings = 1
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '1P'
+        winnings = 2
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '2P'
+        winnings = 5
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '3'
+        winnings = 5
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '3P'
+        winnings = 50
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '4'
+        winnings = 500
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '4P'
+        winnings = 5000
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '5'
+        winnings = 1000000
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '5P'
+        self.result = 'JACKPOT!!'
+      else
+        self.result = 'You did not win'
+    end
+  end
+
 end
 
