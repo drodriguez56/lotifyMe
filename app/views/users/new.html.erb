@@ -11,16 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email, placeholder: "Email" %>
+<div class="form-content">
+<center>
+  <div class="row">
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, placeholder: "Email" %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br>
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+    <div class="actions">
+      <%= submit_tag 'signup', class: "button small default radius nav-button" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</center>
+</div>
 
 <% end %>

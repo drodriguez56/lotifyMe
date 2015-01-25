@@ -10,7 +10,8 @@
       </ul>
     </div>
   <% end %>
-
+<div class="form-content">
+  <div class="row">
   <% email = nil if local_assigns[:email].nil? %>
 
   <% if @user.active %>
@@ -38,7 +39,9 @@
     <%= f.password_field :password, placeholder: "Password" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag 'edit_user_path', class: "button small default radius nav-button" %>
   </div>
+</div>
+</div>
 
 <% end %>
