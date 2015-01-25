@@ -16,10 +16,45 @@ FactoryGirl.define do
     multiplier { 3 }
   end
 
-  factory :jackpot_pick, class: Pick do
+  factory :jackpot_pick_powerball, class: Pick do
     draw_date { '24-01-2015' }
     game { "powerball" }
     multiplier { true }
     number { '11 12 13 14 15 16' }
+  end
+
+  factory :threep_pick_powerball, class: Pick do
+    draw_date { '24-01-2015' }
+    game { "powerball" }
+    multiplier { true }
+    number { '11 12 13 77 77 16' }
+  end
+
+  factory :zero_pick_powerball, class: Pick do
+    draw_date { '24-01-2015' }
+    game { "powerball" }
+    multiplier { true }
+    number { '77 77 77 77 77 77' }
+  end
+
+  factory :jackpot_pick_mega_millions, class: Pick do
+    draw_date { '21-01-2015' }
+    game { "mega_millions" }
+    multiplier { true }
+    number { '11 12 13 14 15 16' }
+  end
+
+  factory :threep_pick_mega_millions, class: Pick do
+    draw_date { '21-01-2015' }
+    game { "mega_millions" }
+    multiplier { true }
+    number { '11 12 13 77 77 16' }
+  end
+
+  factory :zero_pick_mega_millions, class: Pick do
+    draw_date { '21-01-2015' }
+    game { "mega_millions" }
+    multiplier { true }
+    number { '77 77 77 77 77 77' }
   end
 end
