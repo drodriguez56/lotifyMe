@@ -11,16 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email, placeholder: "Email" %>
+<div class="form-content">
+  <div class="row">
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, placeholder: "Email" %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br>
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 
 <% end %>
