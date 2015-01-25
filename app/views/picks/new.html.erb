@@ -8,26 +8,26 @@
 <div class="row">
   <%= text_field_tag 'pick[game]',nil, placeholder: 'game' %>
     <div class="row collapse prefix-radius">
-      <div class="large-2 columns">
+      <div class="small-2 columns">
         <%= number_field_tag 'pick[number1]',nil, placeholder:'0', class: "large-2 columns" %>
       </div>
-      <div class="large-2 columns">
+      <div class="small-2 columns">
         <%= number_field_tag 'pick[number2]',nil, placeholder:'0', class: "large-2 columns" %>
       </div>
-      <div class="large-2 columns">
+      <div class="small-2 columns">
         <%= number_field_tag ' pick[number3]',nil, placeholder:'0', class: "large-2 columns" %>
       </div>
-      <div class="large-2 columns">
+      <div class="small-2 columns">
         <%= number_field_tag 'pick[number4]',nil, placeholder:'0', class: "large-2 columns" %>
       </div>
-      <div class="large-2 columns">
+      <div class="small-2 columns">
         <%= number_field_tag 'pick[number5]',nil, placeholder:'0', class: "large-2 columns" %>
       </div>
-      <div class="large-2 columns">
+      <div class="small-2 columns">
         <%= number_field_tag 'pick[number6]',nil, placeholder:'0', class: "large-2 columns" %>
       </div>
-  <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
-  <%= check_box_tag 'pick[multiplier]'%>
+    <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
+    <%= check_box_tag 'pick[multiplier]'%>
   </div>
   <% if !session[:user_id] %>
     <%= submit_tag 'lotifyme' %>
