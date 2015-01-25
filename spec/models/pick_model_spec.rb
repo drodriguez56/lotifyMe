@@ -83,4 +83,22 @@ describe Pick do
      pick = create(:zero_pick_mega_millions)
      expect(pick.result).to eq('You did not win')
    end
+   # nylotto method tests
+   it "updates pick.result to jackpot when all match in nylotto" do
+     create(:draw_nylotto)
+     pick = create(:jackpot_pick_nylotto)
+     expect(pick.result).to eq('JACKPOT!!')
+   end
+
+   it "updates pick.result to 2nd place when 5P match in nylotto" do
+     create(:draw_nylotto)
+     pick = create(:fivep_pick_nylotto)
+     expect(pick.result).to eq("You won 2nd place")
+   end
+
+   it "updates pick.result to not a winner when 0 match in nylotto " do
+     create(:draw_nylotto)
+     pick = create(:zero_pick_nylotto)
+     expect(pick.result).to eq('You did not win')
+   end
 end
