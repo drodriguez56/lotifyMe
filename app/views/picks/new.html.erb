@@ -1,22 +1,33 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <div class="form-content">
   <div class="row">
-    <%= form_tag(picks_path, method: "post") do %>
+    <div class="small-8 small-centered columns large-3 small-centered columns">
+      <%= text_field_tag 'pick[game]', nil, placeholder: 'game' %>
+    </div>
+    <div class="small-8 small-centered columns large-3 small-centered columns">
+      <%= form_tag(picks_path, method: "post") do %>
       <% if !session[:user_id] %>
-        <%= email_field_tag 'pick[email]',nil, placeholder: 'email' %>
+        <%= email_field_tag 'pick[email]', nil, placeholder: 'email' %>
       <% else %>
         <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
       <% end %>
-    <%= text_field_tag 'pick[game]',nil, placeholder: 'game' %>
+    </div>
+    <div class = "small-8 small-centered columns large-3 small-centered columns">
     <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
+  </div>
+</div>
+
+
+  <div class="row">
     <div class="row collapse prefix-radius">
-      <ul class="small-block-grid-6 large-block-grid-6">
-          <li><%= number_field_tag 'pick[number1]',nil, placeholder:'0', class: "large-6 columns" %></li>
-          <li><%= number_field_tag 'pick[number2]',nil, placeholder:'0', class: "large-6 columns" %></li>
-          <li><%= number_field_tag 'pick[number3]',nil, placeholder:'0', class: "large-6  columns" %></li>
-          <li><%= number_field_tag 'pick[number4]',nil, placeholder:'0', class: "large-6 columns" %></li>
-          <li><%= number_field_tag 'pick[number5]',nil, placeholder:'0', class: "large-6 columns" %></li>
-          <li> <%= number_field_tag 'pick[number6]',nil, placeholder:'0', class: "large-6 columns" %> </li>
+      <ul class="small-block-grid-6 small-centered columns large-block-grid-6 large-centered columns">
+          <li><%= number_field_tag 'pick[number1]',nil, placeholder:'0', class: "small-centered-6 columns large-6 columns" %></li>
+          <li><%= number_field_tag 'pick[number2]',nil, placeholder:'0', class: "small-centered-6 columns large-6 columns" %></li>
+          <li><%= number_field_tag 'pick[number3]',nil, placeholder:'0', class: "small-centered-6 columns large-6 columns" %></li>
+          <li><%= number_field_tag 'pick[number4]',nil, placeholder:'0', class: "small-centered-6 columns large-6 columns" %></li>
+          <li><%= number_field_tag 'pick[number5]',nil, placeholder:'0', class: "small-centered-6 columns large-6 columns" %></li>
+          <li> <%= number_field_tag 'pick[number6]',nil, placeholder:'0', class: "small-centered-6 columns large-6 columns" %> </li>
       </ul>
     </div>
     <div class="form-submit-buttons">
