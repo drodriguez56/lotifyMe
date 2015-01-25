@@ -143,4 +143,22 @@ describe Pick do
      pick = create(:zero_pick_take5)
      expect(pick.result).to eq('You did not win')
    end
+   # pick10 method tests
+   it "updates pick.result to jackpot when all match in pick10" do
+     create(:draw_pick10)
+     pick = create(:jackpot_pick_pick10)
+     expect(pick.result).to eq('You won $500000')
+   end
+
+   it "updates pick.result to not a winner when 1 match in pick10 " do
+     create(:draw_pick10)
+     pick = create(:one_pick_pick10)
+     expect(pick.result).to eq('You did not win')
+   end
+
+   it "updates pick.result $4 when 0 match in pick10 " do
+     create(:draw_pick10)
+     pick = create(:zero_pick_pick10)
+     expect(pick.result).to eq('You won $4')
+   end
 end
