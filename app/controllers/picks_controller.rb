@@ -1,5 +1,6 @@
- class PicksController < ApplicationController
+class PicksController < ApplicationController
 
+  before_action :join_number
    def create
      @user = User.find_by(email: params[:pick][:email])
      if !@user
@@ -21,6 +22,17 @@
    end
 
    private
+   def join_number
+    nums_array = []
+    (1..6).each do |num|
+      number = "number" + num.to_s
+      if params[:pick][number]
+        nums_array << params[:pick][number]
+      end
+    end
+    puts nums_array.join(" ")
+    params[:pick][:number] = nums_array.join(" ")
+   end
 
     def pick_params
       params.require(:pick).permit(:number, :game, :draw_date, :multiplier)
