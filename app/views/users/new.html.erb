@@ -12,6 +12,7 @@
   <% end %>
 
 <div class="form-content">
+<center>
   <div class="row">
     <div class="field">
       <%= f.label :email %><br>
@@ -22,9 +23,10 @@
       <%= f.password_field :password, placeholder: "Password" %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= submit_tag 'signup', class: "button small default radius nav-button" %>
     </div>
   </div>
+</center>
 </div>
 
 <% end %>
