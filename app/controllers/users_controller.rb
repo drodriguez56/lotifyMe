@@ -44,10 +44,20 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
       end
       flash[:success] = "Profile updated."
-      redirect_to user_path(@user)
+       respond_to do |format|
+        format.json { render json: 'this', status:200 }
+          format.html {
+            redirect_to user_path(@user)
+          }
+        end
     else
-      flash[:failure] = "Update unsuccessful."
-      render :edit
+      respond_to do |format|
+        format.json { render nothing: true, status:400 }
+          format.html {
+            render :edit
+            flash[:failure] = "Update unsuccessful."
+          }
+      end
     end
   end
 
