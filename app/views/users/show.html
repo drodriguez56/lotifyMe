@@ -1,34 +1,19 @@
-<p>
-  <strong>Name:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  [hidden]
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+<center>
   <div class="user-picks">
     <% @session_id = session[:user_id] %>
-    <h4> Pick History: </h4>
-    <% @user.picks.each do |pick| %>
-      <%= pick.draw_date %>
-      <%= pick.game %>
-      <%= pick.number %>
-      <%= pick.result %><br>
-    <% end %>
+    <h1> Pick History </h1>
+    <p> Here are the picks you've entered.</p>
+    <div class="pick-history-list">
+      <% @user.picks.each do |pick| %>
+      <ul class="pick-items">
+        <%= pick.draw_date %>
+        <%= pick.game %>
+        <%= pick.number %>
+        <%= pick.result %><br>
+      </ul>
+      <% end %>
+    </div>
   </div>
+<%= link_to 'CREATE A PICK', new_pick_path, class: "button medium default radius nav-button" %>
+
+</center>

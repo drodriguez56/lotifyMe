@@ -1,14 +1,25 @@
-<nav id="site-navigation">
-<div id="right-nav">
-  <% if !session[:user_id] %>
-    <a href="/" class="nav-link">Lotify Me</a>
-    <a href="/login" class="nav-link">Login</a>
-    <a href="/signup" class="nav-link">Signup</a>
-  <% else %>
-    <% @session_id = session[:user_id] %>
-    <a href="/" class="nav-link">Lotify Me</a>
-    <a href="/users/<%= session[:user_id] %>" class="nav-link"> <%= User.find(@session_id).username %> </a>
-    <a href="/logout" class="nav-link">Logout</a>
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+        <div class="logo">
+          <span><h1><a href="/">Lotify Me</a></h1></span>
+        </div>
+    </li>
+</ul>
+ <section class="top-bar-section">
+  <ul class="right">
+    <li class="has-dropdown">
+     <% if !session[:user_id] %>
+        <li><%= link_to 'LOGIN', signup_path, class: "button small default radius nav-button" %></li>
+        <li><%= link_to 'SIGN UP', logout_path, class: "button small radius nav-button" %></li>
+     <% else %>
+        <% @session_id = session[:user_id] %>
+        <li class="active" ><a href="/users/<%= session[:user_id] %>"> <%= User.find(@session_id).username %></a></li>
+        <li><%= link_to 'MY PROFILE', user_path(@session_id), class: "button small default radius nav-button" %></li>
+        <li><%= link_to 'EDIT PROFILE', edit_user_path(@session_id), class: "button small default radius nav-button" %></li>
+        <li><%= link_to 'LOGOUT', logout_path, class: "button small default radius nav-button" %></li>
     <% end %>
-</div>
+    </li>
+   </ul>
+</section>
 </nav>
