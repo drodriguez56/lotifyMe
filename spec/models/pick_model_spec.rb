@@ -113,4 +113,22 @@ describe Pick do
      pick = create(:zero_pick_nylotto)
      expect(pick.result).to eq('You did not win')
    end
+   # cash4life method tests
+   it "updates pick.result to jackpot when all match in cash4life" do
+     create(:draw_cash4life)
+     pick = create(:jackpot_pick_cash4life)
+     expect(pick.result).to eq('You won $1,000 a day for Life')
+   end
+
+   it "updates pick.result to $100 when 3P match in cash4life" do
+     create(:draw_cash4life)
+     pick = create(:threep_pick_cash4life)
+     expect(pick.result).to eq("You won $100")
+   end
+
+   it "updates pick.result to not a winner when 0 match in cash4life " do
+     create(:draw_cash4life)
+     pick = create(:zero_pick_cash4life)
+     expect(pick.result).to eq('You did not win')
+   end
 end
