@@ -30,4 +30,10 @@ FactoryGirl.define do
     game { "take5" }
     number { '11 12 13 14 15' }
   end
+
+  factory :draw_pick10, class: Draw do
+    draw_date { '14-01-2015' }
+    game { "pick10" }
+    number { '11 12 13 14 15 16 17 18 19 20' }
+  end
 end
