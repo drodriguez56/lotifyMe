@@ -46,4 +46,10 @@ describe Pick do
       email: "pickTest@test.com")
     expect(Pick.all).not_to include picky
    end
+
+   xit "updates pick.result correctly" do
+     pick = Pick.create( :jackpot_pick)
+     expect(pick.result).to eq('JACKPOT!!')
+   end
+
 end
