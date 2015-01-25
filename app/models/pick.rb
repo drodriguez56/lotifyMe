@@ -198,10 +198,10 @@ class Pick < ActiveRecord::Base
 
   def nylotto(score)
     case score
-      when '3'
+      when '3' || '3P'
         winnings = '5th place'
         self.update(result: "You won #{winnings}")
-      when '4'
+      when '4' || '4P'
         winnings = '4th place'
         self.update(result: "You won #{winnings}")
       when '5'
@@ -210,7 +210,7 @@ class Pick < ActiveRecord::Base
       when '5P'
         winnings = '2nd place'
         self.update(result: "You won #{winnings}")
-      when '6'
+      when '6P'
         self.update(result: 'JACKPOT!!')
       else
         self.update(result: 'You did not win')
