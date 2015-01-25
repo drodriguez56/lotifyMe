@@ -9,7 +9,8 @@ class Notifier < ActionMailer::Base
 
   def email_for_past_draw(pick)
     @user = pick.user
-     mail(to: @user.email, subject:'your resoult')
+    @pick = pick
+    mail(to: @user.email, subject:'your resoult')
   end
 
   def email_for_future_draw(pick)

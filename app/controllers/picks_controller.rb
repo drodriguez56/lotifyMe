@@ -14,8 +14,8 @@ class PicksController < ApplicationController
        else
         if Time.now.min - @user.created_at.time.min < 1
           @pick.send_email
+          flash[:notice] = 'email sent'
         end
-        flash[:error] = 'email sent'
         redirect_to root_path
        end
      else
