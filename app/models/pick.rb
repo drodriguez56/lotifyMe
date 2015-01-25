@@ -9,6 +9,7 @@ class Pick < ActiveRecord::Base
   validates_uniqueness_of :user, scope: [:number, :game, :draw_date]
 
   belongs_to :user
+  belongs_to :draw
 
 	def set_date_to_next_draw
     if self.game == 'mega_millions' || self.game == 'powerball' || self.game == 'nylotto'
