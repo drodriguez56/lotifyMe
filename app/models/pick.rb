@@ -96,47 +96,48 @@ class Pick < ActiveRecord::Base
   end
 
   def powerball(score)
+    multi = self.draw.multiplier.to_i
     case score
       when 'P'
         winnings = 4
         if self.multiplier
-          winnings =  winnings * self.multiplier.to_i
+          winnings =  winnings * multi
         end
         self.update(result: "You won $#{winnings}")
       when '1P'
         winnings = 4
         if self.multiplier
-          winnings =  winnings * self.multiplier.to_i
+          winnings =  winnings * multi
         end
         self.update(result: "You won $#{winnings}")
       when '2P'
         winnings = 7
         if self.multiplier
-          winnings =  winnings * self.multiplier.to_i
+          winnings =  winnings * multi
         end
         self.update(result: "You won $#{winnings}")
       when '3'
         winnings = 7
         if self.multiplier
-          winnings =  winnings * self.multiplier.to_i
+          winnings =  winnings * multi
         end
         self.update(result: "You won $#{winnings}")
       when '3P'
         winnings = 100
         if self.multiplier
-          winnings =  winnings * self.multiplier.to_i
+          winnings =  winnings * multi
         end
         self.update(result: "You won $#{winnings}")
       when '4'
         winnings = 100
         if self.multiplier
-          winnings =  winnings * self.multiplier.to_i
+          winnings =  winnings * multi
         end
         self.update(result: "You won $#{winnings}")
       when '4P'
         winnings = 10000
         if self.multiplier
-          winnings =  winnings * self.multiplier.to_i
+          winnings =  winnings * multi
         end
         self.update(result: "You won $#{winnings}")
       when '5'
