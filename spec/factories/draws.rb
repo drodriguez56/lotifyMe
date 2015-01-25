@@ -1,7 +1,6 @@
 FactoryGirl.define do
-  factory :draw, class: Pick do
-    draw_date { Time.now }
-    password { Faker::Internet.password }
+  factory :draw, class: Draw do
+    draw_date { '24-01-2015' }
     game { "powerball" }
     multiplier { rand(1..5) }
     number { '11 11 11 11 11 11' }
