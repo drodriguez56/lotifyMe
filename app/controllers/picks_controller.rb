@@ -12,7 +12,10 @@ class PicksController < ApplicationController
        if params[:commit]=="signup"
          redirect_to edit_user_path(@user.id), locals: {email: params[:email]}
        else
-        flash[:error] = 'email sent'
+        if Time.now.min - @user.created_at.time.min < 1
+          @pick.send_email
+          flash[:notice] = 'email sent'
+        end
         redirect_to root_path
        end
      else

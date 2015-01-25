@@ -1,0 +1,7 @@
+<% if @pick.result == 'JACKPOT' %>
+    <p>WOOOOOWWW YOU WON !!! JACKPOT , CONGRATS</p>
+<% elsif @pick.result == 'You did not win' %>
+    <p> sorry, you didnt win but please keep trying</p>
+<% else %>
+    <p>You won <%= @pick.result %>, CONGRATS</p>
+<% end %>
