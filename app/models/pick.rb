@@ -21,14 +21,36 @@ class Pick < ActiveRecord::Base
     self.draw_date = draw_date
 	end
 
-  def gametype
-  #these are simple match type games (take5 and pick10)
-    if self.game == 1
-      p '1'
-  #these are matching type games with a bonus ball ('mega_millions' || 'powerball' || 'nylotto' || 'cash4life')
-    elsif self.game == 2
-      p '2'
-  #these are sum type games ('numbers' || 'win4')
+  def assign_draw_id
+    draw = Draw.find_by(draw_date: self.draw_date)
+    if draw
+      self.draw_id = draw.id
+    end
+  end
+
+  def setresult
+    if self.game == 'powerball'
+      self.powerball(self.getscore)
+    elsif self.game == 'mega_millions'
+      self.mega_millions(self.getscore)
+    elsif self.game == 'nylotto'
+      self.nylotto(self.getscore)
+    elsif self.game == 'cash4life'
+      self.cash4life(self.getscore)
+    elsif self.game == 'take5'
+      self.take5(self.getscore)
+    elsif self.game == 'pick10'
+      self.pick10(self.getscore)
+    end
+  end
+
+  def getscore
+  #these are simple match type games (take5 || nylotto || pick10)
+    if self.game == 'take5' || self.game == 'pick10'
+      self.matchscore
+    elsif self.game == 'nylotto'
+      self.nylottoscore
+  #these are matching type games with a bonus ball ('mega_millions' || 'powerball' || 'cash4life')
     else
       p '3'
     end
