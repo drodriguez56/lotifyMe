@@ -234,5 +234,37 @@ class Pick < ActiveRecord::Base
     end
   end
 
+  def cash4life(score)
+    case score
+      when '1P'
+        winnings = 2
+        self.result = 'You won $#{winnings}'
+      when '2'
+        winnings = 4
+        self.result = 'You won $#{winnings}'
+      when '2P'
+        winnings = 10
+        self.result = 'You won $#{winnings}'
+      when '3'
+        winnings = 25
+        self.result = 'You won $#{winnings}'
+      when '3P'
+        winnings = 100
+        self.result = 'You won $#{winnings}'
+      when '4'
+        winnings = 500
+        self.result = 'You won $#{winnings}'
+      when '4P'
+        winnings = 2500
+        self.result = 'You won $#{winnings}'
+      when '5'
+        self.result = 'You won $1,000 a week for Life}'
+      when '5P'
+        self.result = 'You won $1,000 a day for Life'
+      else
+        self.result = 'You did not win'
+    end
+  end
+
 end
 
