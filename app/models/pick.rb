@@ -77,7 +77,20 @@ class Pick < ActiveRecord::Base
       else
         score = match.length.to_s
       end
+    return score
+  end
+
+  def nylottoscore
+    draw = self.draw
+    pickarr = self.number.split(' ')
+    drawarr = draw.number.split(' ')
+    bonus = ''
+    if pickarr[-1] == drawarr[-1]
+      bonus = 'P'
     end
+    match = pickarr & drawarr
+    result = match.length.to_s + bonus
+    return result
   end
 end
 
