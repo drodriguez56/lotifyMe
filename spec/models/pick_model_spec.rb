@@ -48,8 +48,8 @@ describe Pick do
    end
 
    xit "updates pick.result correctly" do
-     pick = Pick.create( :jackpot_pick)
+     create(:draw)
+     pick = create(:jackpot_pick)
      expect(pick.result).to eq('JACKPOT!!')
    end
-
 end

@@ -17,10 +17,8 @@ FactoryGirl.define do
   end
 
   factory :jackpot_pick, class: Pick do
-    draw_date { Time.now }
-    password { Faker::Internet.password }
+    draw_date { '24-01-2015' }
     game { "powerball" }
-    user_id {Faker::Number.number(3)}
     multiplier { true }
     number { '11 11 11 11 11 11' }
   end
