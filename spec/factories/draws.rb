@@ -12,4 +12,10 @@ FactoryGirl.define do
     multiplier { 2 }
     number { '11 12 13 14 15 16' }
   end
+
+  factory :draw_nylotto, class: Draw do
+    draw_date { '17-01-2015' }
+    game { "nylotto" }
+    number { '11 12 13 14 15 16 17' }
+  end
 end
