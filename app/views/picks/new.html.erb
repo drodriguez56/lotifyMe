@@ -3,15 +3,19 @@
 <div class="form-content">
   <div class="row">
     <div class="small-8 small-centered columns large-3 small-centered columns">
-      <%= text_field_tag 'pick[game]', nil, placeholder: 'game' %>
-    </div>
-    <div class="small-8 small-centered columns large-3 small-centered columns">
       <%= form_tag(picks_path, method: "post") do %>
       <% if !session[:user_id] %>
         <%= email_field_tag 'pick[email]', nil, placeholder: 'email' %>
       <% else %>
         <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
       <% end %>
+    </div>
+    <div class="small-8 small-centered columns large-3 small-centered columns">
+      <select name='pick[game]'>
+        <option value="mega_millions">Mega Millions</option>
+        <option value="powerball">Power Ball</option>
+        <option value="nylotto">NY Lotto</option>
+      </select>
     </div>
     <div class = "small-8 small-centered columns large-3 small-centered columns">
     <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
