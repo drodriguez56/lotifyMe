@@ -2,11 +2,15 @@
   <% if !session[:user_id] %>
     <%= email_field_tag 'pick[email]',nil, placeholder: 'email' %>
   <% end %>
-
-<%= number_field_tag 'pick[number]',nil, placeholder:'number' %>
 <%= text_field_tag 'pick[game]',nil, placeholder: 'game' %>
+<%= number_field_tag 'pick[number1]',nil, placeholder:'0' %>
+<%= number_field_tag 'pick[number2]',nil, placeholder:'0' %>
+<%= number_field_tag 'pick[number3]',nil, placeholder:'0' %>
+<%= number_field_tag 'pick[number4]',nil, placeholder:'0' %>
+<%= number_field_tag 'pick[number5]',nil, placeholder:'0' %>
+<%= number_field_tag 'pick[number6]',nil, placeholder:'0' %>
 <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
-<%= number_field_tag 'pick[multiplier]',nil, placeholder: 'multiplier' %>
+<%= check_box_tag 'pick[multiplier]'%>
 <%= submit_tag 'lotifyme' %>
 <%= submit_tag 'signup' %>
 
