@@ -6,4 +6,9 @@ class Notifier < ActionMailer::Base
     @user = user
     mail(to: @user.email, subject:'welcome to lottifyme')
   end
+
+  def email_for_past_draw(pick)
+    @user = pick.user
+     mail(to: @user.email, subject:'your resoult')
+  end
 end
