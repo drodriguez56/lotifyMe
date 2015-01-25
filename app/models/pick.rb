@@ -11,6 +11,14 @@ class Pick < ActiveRecord::Base
   belongs_to :user
   belongs_to :draw
 
+  def send_email
+    if self.draw_date < Time.now
+      Notifier.email_for_past_draw(self).deliver
+    else
+      Notifier.email_for_future_draw(self).deliver
+    end
+  end
+
 	def set_date_to_next_draw
     if self.game == 'mega_millions' || self.game == 'powerball' || self.game == 'nylotto'
   		until [3, 6].include?(Date.parse(self.draw_date.to_s).cwday)
