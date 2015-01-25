@@ -212,6 +212,7 @@ class Pick < ActiveRecord::Base
   end
 
   def nylotto(score)
+    multi = self.draw.multiplier.to_i
     case score
       when '3'
         winnings = '5th place'
@@ -219,7 +220,7 @@ class Pick < ActiveRecord::Base
       when '4'
         winnings = '4th place'
         if self.multiplier
-          winnings =  winnings * self.multiplier.to_i
+          winnings =  winnings * multi
         end
         self.update(result: "You won $#{winnings}")
       when '5'
@@ -228,7 +229,7 @@ class Pick < ActiveRecord::Base
       when '5P'
         winnings = '4th place'
         if self.multiplier
-          winnings =  winnings * self.multiplier.to_i
+          winnings =  winnings * multi
         end
         self.update(result: "You won $#{winnings}")
       when '6'
