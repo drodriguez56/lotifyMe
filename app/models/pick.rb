@@ -52,28 +52,24 @@ class Pick < ActiveRecord::Base
       self.nylottoscore
   #these are matching type games with a bonus ball ('mega_millions' || 'powerball' || 'cash4life')
     else
-      p '3'
+      self.bonusballscore
     end
+  end
 
   end
 
 
-  def find_winner
-    picks = Pick.all
-    draws = Draw.all
-    picks.each do |pick|
-      pickarr = pick.number.split(' ')
-      power_pick = pickarr.pop
-      if draw = draws.find_by(draw_date: pick.draw_date)
-        drawarr = draw.number.split(' ')
-        power_draw = drawarr.pop
-        match = pickarr & drawarr
-        if power_pick == power_draw
-          result = match.length.to_s + 'P'
-        else
-          result = match.length
-        end
-        pick.update(result: result)
+  def bonusballscore
+    draw = self.draw
+    pickarr = self.number.split(' ')
+    drawarr = draw.number.split(' ')
+    power_pick = pickarr.pop
+    power_draw = drawarr.pop
+    match = pickarr & drawarr
+      if power_pick == power_draw
+        score = match.length.to_s + 'P'
+      else
+        score = match.length.to_s
       end
     end
   end
