@@ -50,9 +50,7 @@ class Pick < ActiveRecord::Base
   #these are simple match type games (take5 || nylotto || pick10)
     if self.game == 'take5' || self.game == 'pick10'
       self.matchscore
-    elsif self.game == 'nylotto'
-      self.nylottoscore
-  #these are matching type games with a bonus ball ('mega_millions' || 'powerball' || 'cash4life')
+  #these are matching type games with a bonus ball ('mega_millions' || 'powerball' || 'cash4life' || 'nylotto')
     else
       self.bonusballscore
     end
@@ -80,19 +78,6 @@ class Pick < ActiveRecord::Base
         score = match.length.to_s
       end
     return score
-  end
-
-  def nylottoscore
-    draw = self.draw
-    pickarr = self.number.split(' ')
-    drawarr = draw.number.split(' ')
-    bonus = ''
-    if pickarr[-1] == drawarr[-1]
-      bonus = 'P'
-    end
-    match = pickarr & drawarr
-    result = match.length.to_s + bonus
-    return result
   end
 
   def powerball(score)
