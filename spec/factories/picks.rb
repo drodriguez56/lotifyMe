@@ -107,4 +107,16 @@ FactoryGirl.define do
     game { "cash4life" }
     number { '77 77 77 77 77 77' }
   end
+  #take5 factories
+  factory :jackpot_pick_take5, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "take5" }
+    number { '11 12 13 14 15' }
+  end
+
+  factory :zero_pick_take5, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "take5" }
+    number { '77 77 77 77 77' }
+  end
 end
