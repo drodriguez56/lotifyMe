@@ -1,6 +1,7 @@
 class Pick < ActiveRecord::Base
 
-	before_save { |pick| pick.flush_date }
+	before_save { |pick| pick.set_date_to_next_draw; pick.assign_draw_id }
+  after_save { |pick| pick.setresult }
 
   validates :number, presence: true
   validates :game, presence: true
@@ -9,10 +10,14 @@ class Pick < ActiveRecord::Base
 
   belongs_to :user
 
-	def flush_date
-		until [3, 6].include?(Date.parse(self.draw_date.to_s).cwday)
-			self.draw_date += 24 * 60 * 60
-		end
+	def set_date_to_next_draw
+    if self.game == 'mega_millions' || self.game == 'powerball' || self.game == 'nylotto'
+  		until [3, 6].include?(Date.parse(self.draw_date.to_s).cwday)
+  			self.draw_date += 24 * 60 * 60
+  		end
+    end
+    draw_date = Date.parse((self.draw_date.to_s)[0..9])
+    self.draw_date = draw_date
 	end
 
   def gametype
