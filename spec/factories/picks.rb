@@ -16,10 +16,125 @@ FactoryGirl.define do
     multiplier { 3 }
   end
 
-  factory :jackpot_pick, class: Pick do
+#powerball factories
+  factory :jackpot_pick_powerball, class: Pick do
     draw_date { '24-01-2015' }
     game { "powerball" }
     multiplier { true }
-    number { '11 11 11 11 11 11' }
+    number { '11 12 13 14 15 16' }
+  end
+
+  factory :threep_pick_powerball, class: Pick do
+    draw_date { '24-01-2015' }
+    game { "powerball" }
+    multiplier { true }
+    number { '11 12 13 77 77 16' }
+  end
+
+  factory :zero_pick_powerball, class: Pick do
+    draw_date { '24-01-2015' }
+    game { "powerball" }
+    multiplier { true }
+    number { '77 77 77 77 77 77' }
+  end
+
+#mega millions factories
+  factory :jackpot_pick_mega_millions, class: Pick do
+    draw_date { '21-01-2015' }
+    game { "mega_millions" }
+    multiplier { true }
+    number { '11 12 13 14 15 16' }
+  end
+
+  factory :threep_pick_mega_millions, class: Pick do
+    draw_date { '21-01-2015' }
+    game { "mega_millions" }
+    multiplier { true }
+    number { '11 12 13 77 77 16' }
+  end
+
+  factory :zero_pick_mega_millions, class: Pick do
+    draw_date { '21-01-2015' }
+    game { "mega_millions" }
+    multiplier { true }
+    number { '77 77 77 77 77 77' }
+  end
+#ny lotto factories
+  factory :jackpot_pick_nylotto, class: Pick do
+    draw_date { '17-01-2015' }
+    game { "nylotto" }
+    number { '11 12 13 14 15 16 17' }
+  end
+
+  factory :three_pick_nylotto, class: Pick do
+    draw_date { '17-01-2015' }
+    game { "nylotto" }
+    number { '11 12 13 77 77 77 77' }
+  end
+
+  factory :threep_pick_nylotto, class: Pick do
+    draw_date { '17-01-2015' }
+    game { "nylotto" }
+    number { '11 12 13 77 77 77 17' }
+  end
+
+  factory :fivep_pick_nylotto, class: Pick do
+    draw_date { '17-01-2015' }
+    game { "nylotto" }
+    number { '11 12 13 14 77 16 17' }
+  end
+
+  factory :zero_pick_nylotto, class: Pick do
+    draw_date { '17-01-2015' }
+    game { "nylotto" }
+    number { '77 77 77 77 77 77 77' }
+  end
+#cash4life factories
+  factory :jackpot_pick_cash4life, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "cash4life" }
+    number { '11 12 13 14 15 16' }
+  end
+
+  factory :threep_pick_cash4life, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "cash4life" }
+    number { '11 12 13 77 77 16' }
+  end
+
+  factory :zero_pick_cash4life, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "cash4life" }
+    number { '77 77 77 77 77 77' }
+  end
+  #take5 factories
+  factory :jackpot_pick_take5, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "take5" }
+    number { '11 12 13 14 15' }
+  end
+
+  factory :zero_pick_take5, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "take5" }
+    number { '77 77 77 77 77' }
+  end
+  #pick10 factories
+  factory :jackpot_pick_pick10, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "pick10" }
+    number { '11 12 13 14 15 16 17 18 19 20' }
+  end
+
+  factory :one_pick_pick10, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "pick10" }
+    number { '11 77 77 77 77 77 77 77 77 77' }
+  end
+
+  factory :zero_pick_pick10, class: Pick do
+    draw_date { '14-01-2015' }
+    game { "pick10" }
+    number { '77 77 77 77 77 77 77 77 77 77' }
   end
 end

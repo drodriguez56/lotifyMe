@@ -40,6 +40,7 @@ group :test do
   gem 'valid_attribute'
   gem 'capybara'
   gem 'launchy'
+  gem 'pry'
 end
 
 # Use unicorn as the app server
