@@ -6,7 +6,7 @@
 <%= number_field_tag 'pick[number]',nil, placeholder:'number' %>
 <%= text_field_tag 'pick[game]',nil, placeholder: 'game' %>
 <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
-<%= number_field_tag 'pick[multiplier]',nil, placeholder: 'multiplier' %>
+<%= check_box_tag 'pick[multiplier]'%>
 <%= submit_tag 'lotifyme' %>
 <%= submit_tag 'signup' %>
 
