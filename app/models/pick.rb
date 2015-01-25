@@ -92,5 +92,63 @@ class Pick < ActiveRecord::Base
     result = match.length.to_s + bonus
     return result
   end
+
+  def powerball(score)
+    case score
+      when 'P'
+        winnings = 4
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '1P'
+        winnings = 4
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '2P'
+        winnings = 7
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '3'
+        winnings = 7
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '3P'
+        winnings = 100
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '4'
+        winnings = 100
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '4P'
+        winnings = 10000
+        if self.multiplier
+          winnings =  winnings * self.multiplier.to_i
+        end
+        self.result = 'You won #{winnings}'
+      when '5'
+        winnings = 1000000
+        if self.multiplier
+          winnings =  winnings * 2
+        end
+        self.result = 'You won #{winnings}'
+      when '5P'
+        self.result = 'JACKPOT!!'
+      else
+        self.result = 'You did not win'
+    end
+  end
+
 end
 
