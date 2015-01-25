@@ -100,53 +100,53 @@ class Pick < ActiveRecord::Base
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '1P'
         winnings = 4
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '2P'
         winnings = 7
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '3'
         winnings = 7
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '3P'
         winnings = 100
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '4'
         winnings = 100
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '4P'
         winnings = 10000
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '5'
         winnings = 1000000
         if self.multiplier
           winnings =  winnings * 2
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '5P'
-        self.result = 'JACKPOT!!'
+        self.update(result: 'JACKPOT!!')
       else
-        self.result = 'You did not win'
+        self.update(result: 'You did not win')
     end
   end
 
@@ -157,53 +157,53 @@ class Pick < ActiveRecord::Base
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '1P'
         winnings = 2
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '2P'
         winnings = 5
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '3'
         winnings = 5
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '3P'
         winnings = 50
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '4'
         winnings = 500
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '4P'
         winnings = 5000
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '5'
         winnings = 1000000
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '5P'
-        self.result = 'JACKPOT!!'
+        self.update(result: 'JACKPOT!!')
       else
-        self.result = 'You did not win'
+        self.update(result: 'You did not win')
     end
   end
 
@@ -211,26 +211,26 @@ class Pick < ActiveRecord::Base
     case score
       when '3'
         winnings = '5th place'
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '4'
         winnings = '4th place'
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '5'
         winnings = '3rd place'
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '5P'
         winnings = '4th place'
         if self.multiplier
           winnings =  winnings * self.multiplier.to_i
         end
-        self.result = 'You won #{winnings}'
+        self.update(result: 'You won #{winnings}')
       when '6'
-        self.result = 'JACKPOT!!'
+        self.update(result: 'JACKPOT!!')
       else
-        self.result = 'You did not win'
+        self.update(result: 'You did not win')
     end
   end
 
@@ -238,46 +238,46 @@ class Pick < ActiveRecord::Base
     case score
       when '1P'
         winnings = 2
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '2'
         winnings = 4
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '2P'
         winnings = 10
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '3'
         winnings = 25
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '3P'
         winnings = 100
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '4'
         winnings = 500
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '4P'
         winnings = 2500
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '5'
-        self.result = 'You won $1,000 a week for Life}'
+        self.update(result: 'You won $1,000 a week for Life}')
       when '5P'
-        self.result = 'You won $1,000 a day for Life'
+        self.update(result: 'You won $1,000 a day for Life')
       else
-        self.result = 'You did not win'
+        self.update(result: 'You did not win')
     end
   end
 
   def take5(score)
     case score
       when '2'
-        self.result = 'You won a free play'
+        self.update(result: 'You won a free play')
       when '3'
-        self.result = 'You won 3rd place'
+        self.update(result: 'You won 3rd place')
       when '4'
-        self.result = 'You won 2nd place'
+        self.update(result: 'You won 2nd place')
       when '5'
-        self.result = 'You won 1st place'
+        self.update(result: 'You won 1st place')
       else
-        self.result = 'You did not win'
+        self.update(result: 'You did not win')
     end
   end
 
@@ -285,24 +285,24 @@ class Pick < ActiveRecord::Base
     case score
       when '0'
         winnings = 4
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '6'
         winnings = 10
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '7'
         winnings = 40
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '8'
         winnings = 300
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '9'
         winnings = 6000
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       when '10'
         winnings = 500000
-        self.result = 'You won $#{winnings}'
+        self.update(result: 'You won $#{winnings}')
       else
-        self.result = 'You did not win'
+        self.update(result: 'You did not win')
     end
   end
 end

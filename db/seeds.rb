@@ -14,8 +14,8 @@ d.get_data(d.powerball)
 end
 
 Pick.create(number: '11 12 15 28 57 23', game: 'powerball', draw_date: Faker::Date.backward(2), user_id: 1, draw_id: 1)
-Pick.create(number: '31 35 77 79 63 06', game: 'powerball', draw_date: Faker::Date.backward(5), user_id: 1, draw_id: 2)
-Pick.create(number: '31 35 56 57 77 06', game: 'powerball', draw_date: Faker::Date.backward(8), user_id: 2, draw_id: 3)
-Pick.create(number: '37 77 56 59 63 06', game: 'powerball', draw_date: Faker::Date.backward(8), user_id: 2, draw_id: 3)
-Pick.create(number: '31 35 57 77 73 06', game: 'powerball', draw_date: Faker::Date.backward(11), user_id: 3, draw_id: 4)
-Pick.create(number: '37 77 77 59 63 06', game: 'powerball', draw_date: Faker::Date.backward(11), user_id: 4, draw_id: 4)
+# Pick.create(number: '31 35 77 79 63 06', game: 'powerball', draw_date: Faker::Date.backward(5), user_id: 1, draw_id: 2)
+# Pick.create(number: '31 35 56 57 77 06', game: 'powerball', draw_date: Faker::Date.backward(8), user_id: 2, draw_id: 3)
+# Pick.create(number: '37 77 56 59 63 06', game: 'powerball', draw_date: Faker::Date.backward(8), user_id: 2, draw_id: 3)
+# Pick.create(number: '31 35 57 77 73 06', game: 'powerball', draw_date: Faker::Date.backward(11), user_id: 3, draw_id: 4)
+# Pick.create(number: '37 77 77 59 63 06', game: 'powerball', draw_date: Faker::Date.backward(11), user_id: 4, draw_id: 4)
