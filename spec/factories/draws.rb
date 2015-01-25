@@ -18,4 +18,10 @@ FactoryGirl.define do
     game { "nylotto" }
     number { '11 12 13 14 15 16 17' }
   end
+
+  factory :draw_cash4life, class: Draw do
+    draw_date { '14-01-2015' }
+    game { "cash4life" }
+    number { '11 12 13 14 15 16' }
+  end
 end
