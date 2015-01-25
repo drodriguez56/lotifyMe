@@ -266,5 +266,20 @@ class Pick < ActiveRecord::Base
     end
   end
 
+  def take5(score)
+    case score
+      when '2'
+        self.result = 'You won a free play'
+      when '3'
+        self.result = 'You won 3rd place'
+      when '4'
+        self.result = 'You won 2nd place'
+      when '5'
+        self.result = 'You won 1st place'
+      else
+        self.result = 'You did not win'
+    end
+  end
+
 end
 
