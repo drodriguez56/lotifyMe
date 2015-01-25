@@ -21,8 +21,6 @@
     <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
   </div>
 </div>
-
-
   <div class="row">
     <div class="row collapse prefix-radius">
       <ul class="small-block-grid-6 small-centered columns large-block-grid-6 large-centered columns">
@@ -36,7 +34,7 @@
     </div>
     <div class="form-submit-buttons">
       <center>
-      <h4><%= check_box_tag 'pick[multiplier]'%></h4>
+      <h4><label>Multiplier?<br> <%= check_box_tag 'pick[multiplier]'%></label></h4>
       <% if !session[:user_id] %>
         <%= submit_tag 'lotifyme', class: "button small default radius nav-button"%>
         <%= submit_tag 'signup', class: "button small default radius nav-button" %>
