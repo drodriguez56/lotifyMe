@@ -47,7 +47,7 @@ describe Pick do
     expect(Pick.all).not_to include picky
    end
 
-   xit "updates pick.result correctly" do
+   it "updates pick.result correctly" do
      create(:draw)
      pick = create(:jackpot_pick)
      expect(pick.result).to eq('JACKPOT!!')
