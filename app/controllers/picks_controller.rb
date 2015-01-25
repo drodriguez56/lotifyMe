@@ -1,11 +1,5 @@
  class PicksController < ApplicationController
 
-   def new
-     @pick = Pick.new
-   end
-
-
-
    def create
      @user = User.find_by(email: params[:pick][:email])
      if !@user
