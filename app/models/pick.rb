@@ -281,5 +281,29 @@ class Pick < ActiveRecord::Base
     end
   end
 
+  def pick10(score)
+    case score
+      when '0'
+        winnings = 4
+        self.result = 'You won $#{winnings}'
+      when '6'
+        winnings = 10
+        self.result = 'You won $#{winnings}'
+      when '7'
+        winnings = 40
+        self.result = 'You won $#{winnings}'
+      when '8'
+        winnings = 300
+        self.result = 'You won $#{winnings}'
+      when '9'
+        winnings = 6000
+        self.result = 'You won $#{winnings}'
+      when '10'
+        winnings = 500000
+        self.result = 'You won $#{winnings}'
+      else
+        self.result = 'You did not win'
+    end
+  end
 end
 
