@@ -56,6 +56,12 @@ class Pick < ActiveRecord::Base
     end
   end
 
+  def matchscore
+    draw = self.draw
+    pickarr = self.number.split(' ')
+    drawarr = draw.number.split(' ')
+    match = pickarr & drawarr
+    return match.length.to_s
   end
 
 
