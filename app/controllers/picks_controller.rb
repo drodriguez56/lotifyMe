@@ -1,6 +1,6 @@
 class PicksController < ApplicationController
 
-  before_action :join_number, :current_user
+  before_action :join_number
    def create
      @user = User.find_by(email: params[:pick][:email])
      if !@user
