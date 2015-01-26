@@ -9,7 +9,10 @@
         <%= pick.draw_date %>
         <%= pick.game %>
         <%= pick.number %>
-        <%= pick.result %><br>
+        <%= pick.result %>
+        <%= link_to 'Destroy',  pick,  method: :delete %>
+        <br>
+
       </ul>
       <% end %>
     </div>
