@@ -5,14 +5,22 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= render partial: "/layouts/navigation", locals: {user: @user }%>
 </head>
-<body>
-  <% if flash[:error] %>
-    <div class='error_message'><%= flash[:error] %></div>
-  <% end %>
+<body >
+  <div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    <header>
+      <%= render partial: "/layouts/navigation", locals: {user: @user }%>
+    </header>
+    <% if flash[:error] %>
+      <div class='error_message'><%= flash[:error] %></div>
+    <% end %>
 
-<%= yield %>
+    <%= yield %>
+  </div>
+
+</div>
 
 </body>
+
 </html>
