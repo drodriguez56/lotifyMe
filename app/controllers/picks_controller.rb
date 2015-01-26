@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-
+  before_action :require_login, except: [:create]
   before_action :join_number
    def create
      @user = User.find_by(email: params[:pick][:email])

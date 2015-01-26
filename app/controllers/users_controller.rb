@@ -71,18 +71,6 @@ class UsersController < ApplicationController
 
   private
 
-    def set_user
-
-    end
-
-    def require_login
-      if current_user
-        @user = current_user
-      else
-        redirect_to root_path
-      end
-    end
-
     def user_params
       if params[:user]
          params.require(:user).permit(:username, :email, :phone, :password)
