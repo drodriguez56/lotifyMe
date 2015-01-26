@@ -3,7 +3,7 @@ require 'rails_helper'
 describe PicksController do
 
   describe "POST #create" do
-    let(:pick_params) do {
+    let(:pick_params) do{
       pick: {
         email: "-666@example.com",
         number1: '3',
@@ -18,9 +18,10 @@ describe PicksController do
       },
       commit: "signup"
     }
-    end
+  end
 
     it "redirects to edit_user_path if pick is created" do
+      session[:user_id] = create(:user).id
       post :create, pick_params
       expect(response).to redirect_to edit_user_path(assigns[:user].id)
     end
