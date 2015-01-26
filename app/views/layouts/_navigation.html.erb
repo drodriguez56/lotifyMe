@@ -1,28 +1,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<nav class="top-bar" data-topbar role="navigation">
+<nav class="middle top-bar hide-for-small" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-        <div class="logo">
-          <span><h1><a href="/">Lotify Me</a></h1></span>
-        </div>
+      <div class="logo">
+        <span><h1><a href="/">(logo)</a></h1></span>
+      </div>
     </li>
-</ul>
+  </ul>
+
+  <section class="middle tab-bar-section">
+    <h3 class="logo">LotifyMe</h2>
+  </section>
 
  <section class="top-bar-section">
   <ul class="right">
-    <li class="has-dropdown">
+    <li>
      <% if !session[:user_id] %>
-        <li><%= link_to 'LOGIN', login_path, class: "button small default radius nav-button" %></li>
-        <li><%= link_to 'SIGN UP', signup_path, class: "button small radius nav-button" %></li>
+      <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Accounts</a>
+        <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+          <li><%= link_to 'LOGIN', login_path %></li>
+          <li><%= link_to 'SIGN UP', signup_path %></li>
+        </ul>
      <% else %>
-        <% @session_id = session[:user_id] %>
-        <li class="active" ><a href="/users/<%= session[:user_id] %>"> <%= User.find(@session_id).username %></a></li>
-        <li><%= link_to 'MY PROFILE', user_path(@session_id), class: "button small default radius nav-button" %></li>
-        <li><%= link_to 'EDIT PROFILE', edit_user_path(@session_id), class: "button small default radius nav-button" %></li>
-        <li><%= link_to 'LOGOUT', logout_path, class: "button small default radius nav-button" %></li>
+     <% @session_id = session[:user_id] %>
+      <li class="active" ><a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false"><%= User.find(@session_id).username %></a><li>
+        <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+          <li><%= link_to 'MY PROFILE', user_path(@session_id) %></li>
+          <li><%= link_to 'EDIT PROFILE', edit_user_path(@session_id) %></li>
+          <li><%= link_to 'LOGOUT', logout_path %></li>
+        </ul>
+     <% end %>
+     </li>
+   </ul>
+  </section>
+</nav>
+
+<nav class="tab-bar show-for-small">
+  <a class="left-off-canvas-toggle menu-icon" aria-expanded="false">
+    <span>LOTTIFY ME</span>
+  </a>
+</nav>
+<aside class="left-off-canvas-menu">
+  <ul class="off-canvas-list">
+    <li>
+     <% if !session[:user_id] %>
+      <li><%= link_to 'LOGIN', login_path %></li>
+      <li><%= link_to 'SIGN UP', signup_path %></li>
+     <% else %>
+      <% @session_id = session[:user_id] %>
+      <li class="active" >
+        <a href="/users/<%= session[:user_id] %>"><%= User.find(@session_id).username %></a>
+      </li>
+      <li>
+        <%= link_to 'MY PROFILE', user_path(@session_id) %>
+      </li>
+      <li>
+        <%= link_to 'EDIT PROFILE', edit_user_path(@session_id) %>
+      </li>
+      <li>
+        <%= link_to 'LOGOUT', logout_path %>
+      </li>
     <% end %>
     </li>
-   </ul>
-</section>
-</nav>
+  </ul>
+</aside>
+<a class="exit-off-canvas" href="#"></a>

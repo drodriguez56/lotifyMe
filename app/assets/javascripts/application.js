@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require js/foundation.min
+//= require js/foundation/foundation.offcanvas
 //= require_tree .
+$( document ).ready(function() {
+  $(document).foundation()
+});
