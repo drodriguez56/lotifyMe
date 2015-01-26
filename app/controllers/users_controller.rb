@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:create, :new]
+
   def new
     @user = User.new
   end
@@ -71,7 +72,15 @@ class UsersController < ApplicationController
   private
 
     def set_user
-      @user = User.find(params[:id])
+
+    end
+
+    def require_login
+      if current_user
+        @user = current_user
+      else
+        redirect_to root_path
+      end
     end
 
     def user_params
