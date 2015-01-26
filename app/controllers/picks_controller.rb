@@ -16,11 +16,21 @@ class PicksController < ApplicationController
           @pick.send_email
           flash[:notice] = 'email sent'
         end
-        redirect_to root_path
+        respond_to do |format|
+          format.json { render json: 'pick created', status:200 }
+            format.html {
+              redirect_to root_path
+            }
+        end
        end
      else
-       flash[:error] = 'failed to create entry.. try again'
-       redirect_to root_path
+       respond_to do |format|
+          format.json { render json: 'fail to create pick', status:400 }
+            format.html {
+              flash[:error] = 'failed to create entry.. try again'
+              redirect_to root_path
+            }
+       end
      end
    end
 
@@ -33,8 +43,9 @@ class PicksController < ApplicationController
         nums_array << params[:pick][number]
       end
     end
-    puts nums_array.join(" ")
-    params[:pick][:number] = nums_array.join(" ")
+    if !params[:pick][:number]
+      params[:pick][:number] = nums_array.join(" ")
+    end
    end
 
     def pick_params
