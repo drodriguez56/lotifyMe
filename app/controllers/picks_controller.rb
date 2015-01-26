@@ -34,13 +34,23 @@ class PicksController < ApplicationController
      end
    end
 
+   def destroy
+    @pick = Pick.find(params[:id])
+    @pick.destroy
+    redirect_to user_path(@pick.user)
+   end
+
    private
    def join_number
     nums_array = []
-    (1..6).each do |num|
-      number = "number" + num.to_s
-      if params[:pick][number]
-        nums_array << params[:pick][number]
+    if !params[:pick]
+      return nil
+    else
+      (1..6).each do |num|
+        number = "number" + num.to_s
+        if params[:pick][number]
+          nums_array << params[:pick][number]
+        end
       end
     end
     if !params[:pick][:number]
