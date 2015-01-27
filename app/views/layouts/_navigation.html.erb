@@ -4,7 +4,7 @@
   <ul class="title-area">
     <li class="name">
       <div class="logo">
-        <span><h1><a href="/">(logo)</a></h1></span>
+        <span><h1><a href="/">SendGrid :)</a></h1></span>
       </div>
     </li>
   </ul>
@@ -24,7 +24,13 @@
         </ul>
      <% else %>
      <% @session_id = session[:user_id] %>
-      <li class="active" ><a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false"><%= User.find(@session_id).username %></a><li>
+      <li class="active" ><a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">
+        <% if User.find(@session_id).username %>
+          <%= User.find(@session_id).username %>
+        <% else %>
+          Menue
+        <% end -%>
+      </a><li>
         <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
           <li><%= link_to 'MY PROFILE', user_path(@session_id) %></li>
           <li><%= link_to 'EDIT PROFILE', edit_user_path(@session_id) %></li>

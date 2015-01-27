@@ -39,7 +39,11 @@
     <%= f.password_field :password, placeholder: "Password" %>
   </div>
   <div class="actions">
-    <%= submit_tag 'edit_user_path', class: "button small default radius nav-button" %>
+    <% if @user.active %>
+     <%= submit_tag 'edit', class: "button small default radius nav-button" %>
+    <% else %>
+      <%= submit_tag 'create account', class: "button small default radius nav-button" %>
+    <% end -%>
   </div>
 </div>
 </div>
