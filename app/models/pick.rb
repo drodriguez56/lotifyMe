@@ -25,13 +25,13 @@ class Pick < ActiveRecord::Base
     elsif self.game == 'Megamillions'
       self.game = 'mega_millions'
     elsif self.game == 'NYLotto'
-      self.game == 'nylotto'
+      self.game = 'nylotto'
     elsif self.game == 'Cash4Life'
-      self.game == 'cash4life'
+      self.game = 'cash4life'
     elsif self.game == 'Take5'
-      self.game == 'take5'
+      self.game = 'take5'
     elsif self.game == 'Pick10'
-      self.game == 'pick10'
+      self.game = 'pick10'
     end
   end
 

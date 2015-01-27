@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :require_login, except: [:create]
+  before_action :require_login, except: [:create, :index]
   before_action :join_number
 
   def index
