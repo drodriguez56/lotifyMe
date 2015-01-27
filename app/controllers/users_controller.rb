@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       end
     else
       respond_to do |format|
-        format.json { render nothing: true, status:400 }
+        format.json { render json: 'signup failed', status:400 }
           format.html {
             render :new
             flash[:failure] = "Signup failed."
