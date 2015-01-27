@@ -30,7 +30,7 @@ class PicksController < ApplicationController
           flash[:notice] = 'email sent'
         end
         respond_to do |format|
-          format.json { render json: 'pick created', status:200 }
+          format.json { render json: ActiveSupport::JSON.encode(@pick), status:200 }
             format.html {
               redirect_to root_path
             }
