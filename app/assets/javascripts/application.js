@@ -20,7 +20,7 @@
 $( document ).ready(function() {
   $(document).foundation()
 });
-$(document).ready(function() {
+$(document).on("ready page:load", function(){
   $('#pick_number1').autotab({ target: '#pick_number2', format: 'numeric' });
     $('#pick_number2').autotab({ target: '#pick_number3', format: 'numeric'});
      $('#pick_number3').autotab({ target: '#pick_number4', format: 'numeric'});
