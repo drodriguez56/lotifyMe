@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       end
       @user.active = true; @user.save
       respond_to do |format|
-        format.json { render nothing: true, status:200, location: @user}
+        format.json { render json: ActiveSupport::JSON.encode(@user), status:200, location: @user}
         format.html {
           redirect_to user_path(@user)
           session[:user_id] = @user.id
