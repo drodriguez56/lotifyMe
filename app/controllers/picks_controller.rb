@@ -1,7 +1,20 @@
 class PicksController < ApplicationController
   before_action :require_login, except: [:create]
   before_action :join_number
-   def create
+
+  def index
+    if User.find_by(email: params[:pick][:email])
+      @pick = User.find_by(email: params[:pick][:email]).picks
+      respond_to do |format|
+          format.json { render json: ActiveSupport::JSON.encode(@pick), status:200 }
+        end
+    else
+      respond_to do |format|
+          format.json { render json: 'user not found', status:400 }
+        end
+    end
+  end
+  def create
      @user = User.find_by(email: params[:pick][:email])
      if !@user
         @user = User.create(email: params[:pick][:email], password: (0...20).map { ('a'..'z').to_a[rand(26)] }.join)
