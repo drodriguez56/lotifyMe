@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       respond_to do |format|
-        format.json { render json: 'logged in ok', status: 200}
+        format.json { render json: ActiveSupport::JSON.encode(user), status: 200}
         format.html {
           session[:user_id] = user.id
           flash[:success] = "Welcome, #{user.username}!"
