@@ -72,11 +72,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      if params[:user]
          params.require(:user).permit(:username, :email, :phone, :password)
-      else
-        params.permit(:username, :email, :phone, :password)
-      end
     end
 
 end
