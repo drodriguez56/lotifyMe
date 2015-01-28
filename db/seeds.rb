@@ -5,16 +5,16 @@ User.create(username: 'carl', phone: Faker::PhoneNumber.phone_number, password: 
 p = Powerball.new
 p.get_data!
 
-# m = MegaMillion.new
-# m.get_data!
-# n = NyLotto.new
-# n.get_data!
-# c = Cash4Life.new
-# c.get_data!
-# t = Take5.new
-# t.get_data!
-# p = Pick10.new
-# p.get_data!
+m = MegaMillion.new
+m.get_data!
+n = NyLotto.new
+n.get_data!
+c = Cash4Life.new
+c.get_data!
+t = Take5.new
+t.get_data!
+p = Pick10.new
+p.get_data!
 
 5.times do
   User.create(username: Faker::Name.first_name, phone: Faker::Number.number(10), password: '123456', email: Faker::Internet.email, active: false)
