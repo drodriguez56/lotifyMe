@@ -4,9 +4,9 @@ class PicksController < ApplicationController
 
   def index
     if User.find_by(email: params[:pick][:email])
-      @pick = User.find_by(email: params[:pick][:email]).picks
+      @picks = User.find_by(email: params[:pick][:email]).picks
       respond_to do |format|
-          format.json { render json: ActiveSupport::JSON.encode(@pick), status:200 }
+          format.json { render json: ActiveSupport::JSON.encode(@picks), status:200 }
         end
     else
       respond_to do |format|
