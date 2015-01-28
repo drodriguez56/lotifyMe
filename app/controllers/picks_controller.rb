@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :require_login, except: [:create, :index]
+  before_action :require_login, except: [:create, :index, :destroy]
   before_action :join_number
 
   def index
@@ -50,8 +50,19 @@ class PicksController < ApplicationController
 
    def destroy
     @pick = Pick.find(params[:id])
-    @pick.destroy
-    redirect_to user_path(@pick.user)
+    if @pick
+      @pick.destroy
+      respond_to do |format|
+          format.json { render json: 'pick destroyed', status:200 }
+      end
+    else
+      respond_to do |format|
+          format.json { render json: 'pick not found', status:400 }
+          format.html {
+            redirect_to user_path(@pick.user)
+          }
+      end
+    end
    end
 
    private
