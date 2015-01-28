@@ -10,10 +10,9 @@ $( document ).ready(function() {
   $('#pick_number3').autotab({ target: '#pick_number4', format: 'numeric'});
   $('#pick_number4').autotab({ target: '#pick_number5', format: 'numeric'});
   $('#pick_number5').autotab({ target: '#pick_number6', format: 'numeric'});
-});
 
-
-  $(".next").click(function(){
+  $(".next").click(function(event){
+    console.log("next click", event)
 
     current_fs = $(this).parent();
     next_fs = $(this).parent().next();
@@ -22,36 +21,35 @@ $( document ).ready(function() {
     $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
 
-  next_fs.show();
+    current_fs.hide();
+    next_fs.show();
 
-  current_fs.replaceWith(next_fs);
-  next_fs.css({'left': left, 'opacity': opacity});
-  current_fs.hide();
-  animating = false;
-
-  $(".previous").click(function(){
-    if(animating) return false;
-    animating = true;
-
-    current_fs = $(this).parent();
-    previous_fs = $(this).parent().prev();
-
-
-
-    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-  previous_fs.show();
-    // "slow", function(){
-    // complete: function(){
-    // current_fs.hide();
-    // animating = false;
-    // },
-    //   }
+    next_fs.css({'left': left, 'opacity': opacity});
+    animating = false;
     });
-  });
+
+    $(".previous").click(function(event){
+      console.log("prev click", event.target)
+
+        $current_fs = $(this).parent();
+        $previous_fs = $current_fs.prev();
+        console.log("current_fs", $current_fs);
+        console.log("previous_fs", $previous_fs);
+
+        $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+        $current_fs.hide();
+        $previous_fs.show();
+
+        previous_fs.css({'opacity': opacity});
+        animating = false;
+      });
+
 });
+
 
 $(".submit").click(function(){
   return false;
-})
+  });
+
 
