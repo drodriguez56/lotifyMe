@@ -25,11 +25,9 @@
    padding-top: 1em;
 }
 
-.valign-middle .columns {
-    display: table-cell;
-}
-
-.valign-middle .columns,
-.valign-middle [class*="column"] + [class*="column"]:last-child {
-    float: none;
+#msform {
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
 }
