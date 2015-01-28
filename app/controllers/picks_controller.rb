@@ -54,13 +54,13 @@ class PicksController < ApplicationController
       @pick.destroy
       respond_to do |format|
           format.json { render json: 'pick destroyed', status:200 }
+          format.html {
+            redirect_to user_path(@pick.user)
+          }
       end
     else
       respond_to do |format|
           format.json { render json: 'pick not found', status:400 }
-          format.html {
-            redirect_to user_path(@pick.user)
-          }
       end
     end
    end
