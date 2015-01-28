@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<form id="msform">
+<div id="msform">
   <ul id="progressbar">
     <li class="active">Your Picks</li>
     <li>Lottery Info</li>
@@ -53,17 +53,16 @@
       <h2 class="fs-title">Notification Settings</h2>
       <h3 class="fs-subtitle">Enter Your Email:</h3>
 
-      <%= form_tag(picks_path, method: "post") do %>
+
         <% if !session[:user_id] %>
           <%= email_field_tag 'pick[email]', nil, placeholder: 'email' %>
         <% else %>
           <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
         <% end %>
-      <% end %>
       <input type="button" name="previous" class="previous action-button" value="Previous" />
       <input type="submit" name="submit" class="submit action-button" value="Submit" />
     </fieldset>
-    </form>
+
     <% end %>
   </div>
-</form>
+</div>

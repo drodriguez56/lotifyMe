@@ -3,7 +3,7 @@ var left, opacity, scale;
 var animating;
 
 $( document ).ready(function() {
-  $(document).foundation()
+  $(document).foundation();
 
   $('#pick_number1').autotab({ target: '#pick_number2', format: 'numeric' });
   $('#pick_number2').autotab({ target: '#pick_number3', format: 'numeric'});
@@ -26,9 +26,9 @@ $( document ).ready(function() {
 
     next_fs.css({'left': left, 'opacity': opacity});
     animating = false;
-    });
+  });
 
-    $(".previous").click(function(event){
+  $(".previous").click(function(event){
       console.log("prev click", event.target)
 
         $current_fs = $(this).parent();
@@ -43,11 +43,7 @@ $( document ).ready(function() {
 
         previous_fs.css({'opacity': opacity});
         animating = false;
-      });
-    });
-
-$(".submit").click(function(){
-  return false;
+  });
 });
 
 
