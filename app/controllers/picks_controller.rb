@@ -34,7 +34,7 @@ class PicksController < ApplicationController
           redirect_to edit_user_path(@user.id), locals: {email: params[:email]}
         else
           if Time.now.min - @user.created_at.time.min < 1
-            # @pick.send_email
+            @pick.send_email
             flash[:notice] = 'email sent'
           end
           respond_to do |format|

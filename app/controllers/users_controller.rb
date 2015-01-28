@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.find_or_create_by(email: user_params[:email])
     if @user.update(user_params)
       if @user.created_at.time.min - Time.now.min < 1 || !@user.active
-        # Notifier.welcome_email(@user).deliver
+        Notifier.welcome_email(@user).deliver
       end
       @user.active = true; @user.save
       respond_to do |format|
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       if Time.now.min - @user.created_at.time.min < 1 || !@user.active
-        # Notifier.welcome_email(@user).deliver
+        Notifier.welcome_email(@user).deliver
       end
       if !@user.active
         @user.active = true; @user.save
