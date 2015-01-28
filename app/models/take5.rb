@@ -10,5 +10,27 @@ class Take5 < Draw
       end
     end
   end
+
+  def find_score(pick)
+    pickarr = pick.number.split(' ')
+    drawarr = self.number.split(' ')
+    match = pickarr & drawarr
+    translate_score(match.length.to_s)
+  end
+
+  def translate_score(score)
+    case score
+      when '2'
+        return 'You won a free play'
+      when '3'
+        return 'You won 3rd place'
+      when '4'
+        return 'You won 2nd place'
+      when '5'
+        return 'You won 1st place'
+      else
+        return 'You did not win'
+    end
+  end
 end
 
