@@ -32,7 +32,6 @@
   position: relative;
 }
 
-
 #msform fieldset {
   background: white;
   border: 0 none;
@@ -53,4 +52,17 @@
 #msform input, #msform textarea{
   padding: 0px;
   border: 1px solid black;
+  box-sizing: border-box;
+}
+
+#msform .action-button {
+  width: 100px;
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
 }
