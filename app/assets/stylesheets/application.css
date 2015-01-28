@@ -17,9 +17,12 @@
  *= require_self
  */
 
+#progressbar {
+  padding-top: 1em;
+  height: 3em;
+}
 .form-content  {
-   padding-top: 4em
-
+   padding-top: 1em;
 }
 
 .valign-middle .columns {
