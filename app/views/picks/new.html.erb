@@ -9,8 +9,8 @@
   <div class="form-content">
     <%= form_tag(picks_path, method: "post") do %>
     <fieldset>
-      <h2 class="fs-title">What are your Lotto Numbers?</h2>
-      <h3 class="fs-subtitle">This is step 1</h3>
+    <h2 class="fs-title">What are your Lotto Numbers?</h2>
+    <h3 class="fs-subtitle">This is step 1</h3>
       <div class="row">
         <ul class="small-block-grid-6 small-centered columns large-block-grid-6 large-centered columns">
           <li><%= text_field_tag 'pick[number1]', nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0' %></li>
@@ -20,7 +20,7 @@
           <li><%= text_field_tag 'pick[number5]',nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0'%></li>
           <li> <%= text_field_tag 'pick[number6]',nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1,
           placeholder:'0'%></li>
-          <h4>If you have a multiplier, check box: </h4>
+          <class="fs-title">If you have a multiplier, check box: </h2>
             <%= check_box_tag 'pick[multiplier]'%>
           <br>
           <input type="button" name="next" class="next action-button" value="Next" />
