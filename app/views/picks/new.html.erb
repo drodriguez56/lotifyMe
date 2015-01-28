@@ -1,49 +1,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<div class="form-content">
-      <%= form_tag(picks_path, method: "post") do %>
+<div id="msform">
+  <ul id="progressbar">
+    <li class="active">Your Picks</li>
+    <li>Lottery Info</li>
+    <li>Notification Settings</li>
+  </ul>
+  <div class="form-content">
+    <%= form_tag(picks_path, method: "post") do %>
+    <fieldset>
+    <div class="first-page">
+    <h2 class="fs-title">What are your Lotto Numbers?</h2>
+    <h3 class="fs-subtitle">This is step 1</h3>
       <div class="row">
-          <div class="small-8 small-centered columns large-3 small-centered columns">
-            <% if !session[:user_id] %>
-              <%= email_field_tag 'pick[email]', nil, placeholder: 'email' %>
-            <% else %>
-              <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
-            <% end %>
-          </div>
-          <div class="small-8 small-centered columns large-3 small-centered columns">
-            <select name='pick[game]'>
-              <option value="mega_millions">Mega Millions</option>
-              <option value="powerball">Power Ball</option>
-              <option value="nylotto">NY Lotto</option>
-            </select>
-          </div>
-          <div class = "small-8 small-centered columns large-3 small-centered columns">
-          <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
-          </div>
-      </div>
-        <div class="row">
-          <div class="row collapse prefix-radius">
-            <ul class="small-block-grid-6 small-centered columns large-block-grid-6 large-centered columns">
-                <li><%= text_field_tag 'pick[number1]', nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0' %></li>
-                <li><%= text_field_tag 'pick[number2]',nil, placeholder:'0', class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0' %></li>
-                <li><%= text_field_tag 'pick[number3]',nil, maxlength: 2, step: 1, placeholder:'0', class: "small-centered-6 columns large-6 columns" %></li>
-                <li><%= text_field_tag 'pick[number4]',nil, maxlength: 2, step: 1, placeholder:'0', class: "small-centered-6 columns large-6 columns" %></li>
-                <li><%= text_field_tag 'pick[number5]',nil, maxlength: 2, step: 1, placeholder:'0', class: "small-centered-6 columns large-6 columns" %></li>
-                <li> <%= text_field_tag 'pick[number6]',nil, maxlength: 2, step: 1,
-                placeholder:'0', class: "small-centered-6 columns large-6 columns" %></li>
-            </ul>
-          </div>
-          <div class="form-submit-buttons">
-            <center>
-            <h4><label>Multiplier?<br> <%= check_box_tag 'pick[multiplier]'%></label></h4>
-              <% if !session[:user_id] %>
-                <%= submit_tag 'lotifyme', class: "button small default radius nav-button"%>
-                <%= submit_tag 'signup', class: "button small default radius nav-button" %>
-              <% else %>
-                <%= submit_tag 'lotifyme', class: "button small default radius nav-button" %>
-              <% end %>
-            </center>
-          </div>
+        <ul class="small-block-grid-6 small-centered columns large-block-grid-6 large-centered columns">
+          <li><%= text_field_tag 'pick[number1]', nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0' %></li>
+          <li><%= text_field_tag 'pick[number2]',nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0' %></li>
+          <li><%= text_field_tag 'pick[number3]',nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0'%></li>
+          <li><%= text_field_tag 'pick[number4]',nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0'%></li>
+          <li><%= text_field_tag 'pick[number5]',nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0'%></li>
+          <li> <%= text_field_tag 'pick[number6]',nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1,
+          placeholder:'0'%></li>
+          <h2 class="fs-title">If you have a multiplier, check box: </h2>
+            <%= check_box_tag 'pick[multiplier]'%>
+          <br>
+          </ul>
         </div>
+      </div>
+          <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+
+    <fieldset>
+      <h2 class="fs-title">Lotto Info</h2>
+      <h3 class="fs-subtitle">Please Provide Some Game Information</h3>
+       <h3 class="fs-title"> Select the Game:</h3>
+       <select name='pick[game]'>
+          <option value="mega_millions">Mega Millions</option>
+          <option value="powerball">Power Ball</option>
+          <option value="nylotto">NY Lotto</option>
+          <option value="cash4life">Cash4Life</option>
+          <option value="take5">Take5</option>
+          <option value="pick10">Pick10</option>
+        </select>
+      <h4 class="fs-title"> When Did You Buy The Ticket?</h4>
+      <%= date_field_tag 'pick[draw_date]', nil, placeholder: 'date' %>
+      <input type="button" name="previous" class="previous action-button" value="Previous" />
+
+      <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+
+    <fieldset>
+      <h2 class="fs-title">Notification Settings</h2>
+      <h3 class="fs-subtitle">Enter Your Email:</h3>
+
+
+        <% if !session[:user_id] %>
+          <%= email_field_tag 'pick[email]', nil, placeholder: 'email' %>
+        <% else %>
+          <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
+        <% end %>
+      <input type="button" name="previous" class="previous action-button" value="Previous" />
+      <input type="submit" name="submit" class="submit action-button" value="Submit" />
+    </fieldset>
+
     <% end %>
+  </div>
 </div>

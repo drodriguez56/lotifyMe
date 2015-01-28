@@ -16,11 +16,3 @@
 //= require js/foundation.min
 //= require js/foundation/foundation.offcanvas
 //= require_tree .
-$( document ).ready(function() {
-  $(document).foundation()
-  $('#pick_number1').autotab({ target: '#pick_number2', format: 'numeric' });
-  $('#pick_number2').autotab({ target: '#pick_number3', format: 'numeric'});
-  $('#pick_number3').autotab({ target: '#pick_number4', format: 'numeric'});
-  $('#pick_number4').autotab({ target: '#pick_number5', format: 'numeric'});
-  $('#pick_number5').autotab({ target: '#pick_number6', format: 'numeric'});
-});
