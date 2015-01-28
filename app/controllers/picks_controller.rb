@@ -20,6 +20,8 @@ class PicksController < ApplicationController
       @user = User.create(email: params[:pick][:email], password: (0...20).map { ('a'..'z').to_a[rand(26)] }.join)
       session[:user_id] = @user.id
     end
+    p '*'*100
+    p pick_params
     @pick = Pick.new(pick_params)
     if @pick.save
       user_picks_before_push = @user.picks.count
