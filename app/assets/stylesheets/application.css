@@ -110,9 +110,10 @@
 }
 
 #msform input, #msform textarea{
-  padding: 0px;
+  padding: 3px;
   border: 1px solid black;
-  box-sizing: border-box;
+  width: 30px;
+  border
 }
 
 #msform .action-button {

@@ -9,6 +9,7 @@
   <div class="form-content">
     <%= form_tag(picks_path, method: "post") do %>
     <fieldset>
+    <div class="first-page">
     <h2 class="fs-title">What are your Lotto Numbers?</h2>
     <h3 class="fs-subtitle">This is step 1</h3>
       <div class="row">
@@ -20,20 +21,21 @@
           <li><%= text_field_tag 'pick[number5]',nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0'%></li>
           <li> <%= text_field_tag 'pick[number6]',nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1,
           placeholder:'0'%></li>
-          <class="fs-title">If you have a multiplier, check box: </h2>
+          <h2 class="fs-title">If you have a multiplier, check box: </h2>
             <%= check_box_tag 'pick[multiplier]'%>
           <br>
-          <input type="button" name="next" class="next action-button" value="Next" />
           </ul>
         </div>
+      </div>
+          <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
 
     <fieldset>
       <h2 class="fs-title">Lotto Info</h2>
       <h3 class="fs-subtitle">Please Provide The Game Information</h3>
-      <h4> When Did You Buy The Ticket?</h4>
-       <%= date_field_tag 'pick[draw_date]',nil, placeholder: 'date' %>
-       <h4> Select the Game:</h4>
+      <h4 class="fs-title"> When Did You Buy The Ticket?</h4>
+       <%= date_field_tag 'pick[draw_date]', nil, placeholder: 'date' %>
+       <h3 class="fs-title"> Select the Game:</h3>
        <select name='pick[game]'>
           <option value="mega_millions">Mega Millions</option>
           <option value="powerball">Power Ball</option>
