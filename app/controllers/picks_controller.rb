@@ -30,6 +30,10 @@ class PicksController < ApplicationController
       if user_picks_before_push == user_picks_after_push
         respond_to do |format|
           format.json { render json: 'fail to create pick', status:400 }
+          format.html {
+            flash[:error] = 'You have already created this Pick Number, please try again.'
+              redirect_to root_path
+            }
         end
       else
         if params[:commit]=="signup"
@@ -37,7 +41,7 @@ class PicksController < ApplicationController
         else
           if Time.now.min - @user.created_at.time.min < 1
             @pick.send_email
-            flash[:notice] = 'email sent'
+            flash[:notice] = "We will send an email to #{@user.email} to notify you with your resoult. thanks for using LotifyMe"
           end
           respond_to do |format|
             format.json { render json: ActiveSupport::JSON.encode(@pick), status:200 }
