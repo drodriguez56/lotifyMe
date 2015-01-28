@@ -21,17 +21,17 @@ class Pick < ActiveRecord::Base
 
   def normalize_game_names
     if self.game == 'Powerball'
-      self.game = 'powerball'
-    elsif self.game == 'Megamillions'
-      self.game = 'mega_millions'
+      self.game = 'Powerball'
+    elsif self.game == 'MegaMillions'
+      self.game = 'MegaMillion'
     elsif self.game == 'NYLotto'
-      self.game = 'nylotto'
+      self.game = 'NyLotto'
     elsif self.game == 'Cash4Life'
-      self.game = 'cash4life'
+      self.game = 'Cash4Life'
     elsif self.game == 'Take5'
-      self.game = 'take5'
+      self.game = 'Take5'
     elsif self.game == 'Pick10'
-      self.game = 'pick10'
+      self.game = 'Pick10'
     end
   end
 
@@ -54,19 +54,7 @@ class Pick < ActiveRecord::Base
 
   def setresult
     if self.result == nil && self.draw_id != nil
-      if self.game == 'powerball'
-        self.powerball(self.getscore)
-      elsif self.game == 'mega_millions'
-        self.mega_millions(self.getscore)
-      elsif self.game == 'nylotto'
-        self.nylotto(self.getscore)
-      elsif self.game == 'cash4life'
-        self.cash4life(self.getscore)
-      elsif self.game == 'take5'
-        self.take5(self.getscore)
-      elsif self.game == 'pick10'
-        self.pick10(self.getscore)
-      end
+      update_pick(draw.find_score(self))
     end
   end
 
