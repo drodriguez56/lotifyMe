@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
 
   def landing
   	@pick = Pick.new
+    if current_user
+     if !current_user.active
+        session[:user_id] = nil
+      end
+    end
   end
 
   def current_user
