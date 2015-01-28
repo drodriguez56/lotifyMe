@@ -17,9 +17,54 @@
  *= require_self
  */
 
+
 #progressbar {
   padding-top: 1em;
-  height: 3em;
+  overflow: hidden;
+  counter-reset: step;
+}
+
+#progressbar li {
+  list-style-type: none;
+  color: black;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: yellow;
+  border-radius: 3px;
+  margin: 0 auto 1px auto;
+}
+
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: yellow;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1;
+}
+
+#progressbar li:first-child:after {
+  content: none;
+}
+
+#progressbar li.active:before,  #progressbar li.active:after{
+  background: grey;
+  color: yellow;
 }
 
 .fs-title {
@@ -39,7 +84,6 @@
 .form-content  {
    padding-top: 1em;
 }
-
 
 #msform {
   width: 400px;
