@@ -1,0 +1,10 @@
+Your Pick number is: <%= @pick.number %>
+Resoult:
+
+<% if @pick.result == 'JACKPOT' %>
+    WOOOOOWWW YOU WON !!! JACKPOT , CONGRATS
+<% elsif @pick.result == 'You did not win' %>
+    Sorry, you didnt win but keep trying.
+<% else %>
+    <%= @pick.result %>, CONGRATS
+<% end %>
