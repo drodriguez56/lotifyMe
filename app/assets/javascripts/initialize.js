@@ -44,12 +44,10 @@ $( document ).ready(function() {
         previous_fs.css({'opacity': opacity});
         animating = false;
       });
-
-});
-
+    });
 
 $(".submit").click(function(){
   return false;
-  });
+});
 
 

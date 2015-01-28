@@ -17,11 +17,25 @@
  *= require_self
  */
 
-
+body {
+  background-color: rgb(51, 151, 218);
+}
+nav{
+  color: rgb(51, 151, 218);
+}
+top-bar-section{
+  background-color: rgb(71, 151, 255);
+}
 #progressbar {
   padding-top: 1em;
   overflow: hidden;
   counter-reset: step;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 70%;
 }
 
 #progressbar li {
@@ -42,7 +56,7 @@
   display: block;
   font-size: 10px;
   color: #333;
-  background: yellow;
+  background: rgb(64,242,255);
   border-radius: 3px;
   margin: 0 auto 1px auto;
 }
@@ -51,7 +65,7 @@
   content: '';
   width: 100%;
   height: 2px;
-  background: yellow;
+  background: white;
   position: absolute;
   left: -50%;
   top: 9px;
@@ -63,8 +77,8 @@
 }
 
 #progressbar li.active:before,  #progressbar li.active:after{
-  background: grey;
-  color: yellow;
+  background: white;
+  color: rgb(71, 151, 255);
 }
 
 .fs-title {
@@ -90,14 +104,21 @@
   margin: 10px auto;
   text-align: center;
   position: relative;
+  border-radius: 45px;
 }
 
 #msform fieldset {
   background: white;
   border: 0 none;
   border-radius: 3px;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
   padding: 30px 30px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 70%;
 
   box-sizing: border-box;
   width: 80%;
@@ -118,7 +139,7 @@
 
 #msform .action-button {
   width: 100px;
-  background: #27AE60;
+  background: rgb(71, 151, 255);
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -127,6 +148,48 @@
   padding: 10px 5px;
   margin: 10px 5px;
 }
+
 #msform .action-button:hover, #msform .action-button:focus {
-  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+  box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(71, 151, 255);
+}
+
+#pick_number1 {
+  border-radius: 12px;
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
+}
+
+#pick_number2 {
+  border-radius: 12px;
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
+}
+#pick_number3 {
+  border-radius: 12px;
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
+}
+#pick_number4 {
+  border-radius: 12px;
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
+}
+#pick_number5 {
+  border-radius: 12px;
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
+}
+#pick_number6 {
+  border-radius: 12px;
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
+}
+#pick_draw_date {
+  min-width: inherit;
+}
+#msform input{
+  min-width: 100% !important;
+}
+#msform .action-button {
+  width: 50% ;
 }

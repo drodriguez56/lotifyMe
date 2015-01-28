@@ -32,9 +32,7 @@
 
     <fieldset>
       <h2 class="fs-title">Lotto Info</h2>
-      <h3 class="fs-subtitle">Please Provide The Game Information</h3>
-      <h4 class="fs-title"> When Did You Buy The Ticket?</h4>
-       <%= date_field_tag 'pick[draw_date]', nil, placeholder: 'date' %>
+      <h3 class="fs-subtitle">Please Provide Some Game Information</h3>
        <h3 class="fs-title"> Select the Game:</h3>
        <select name='pick[game]'>
           <option value="mega_millions">Mega Millions</option>
@@ -44,6 +42,8 @@
           <option value="take5">Take5</option>
           <option value="pick10">Pick10</option>
         </select>
+      <h4 class="fs-title"> When Did You Buy The Ticket?</h4>
+      <%= date_field_tag 'pick[draw_date]', nil, placeholder: 'date' %>
       <input type="button" name="previous" class="previous action-button" value="Previous" />
 
       <input type="button" name="next" class="next action-button" value="Next" />
