@@ -15,29 +15,37 @@ class PicksController < ApplicationController
     end
   end
   def create
-     @user = User.find_by(email: params[:pick][:email])
-     if !@user
-        @user = User.create(email: params[:pick][:email], password: (0...20).map { ('a'..'z').to_a[rand(26)] }.join)
-        session[:user_id] = @user.id
-     end
-     @pick = Pick.new(pick_params)
-     if @pick.save
-       @user.picks << @pick
-       if params[:commit]=="signup"
-         redirect_to edit_user_path(@user.id), locals: {email: params[:email]}
-       else
-        if Time.now.min - @user.created_at.time.min < 1
-          # @pick.send_email
-          flash[:notice] = 'email sent'
-        end
+    @user = User.find_by(email: params[:pick][:email])
+    if !@user
+      @user = User.create(email: params[:pick][:email], password: (0...20).map { ('a'..'z').to_a[rand(26)] }.join)
+      session[:user_id] = @user.id
+    end
+    @pick = Pick.new(pick_params)
+    if @pick.save
+      user_picks_before_push = @user.picks.count
+      @user.picks << @pick
+      user_picks_after_push = @user.picks.count
+      if user_picks_before_push == user_picks_after_push
         respond_to do |format|
-          format.json { render json: ActiveSupport::JSON.encode(@pick), status:200 }
+          format.json { render json: 'fail to create pick', status:400 }
+        end
+      else
+        if params[:commit]=="signup"
+          redirect_to edit_user_path(@user.id), locals: {email: params[:email]}
+        else
+          if Time.now.min - @user.created_at.time.min < 1
+            # @pick.send_email
+            flash[:notice] = 'email sent'
+          end
+          respond_to do |format|
+            format.json { render json: ActiveSupport::JSON.encode(@pick), status:200 }
             format.html {
               redirect_to root_path
             }
+          end
         end
-       end
-     else
+      end
+    else
        respond_to do |format|
           format.json { render json: 'fail to create pick', status:400 }
             format.html {
