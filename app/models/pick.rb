@@ -1,6 +1,6 @@
 class Pick < ActiveRecord::Base
 
-	before_save { |pick| pick.normalize_game_names; pick.set_date_to_next_draw; pick.assign_draw_id }
+	before_save { |pick| pick.set_date_to_next_draw; pick.assign_draw_id }
   after_save { |pick| pick.setresult }
 
   validates :number, presence: true
@@ -16,22 +16,6 @@ class Pick < ActiveRecord::Base
       Notifier.email_for_past_draw(self).deliver
     else
       Notifier.email_for_future_draw(self).deliver
-    end
-  end
-
-  def normalize_game_names
-    if self.game == 'Powerball'
-      self.game = 'Powerball'
-    elsif self.game == 'MegaMillions'
-      self.game = 'MegaMillion'
-    elsif self.game == 'NYLotto'
-      self.game = 'NyLotto'
-    elsif self.game == 'Cash4Life'
-      self.game = 'Cash4Life'
-    elsif self.game == 'Take5'
-      self.game = 'Take5'
-    elsif self.game == 'Pick10'
-      self.game = 'Pick10'
     end
   end
 
