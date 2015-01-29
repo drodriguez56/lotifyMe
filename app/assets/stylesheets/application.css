@@ -378,5 +378,20 @@ ul.off-canvas-list li a{
 
 ul.off-canvas-list li a:hover {
       background: none;
-    }
+}
+.error_message{
+  color: white !important;
+  text-align: center;
+  background: #F04124;
+  padding: 2px;
+}
 
+.notice_message{
+  color: white;
+  background-color: #43AC6A;
+  text-align: center;
+  padding: 10px;
+}
+.notice{
+  font-weight: 200;
+}
