@@ -73,18 +73,6 @@ top-bar-section{
   margin: 0 auto 1px auto;
 }
 
-#progressbar li:after {
-  content: '';
-  width: 50%;
-  height: 2px;
-  background: white;
-  position: absolute;
-  left: 50%;
-  top: 25px;
-  transform:translate(-50%);
-  z-index: -1;
-}
-
 #progressbar li:first-child:after {
   content: none;
 }
@@ -174,7 +162,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -184,7 +172,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -193,7 +181,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -202,7 +190,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -211,7 +199,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -220,7 +208,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
 }
@@ -354,4 +342,28 @@ ul.off-canvas-list li a{
 }
 .set-width{
   width: 305px;
+}
+
+.exit-off-canvas{
+  height: 200%;
+}
+.left-off-canvas-menu{
+  height: 200%;
+}
+@media screen and (max-width: 600px) {
+   .number-row{
+      font-size: 10pt !important;
+    }
+    .pick-info{
+      font-size: 9pt !important;
+      margin-top: -20px !important;
+    }
+    .pick-items{
+      height: 60px;
+
+    }
+
+}
+.trash-pic{
+  margin-top: -20px !important;
 }
