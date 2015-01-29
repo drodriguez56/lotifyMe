@@ -1,6 +1,6 @@
 class Pick < ActiveRecord::Base
 
-	before_save { |pick| pick.set_date_to_next_draw; pick.assign_draw_id }
+	before_save { |pick| pick.assign_draw_id; pick.set_date_to_next_draw  }
   after_save { |pick| pick.setresult }
 
   validates :number, presence: true
@@ -20,14 +20,10 @@ class Pick < ActiveRecord::Base
   end
 
 	def set_date_to_next_draw
-    if self.game == 'mega_millions' || self.game == 'powerball' || self.game == 'nylotto'
-  		until [3, 6].include?(Date.parse(self.draw_date.to_s).cwday)
-  			self.draw_date += 24 * 60 * 60
-  		end
+    if self.draw_date == nil && self.draw_id
+      self.update(draw_date: draw.set_date(self))
     end
-    draw_date = Date.parse((self.draw_date.to_s)[0..9])
-    self.draw_date = draw_date
-	end
+  end
 
   def assign_draw_id
     draws = Draw.where(game: self.game)
@@ -39,12 +35,7 @@ class Pick < ActiveRecord::Base
 
   def setresult
     if self.result == nil && self.draw_id != nil
-      update_pick(draw.find_score(self))
+      self.update(result: (draw.find_score(self)))
     end
   end
-
-  def update_pick(result)
-    self.update(result: result)
-  end
 end
-
