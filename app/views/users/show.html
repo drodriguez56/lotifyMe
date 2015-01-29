@@ -6,30 +6,17 @@
     <div class="pick-history-list">
       <% @user.picks.each do |pick| %>
       <div class="pick-items">
-        <% if pick.result == nil %>
           <row class="number-row" style="float:left">
-            <%= pick.number %>  <b> <%= pick.result %>
+            <%= pick.number %> -- <b> <%= pick.result %>
           </row><br><br>
           <row class="game-details row">
             <div class="pick-info" style="float: left">
               <%= pick.draw_date.to_s[0..10] %> • <%= pick.game.upcase %>
             </div>
             <div class="trash-pic" style="float: right">
-               <%= link_to 'Delete', pick, method: :delete %></img>
+               <%= link_to image_tag("trash.png", class:"trash"), pick, method: :delete %>
             </div>
           </row>
-        <% else %>
-          <div class="winning_pick" >
-            <row class="number-row" style="float:left">
-              <%= pick.number %> -- <b> <%= pick.result %> </b>
-            </row>
-            <row class="game-details row">
-              <div class="trash-pic" style="float: right">
-                 <img src="<%= asset_path 'trash.png' %>" class="trash"></img>
-              </div>
-            </row>
-          </div>
-        <% end %>
       </div>
      <br>
     <% end %>
