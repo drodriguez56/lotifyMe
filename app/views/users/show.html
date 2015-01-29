@@ -15,7 +15,7 @@
               <%= pick.draw_date.to_s[0..10] %> • <%= pick.game.upcase %>
             </div>
             <div class="trash-pic" style="float: right">
-               <%= link_to 'Destroy'(, pick,  method: :delete , class:'delete'%></img>
+               <%= link_to 'Delete', pick, method: :delete %></img>
             </div>
           </row>
         <% else %>
