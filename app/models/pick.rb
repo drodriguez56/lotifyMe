@@ -20,7 +20,7 @@ class Pick < ActiveRecord::Base
   end
 
 	def set_date_to_next_draw
-    update_draw_date(draw.set_date(self))
+    self.update(draw_date: (draw.set_date(self)))
   end
 
   def assign_draw_id
@@ -33,16 +33,7 @@ class Pick < ActiveRecord::Base
 
   def setresult
     if self.result == nil && self.draw_id != nil
-      update_pick(draw.find_score(self))
+      self.update(result: (draw.find_score(self)))
     end
   end
-
-  def update_result(result)
-    self.update(result: result)
-  end
-
-  def update_draw_date(draw_date)
-    self.update(draw_date: draw_date)
-  end
 end
-
