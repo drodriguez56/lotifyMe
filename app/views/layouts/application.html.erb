@@ -5,20 +5,22 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body >
   <div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-    <header>
-      <%= render partial: "/layouts/navigation", locals: {user: @user }%>
-    </header>
-    <% if flash[:error] %>
-      <div class='error_message'><%= flash[:error] %></div>
-    <% end %>
-
-    <%= yield %>
+    <div class="inner-wrap">
+      <header>
+        <%= render partial: "/layouts/navigation", locals: {user: @user }%>
+      </header>
+      <% if flash[:error] %>
+        <div class='error_message'><%= flash[:error] %></div>
+      <% end %>
+      <section class="main-section">
+        <%= yield %>
+      </section>
+      <a class="exit-off-canvas" href="#"></a>
   </div>
-
 </div>
 
 </body>
