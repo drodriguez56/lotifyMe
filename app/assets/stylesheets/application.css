@@ -252,3 +252,12 @@ top-bar-section{
 li{
   padding: 1px !important;
 }
+.button.medium.default.radius.nav-button{
+  background-color: #5da423;
+}
+p{
+  color:white;
+}
+.centered{
+  text-align: center !important;
+}

@@ -7,21 +7,18 @@
       <div id="error_explanation">
         <h2><%= flash[:failure] %></h2>
       </div>
-      <% flash[:failure] = nil %>
+    <% flash[:failure] = nil %>
     <% end %>
-
+    <p>Login Here</p>
     <%= form_tag(controller: "sessions", action: "login", method: "get") %>
-
       <div class="field">
-      	Username or Email<br>
       	<%= text_field_tag "user_input", nil, :placeholder => "Username or Email" %>
       </div>
     	<div class="actions">
-    		Password<br>
       	<%= password_field_tag "password", nil, :placeholder => "Password" %>
       </div>
       <div class="actions">
-    	 <%= submit_tag "Login", class: "button medium default radius nav-button" %>
+    	   <%= submit_tag "Login", class: "button medium default radius nav-button" %>
       </div>
     </div>
     </div>
