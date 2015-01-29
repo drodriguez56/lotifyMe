@@ -12,7 +12,7 @@ describe PicksController do
         number4: '6',
         number5: '37',
         number6: '56',
-        game: "snapple",
+        game: "Powerball",
         draw_date: Faker::Time.between(7.days.ago, Time.now),
         multiplier: 2
       },
