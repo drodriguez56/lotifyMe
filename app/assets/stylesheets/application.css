@@ -345,10 +345,13 @@ ul.off-canvas-list li a{
 }
 
 .exit-off-canvas{
-  height: 200%;
+  height: 500%%;
 }
 .left-off-canvas-menu{
-  height: 200%;
+  height: 599%%;
+}
+.off-canvas-menu{
+  height: 500%;
 }
 @media screen and (max-width: 600px) {
    .number-row{
@@ -360,10 +363,14 @@ ul.off-canvas-list li a{
     }
     .pick-items{
       height: 60px;
-
     }
 
 }
 .trash-pic{
   margin-top: -20px !important;
 }
+
+ul.off-canvas-list li a:hover {
+      background: none;
+    }
+
