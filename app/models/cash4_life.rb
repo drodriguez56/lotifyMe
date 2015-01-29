@@ -11,6 +11,14 @@ class Cash4Life < Draw
     end
   end
 
+  def set_date(pick)
+    draw_date = pick.draw_date
+    until [1, 4].include?(Date.parse(draw_date.to_s).cwday)
+      draw_date += 24 * 60 * 60
+    end
+    Date.parse((draw_date.to_s)[0..9])
+  end
+
   def find_score(pick)
     pickarr = pick.number.split(' ')
     drawarr = self.number.split(' ')
