@@ -20,14 +20,8 @@ class Pick < ActiveRecord::Base
   end
 
 	def set_date_to_next_draw
-    if self.game == 'mega_millions' || self.game == 'powerball' || self.game == 'nylotto'
-  		until [3, 6].include?(Date.parse(self.draw_date.to_s).cwday)
-  			self.draw_date += 24 * 60 * 60
-  		end
-    end
-    draw_date = Date.parse((self.draw_date.to_s)[0..9])
-    self.draw_date = draw_date
-	end
+    update_draw_date(draw.set_date(self))
+  end
 
   def assign_draw_id
     draws = Draw.where(game: self.game)
@@ -43,8 +37,12 @@ class Pick < ActiveRecord::Base
     end
   end
 
-  def update_pick(result)
+  def update_result(result)
     self.update(result: result)
+  end
+
+  def update_draw_date(draw_date)
+    self.update(draw_date: draw_date)
   end
 end
 
