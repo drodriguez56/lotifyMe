@@ -7,29 +7,18 @@
 
  <section class="top-bar-section">
   <ul class="right">
-    <li>
-     <% if !session[:user_id] %>
-      <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Accounts</a>
-        <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-          <li><%= link_to 'LOGIN', login_path %></li>
-          <li><%= link_to 'SIGN UP', signup_path %></li>
-        </ul>
+      <% if !session[:user_id] %>
+          <li><%= link_to 'Login', login_path %></li>
+          <li><%= link_to 'Sign Up', signup_path %></li>
      <% else %>
      <% @session_id = session[:user_id] %>
-      <li class="active" ><a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">
         <% if User.find(@session_id).username %>
-          <%= User.find(@session_id).username %>
-        <% else %>
-          Menu
-        <% end -%>
-      </a><li>
-        <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-          <li><%= link_to 'MY PROFILE', user_path(@session_id) %></li>
-          <li><%= link_to 'EDIT PROFILE', edit_user_path(@session_id) %></li>
-          <li><%= link_to 'LOGOUT', logout_path %></li>
-        </ul>
+          <li id='username'><%= User.find(@session_id).username %></li>
+        <% end %>
+          <li><%= link_to 'My Profile', user_path(@session_id) %></li>
+          <li><%= link_to 'Edit Profile', edit_user_path(@session_id) %></li>
+          <li><%= link_to 'Logout', logout_path %></li>
      <% end %>
-     </li>
    </ul>
   </section>
 </nav>
