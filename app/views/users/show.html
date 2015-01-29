@@ -1,22 +1,41 @@
-<center>
+<center><h1> PICK HISTORY </h1> </center>
+ <center> <p class="history-description"> here are your lottery picks</p> </center>
+ <center>
   <div class="user-picks">
     <% @session_id = session[:user_id] %>
-    <h1> Pick History </h1>
-    <p> Here are the picks you've entered.</p>
     <div class="pick-history-list">
       <% @user.picks.each do |pick| %>
-      <ul class="pick-items">
-        <%= pick.draw_date %>
-        <%= pick.game %>
-        <%= pick.number %>
-        <%= pick.result %>
-        <%= link_to 'Destroy',  pick,  method: :delete %>
-        <br>
-
-      </ul>
-      <% end %>
-    </div>
+      <div class="pick-items">
+        <% if pick.result == nil %>
+          <row class="number-row" style="float:left">
+            <%= pick.number %>
+          </row><br><br>
+          <row class="game-details row">
+            <div class="pick-info" style="float: left">
+              <%= pick.draw_date.to_s[0..10] %> • <%= pick.game.upcase %>
+            </div>
+            <div class="trash-pic" style="float: right">
+               <%= link_to 'Delete', pick, method: :delete %></img>
+            </div>
+          </row>
+        <% else %>
+          <div class="winning_pick" >
+            <row class="number-row" style="float:left">
+              <%= pick.number %> -- <b> *YOU HAVE A WINNING TICKET!* </b>
+            </row>
+            <row class="game-details row">
+              <div class="trash-pic" style="float: right">
+                 <img src="<%= asset_path 'trash.png' %>" class="trash"></img>
+              </div>
+            </row>
+          </div>
+        <% end %>
+      </div>
+     <br>
+    <% end %>
   </div>
+</div>
+<br><br>
 <%= link_to 'CREATE A PICK', root_path, class: "button medium default radius nav-button" %>
 
 </center>
