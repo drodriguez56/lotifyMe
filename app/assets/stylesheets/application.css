@@ -16,13 +16,7 @@
  *= require_tree .
  *= require_self
  */
-input{
-  border-color: rgba(83, 83, 83, 0.2) !important;
-  text-align: center;
-}
-html{
- font-family: 'Helvetica-Neue' !important;
-}
+
 body {
   background-color: rgb(51, 151, 218);
 }
@@ -31,9 +25,6 @@ nav{
 }
 top-bar-section{
   background-color: rgb(71, 151, 255);
-}
-.miltip{
-  display: inline-block !important;
 }
 #progressbar {
   padding-top: 1em;
@@ -54,9 +45,6 @@ top-bar-section{
   font-size: 9px;
   width: 33.33%;
   float: left;
-  positin: relative;
-}
-.off-canvas-wrap{
   position: relative;
 }
 
@@ -75,13 +63,12 @@ top-bar-section{
 
 #progressbar li:after {
   content: '';
-  width: 50%;
+  width: 100%;
   height: 2px;
   background: white;
   position: absolute;
-  left: 50%;
-  top: 25px;
-  transform:translate(-50%);
+  left: -50%;
+  top: 9px;
   z-index: -1;
 }
 
@@ -111,16 +98,14 @@ top-bar-section{
 .form-content  {
    padding-top: 1em;
 }
-@media screen and (min-width: 700px) {
-    #msform {
+
+#msform {
   width: 400px;
   margin: 10px auto;
   text-align: center;
   position: relative;
   border-radius: 45px;
-  }
 }
-
 
 #msform fieldset {
   background: white;
@@ -128,9 +113,11 @@ top-bar-section{
   border-radius: 3px;
   padding: 30px 30px;
   position: relative;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 70%;
 
   box-sizing: border-box;
@@ -139,13 +126,20 @@ top-bar-section{
   height: 80%
 }
 #username{
-  margin-top: 10px !important;
   margin-right: 50px !important;
   color:white;
+  padding: 10px;
+  background-color: rgba(83, 83, 83, 0.6);
 }
 
 #msform fieldset:not(:first-of-type) {
   display: none;
+}
+
+#msform input, #msform textarea{
+  padding: 3px;
+  border: 1px solid black;
+  width: 30px;
 }
 
 #msform .action-button {
@@ -168,57 +162,33 @@ top-bar-section{
 
 #pick_number1 {
   border-radius: 12px;
-  font-size: 20px;
-  text-align: center;
-  width: 40px !important;
-  border-width: 0.5px !important;
-  border-color: rgba(83, 83, 83, 0.4) !important;
-  box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
 }
 
 #pick_number2 {
   border-radius: 12px;
-  font-size: 20px;
-  text-align: center;
-  width: 40px !important;
-  border-width: 0.5px !important;
-  border-color: rgba(83, 83, 83, 0.4) !important;
-  box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
 }
 #pick_number3 {
   border-radius: 12px;
-  font-size: 20px;
-  text-align: center;
-  width: 40px !important;
-  border-width: 0.5px !important;
-  border-color: rgba(83, 83, 83, 0.4) !important;
-  box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
 }
 #pick_number4 {
   border-radius: 12px;
-  font-size: 20px;
-  text-align: center;
-  width: 40px !important;
-  border-width: 0.5px !important;
-  border-color: rgba(83, 83, 83, 0.4) !important;
-  box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
 }
 #pick_number5 {
   border-radius: 12px;
-  font-size: 20px;
-  text-align: center;
-  width: 40px !important;
-  border-width: 0.5px !important;
-  border-color: rgba(83, 83, 83, 0.4) !important;
-  box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
+  border-color: grey;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
 }
 #pick_number6 {
   border-radius: 12px;
-  font-size: 20px;
-  text-align: center;
-  width: 40px !important;
-  border-width: 0.5px !important;
-  border-color: rgba(83, 83, 83, 0.4) !important;
+  border-color: grey;
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
 }
 #pick_draw_date {
@@ -228,8 +198,7 @@ top-bar-section{
   min-width: 100% !important;
 }
 #msform .action-button {
-  width: 50%;
-  margin-left: 0px;
+  width: 50% ;
 }
 .previous{
   border-style: none !important;
@@ -241,11 +210,4 @@ top-bar-section{
 }
 .no_important{
   background-color:rgba(51, 212, 255, 0.7) !important;
-}
-.logo2{
-  width: 100px !important;
-  margin: 0 auto;
-}
-li{
-  padding: 1px !important;
 }
