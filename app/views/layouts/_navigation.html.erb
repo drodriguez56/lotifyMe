@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<nav class="middle top-bar hide-for-small" data-topbar role="navigation">
+<nav class="middle top-bar hide-for-small navi" data-topbar role="navigation">
   <section class="middle tab-bar-section">
     <img src="<%= asset_path 'lotifyme.png' %>" class="logo"></img>
   </section>
@@ -15,8 +15,8 @@
         <% if User.find(@session_id).username %>
           <li id='username'><%= User.find(@session_id).username %></li>
         <% end %>
-          <li><%= link_to 'My Profile', user_path(@session_id) %></li>
-          <li><%= link_to 'Edit Profile', edit_user_path(@session_id) %></li>
+          <li class='navrigth'><%= link_to 'My Profile', user_path(@session_id) %></li>
+          <li class='navrigth'><%= link_to 'Edit Profile', edit_user_path(@session_id) %></li>
           <li><%= link_to 'Logout', logout_path %></li>
      <% end %>
    </ul>
