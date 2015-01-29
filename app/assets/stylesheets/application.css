@@ -194,3 +194,14 @@ top-bar-section{
 #msform .action-button {
   width: 50% ;
 }
+.previous{
+  border-style: none !important;
+  background-color: white !important;
+  color: rgb(51, 151, 218);
+}
+.important{
+  height: 60px !important;
+}
+.no_important{
+  background-color:rgba(51, 212, 255, 0.7) !important;
+}
