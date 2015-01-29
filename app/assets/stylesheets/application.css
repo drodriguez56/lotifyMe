@@ -139,6 +139,12 @@ top-bar-section{
   display: none;
 }
 
+#msform input, #msform textarea{
+  padding: 3px;
+  border: 1px solid black;
+  width: 30px;
+}
+
 #msform .action-button {
   width: 100px;
   background: rgb(71, 151, 255);
