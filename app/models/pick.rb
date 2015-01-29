@@ -1,6 +1,6 @@
 class Pick < ActiveRecord::Base
 
-	before_save { |pick| pick.set_date_to_next_draw; pick.assign_draw_id }
+	before_save { |pick| pick.assign_draw_id; pick.set_date_to_next_draw  }
   after_save { |pick| pick.setresult }
 
   validates :number, presence: true
@@ -20,7 +20,9 @@ class Pick < ActiveRecord::Base
   end
 
 	def set_date_to_next_draw
-    self.update(draw_date: (draw.set_date(self)))
+    if self.draw_date == nil && self.draw_id
+      self.update(draw_date: draw.set_date(self))
+    end
   end
 
   def assign_draw_id
