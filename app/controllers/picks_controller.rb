@@ -34,7 +34,7 @@ class PicksController < ApplicationController
             }
         end
       else
-        if params[:commit]=="signup"
+        if params[:commit]=="Create and account"
           redirect_to edit_user_path(@user.id), locals: {email: params[:email]}
         else
           if !@user.active
