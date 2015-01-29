@@ -1,14 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <nav class="middle top-bar hide-for-small" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <div class="logo">
-        <span><h1><a href="/">Home</a></h1></span>
-      </div>
-    </li>
-  </ul>
-
   <section class="middle tab-bar-section">
     <img src="<%= asset_path 'lotifyme.png' %>" class="logo"></img>
   </section>
@@ -44,8 +36,11 @@
 
 <nav class="tab-bar show-for-small">
   <a class="left-off-canvas-toggle menu-icon" aria-expanded="false">
-    <span>LOTTIFY ME</span>
+    <span></span>
   </a>
+  <section class="middle tab-bar-section">
+    <img src="<%= asset_path 'lotifyme.png' %>" class="logo2"></img>
+  </section>
 </nav>
 <aside class="left-off-canvas-menu">
   <ul class="off-canvas-list">
@@ -53,7 +48,7 @@
      <% if !session[:user_id] %>
       <li><%= link_to 'LOGIN', login_path %></li>
       <li><%= link_to 'SIGN UP', signup_path %></li>
-      <li><%= link_to 'LOTIFYME', root_path %></li>
+      <li><%= link_to 'HOME', root_path %></li>
      <% else %>
       <% @session_id = session[:user_id] %>
       <li class="active" >
@@ -72,4 +67,4 @@
     </li>
   </ul>
 </aside>
-<a class="exit-off-canvas" href="#"></a>
+
