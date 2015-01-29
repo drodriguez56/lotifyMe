@@ -1,5 +1,5 @@
-<center><h1> pick history </h1> </center>
- <center> <p class="history-description"> Here are your lottery picks.</p> </center>
+<center><h1> PICK HISTORY </h1> </center>
+ <center> <p class="history-description"> here are your lottery picks</p> </center>
  <center>
   <div class="user-picks">
     <% @session_id = session[:user_id] %>
@@ -8,20 +8,20 @@
       <div class="pick-items">
         <% if pick.result == nil %>
           <row class="number-row" style="float:left">
-            <h3><%= pick.number %> </h3>
+            <%= pick.number %>
           </row><br><br>
           <row class="game-details row">
             <div class="pick-info" style="float: left">
-              <%= pick.draw_date.to_s[0..10] %> • <%= pick.game %>
+              <%= pick.draw_date.to_s[0..10] %> • <%= pick.game.upcase %>
             </div>
             <div class="trash-pic" style="float: right">
-               <%= link_to 'Destroy',  pick,  method: :delete , class:'delete'%></img>
+               <%= link_to 'Destroy'(, pick,  method: :delete , class:'delete'%></img>
             </div>
           </row>
         <% else %>
           <div class="winning_pick" >
-            <row class="number-row">
-              <h3><%= pick.number %> --You Have a Winning Ticket!</h3>
+            <row class="number-row" style="float:left">
+              <%= pick.number %> -- <b> *YOU HAVE A WINNING TICKET!* </b>
             </row>
             <row class="game-details row">
               <div class="trash-pic" style="float: right">

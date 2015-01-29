@@ -144,7 +144,7 @@ top-bar-section{
 #username{
   margin-right: 10px !important;
   color:white;
-  padding: 12px !important;
+  padding: 11.5px !important;
   background-color: rgba(83, 83, 83, 0.6);
 }
 #msform fieldset:not(:first-of-type) {
@@ -277,7 +277,6 @@ p{
 h1{
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   letter-spacing: -2px;
-  text-align: left;
   font-style: normal;
   margin-top: 3rem;
   line-height: 1.4;
@@ -285,7 +284,6 @@ h1{
 }
 .history-description{
   color: white;
-  margin-left: 6%;
   font-size: 140%;
   margin-top: -1.5rem;
 }
@@ -307,4 +305,6 @@ h1{
 h3{
   color: rgb(51,151,218);
 }
-
+.number-row{
+  font-size: 18pt;
+}
