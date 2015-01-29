@@ -37,9 +37,11 @@ class PicksController < ApplicationController
         if params[:commit]=="signup"
           redirect_to edit_user_path(@user.id), locals: {email: params[:email]}
         else
-          if Time.now.min - @user.created_at.time.min < 1
+          if !@user.active
             @pick.send_email
             flash[:notice] = "We will send an email to #{@user.email} to notify you with your resoult. thanks for using LotifyMe"
+          else
+            flash[:notice] = "Pcik created, check you profile or create a new one"
           end
           respond_to do |format|
             format.json { render json: ActiveSupport::JSON.encode(@pick), status:200 }

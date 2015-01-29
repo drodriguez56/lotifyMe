@@ -15,7 +15,9 @@
       </header>
       <% if flash[:error] %>
         <div class='error_message'><%= flash[:error] %></div>
-      <% end %>
+      <% elsif flash[:notice] %>
+        <div class='notice_message'><%= flash[:notice] %></div>
+      <% end -%>
       <section class="main-section">
         <%= yield %>
       </section>
