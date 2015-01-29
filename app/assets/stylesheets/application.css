@@ -261,3 +261,44 @@ p{
 .centered{
   text-align: center !important;
 }
+.user-picks{
+  background-color: white;
+  width: 80%;
+  color: black;
+  border: 0 none;
+  border-radius: 1px;
+  padding: 10px 5px;
+
+}
+
+.user-picks p{
+  color: black;
+}
+
+h1{
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  letter-spacing: -2px;
+  margin-right: 300px !important;
+  font-style: normal;
+  margin-top: 3rem;
+  line-height: 1.4;
+  color: black;
+}
+.history-description{
+  color: white;
+  margin-right: 170px !important;
+  font-size: 140%;
+  margin-top: -1rem;
+}
+
+#winning_pick {
+
+}
+
+.button.medium.default.radius.nav-button{
+  background-color: rgb(67,242,255);
+}
+
+#pick-items {
+  border-bottom-style: double;
+}
