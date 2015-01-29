@@ -1,38 +1,41 @@
-<center><h1> pick history </h1>
-  <p class="history-description"> Here are your lottery picks.</p>
+<center><h1> pick history </h1> </center>
+ <center> <p class="history-description"> Here are your lottery picks.</p> </center>
+ <center>
   <div class="user-picks">
     <% @session_id = session[:user_id] %>
     <div class="pick-history-list">
       <% @user.picks.each do |pick| %>
       <div class="pick-items">
-          <% if pick.result == nil %>
-            <row class="number-row" style="float:left">
-              <h3><%= pick.number %> </h3>
-            </row><br>
-            <row class="game-details row">
-              <div class="pick-info" style="float: left">
-                <%= pick.draw_date.to_s[0..10] %> • <%= pick.game %>
-              </div>
-              <div class="trash-pic" style="float: right">
-                 <img src="<%= asset_path 'trash.png' %>" class="trash"></img>
-              </div>
-            </row>
+        <% if pick.result == nil %>
+          <row class="number-row" style="float:left">
+            <h3><%= pick.number %> </h3>
+          </row><br><br>
+          <row class="game-details row">
+            <div class="pick-info" style="float: left">
+              <%= pick.draw_date.to_s[0..10] %> • <%= pick.game %>
+            </div>
+            <div class="trash-pic" style="float: right">
+               <%= link_to 'Destroy',  pick,  method: :delete , class:'delete'%></img>
+            </div>
+          </row>
         <% else %>
           <div class="winning_pick" >
             <row class="number-row">
               <h3><%= pick.number %> --You Have a Winning Ticket!</h3>
             </row>
             <row class="game-details row">
-              <div class="pick-info" style="float: left">
-                <%= pick.draw_date.to_s[0..10] %> • <%= pick.game %> • <%= link_to 'Destroy',  pick,  method: :delete %>
+              <div class="trash-pic" style="float: right">
+                 <img src="<%= asset_path 'trash.png' %>" class="trash"></img>
               </div>
             </row>
           </div>
-          <% end %>
-        <br>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+     <br>
+    <% end %>
   </div>
+</div>
+<br><br>
 <%= link_to 'CREATE A PICK', root_path, class: "button medium default radius nav-button" %>
 
 </center>

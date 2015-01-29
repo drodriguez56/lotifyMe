@@ -266,9 +266,8 @@ p{
   width: 80%;
   color: black;
   border: 0 none;
-  border-radius: 1px;
+  border-radius: 20px;
   padding: 10px 5px;
-
 }
 
 .user-picks p{
@@ -278,7 +277,7 @@ p{
 h1{
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   letter-spacing: -2px;
-  margin-right: 300px !important;
+  text-align: left;
   font-style: normal;
   margin-top: 3rem;
   line-height: 1.4;
@@ -286,19 +285,26 @@ h1{
 }
 .history-description{
   color: white;
-  margin-right: 170px !important;
+  margin-left: 6%;
   font-size: 140%;
-  margin-top: -1rem;
+  margin-top: -1.5rem;
 }
-
-#winning_pick {
-
+.trash{
+  width: 25px;
+  height: auto;
+  margin-top: -2em;
 }
-
 .button.medium.default.radius.nav-button{
   background-color: rgb(67,242,255);
 }
 
-#pick-items {
+.pick-items {
   border-bottom-style: double;
 }
+.pick-info{
+  margin-top: -1em;
+}
+h3{
+  color: rgb(51,151,218);
+}
+
