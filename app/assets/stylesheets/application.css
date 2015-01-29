@@ -73,18 +73,6 @@ top-bar-section{
   margin: 0 auto 1px auto;
 }
 
-#progressbar li:after {
-  content: '';
-  width: 50%;
-  height: 2px;
-  background: white;
-  position: absolute;
-  left: 50%;
-  top: 25px;
-  transform:translate(-50%);
-  z-index: -1;
-}
-
 #progressbar li:first-child:after {
   content: none;
 }
@@ -174,7 +162,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -184,7 +172,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -193,7 +181,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -202,7 +190,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -211,7 +199,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(83, 83, 83, 0.4);
 }
@@ -220,7 +208,7 @@ top-bar-section{
   font-size: 20px;
   text-align: center;
   width: 40px !important;
-  border-width: 0.5px !important;
+  border-width: 1px !important;
   border-color: rgba(83, 83, 83, 0.4) !important;
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
 }
@@ -308,3 +296,81 @@ h3{
 .number-row{
   font-size: 18pt;
 }
+.left-off-canvas-menu
+{
+  background: none repeat scroll 0% 0% white !important;
+}
+ul.off-canvas-list li a{
+  color: black !important;
+}
+.exit_icon{
+  height: 35px;
+  width: auto;
+  margin-left: 4%;
+  margin-bottom: -40px;
+}
+.tool_icon{
+  height: 35px;
+  width: auto;
+  margin-left: 4%;
+  margin-bottom: -40px;
+}
+.jumping_icon{
+  height: 40px;
+  width: auto;
+  margin-bottom: -40px;
+}
+.home_icon{
+  height: 40px;
+  width: auto;
+  margin-bottom: -40px;
+}
+.key_icon{
+  height: 40px;
+  width: auto;
+  margin-left: 4%;
+  margin-bottom: -40px;
+}
+.create_icon{
+  height: 40px;
+  width: auto;
+  margin-left: 4%;
+  margin-bottom: -40px;
+}
+.off-canvas-list{
+  width:100%;
+}
+.set-width{
+  width: 305px;
+}
+
+.exit-off-canvas{
+  height: 500%%;
+}
+.left-off-canvas-menu{
+  height: 599%%;
+}
+.off-canvas-menu{
+  height: 500%;
+}
+@media screen and (max-width: 600px) {
+   .number-row{
+      font-size: 10pt !important;
+    }
+    .pick-info{
+      font-size: 9pt !important;
+      margin-top: -20px !important;
+    }
+    .pick-items{
+      height: 60px;
+    }
+
+}
+.trash-pic{
+  margin-top: -20px !important;
+}
+
+ul.off-canvas-list li a:hover {
+      background: none;
+    }
+

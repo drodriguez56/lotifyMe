@@ -2,7 +2,7 @@
 
 <nav class="middle top-bar hide-for-small navi" data-topbar role="navigation">
   <section class="middle tab-bar-section">
-    <img src="<%= asset_path 'lotifyme.png' %>" class="logo"></img>
+   <a href="/"> <img src="<%= asset_path 'lotifyme.png' %>" class="logo"></img></a>
   </section>
 
  <section class="top-bar-section">
@@ -28,30 +28,48 @@
     <span></span>
   </a>
   <section class="middle tab-bar-section">
-    <img src="<%= asset_path 'lotifyme.png' %>" class="logo2"></img>
+    <a href="/"> <img src="<%= asset_path 'lotifyme.png' %>" class="logo2"></img></a>
   </section>
 </nav>
 <aside class="left-off-canvas-menu">
   <ul class="off-canvas-list">
-    <li>
+    <li class="set-width">
      <% if !session[:user_id] %>
-      <li><%= link_to 'LOGIN', login_path %></li>
-      <li><%= link_to 'SIGN UP', signup_path %></li>
-      <li><%= link_to 'HOME', root_path %></li>
-     <% else %>
+        <li>
+          <div align="left"><img src="<%= asset_path 'key83.png' %>" class="key_icon"></img></div>
+          <div align="right" class="login_row"><%= link_to 'LOGIN', login_path %></div>
+        </li>
+
+        <li>
+          <div align="left"><img src="<%= asset_path 'create1.png' %>" class="create_icon"></img></div>
+          <div align="right" class="login_row"><%= link_to 'SIGN UP', signup_path %></div>
+        </li>
+
+        <li>
+          <div align="left"><img src="<%= asset_path 'home87.png' %>" class="home_icon"></img></div>
+          <div align="right" class="login_row"><%= link_to 'HOME', root_path %></div>
+        </li>
+      <% else %>
       <% @session_id = session[:user_id] %>
       <li class="active" >
         <a href="/users/<%= session[:user_id] %>"><%= User.find(@session_id).username %></a>
       </li>
+
       <li>
-        <%= link_to 'MY PROFILE', user_path(@session_id) %>
+       <div align="left"><img src="<%= asset_path 'jumping28.png' %>" class="jumping_icon"></img></div>
+       <div align="right" class="login_row"> <%= link_to 'MY PROFILE', user_path(@session_id) %></div>
       </li>
+
       <li>
-        <%= link_to 'EDIT PROFILE', edit_user_path(@session_id) %>
+        <div align="left"><img src="<%= asset_path 'tools6.png' %>" class="tool_icon"></img></div>
+        <div align="right" class="login_row"><%= link_to 'EDIT PROFILE', edit_user_path(@session_id) %></div>
       </li>
+
       <li>
-        <%= link_to 'LOGOUT', logout_path %>
+        <div align="left"><img src="<%= asset_path 'exit16.png' %>" class="exit_icon"></img></div>
+        <div align="right" class="login_row"><%= link_to 'LOGOUT', logout_path %></div>
       </li>
+
     <% end %>
     </li>
   </ul>

@@ -2,14 +2,29 @@
   <ul id="progressbar">
     <li class="active">Your Picks</li>
     <li>Lottery Info</li>
-    <li>Notification Settings</li>
+    <li>LotifyMe</li>
   </ul>
   <div class="form-content">
     <%= form_tag(picks_path, method: "post") do %>
     <fieldset>
+      <h2 class="fs-title">Lotto Info</h2>
+      <h3 class="fs-subtitle">Please Provide Some Game Information</h3>
+       <h3 class="fs-title"> Select the Game:</h3>
+       <select name='pick[game]'>
+          <option value="MegaMillion">Mega Millions</option>
+          <option value="Powerball">Power Ball</option>
+          <option value="NyLotto">NY Lotto</option>
+          <option value="Cash4Life">Cash4Life</option>
+          <option value="Take5">Take5</option>
+          <option value="Pick10">Pick10</option>
+        </select>
+      <h4 class="fs-title"> Draw Date</h4>
+      <%= date_field_tag 'pick[draw_date]', nil, placeholder: 'date' %>
+      <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+    <fieldset>
     <div class="first-page">
     <h2 class="fs-title">What are your Lotto Numbers?</h2>
-    <h3 class="fs-subtitle">This is step 1</h3>
       <div class="row">
         <ul class="small-block-grid-6 small-centered columns large-block-grid-6 large-centered columns">
           <li><%= text_field_tag 'pick[number1]', nil, class: "small-centered-6 columns large-6 columns", maxlength: 2, step: 1, placeholder:'0' %></li>
@@ -25,38 +40,19 @@
         </div>
       </div>
           <input type="button" name="next" class="next action-button" value="Next" />
+           <input type="button" name="previous" class="previous" value="Previous" />
     </fieldset>
 
     <fieldset>
-      <h2 class="fs-title">Lotto Info</h2>
-      <h3 class="fs-subtitle">Please Provide Some Game Information</h3>
-       <h3 class="fs-title"> Select the Game:</h3>
-       <select name='pick[game]'>
-          <option value="MegaMillion">Mega Millions</option>
-          <option value="Powerball">Power Ball</option>
-          <option value="NyLotto">NY Lotto</option>
-          <option value="Cash4Life">Cash4Life</option>
-          <option value="Take5">Take5</option>
-          <option value="Pick10">Pick10</option>
-        </select>
-      <h4 class="fs-title"> When Did You Buy The Ticket?</h4>
-      <%= date_field_tag 'pick[draw_date]', nil, placeholder: 'date' %>
-      <input type="button" name="next" class="next action-button" value="Next" />
-      <input type="button" name="previous" class="previous" value="Previous" />
-    </fieldset>
-
-    <fieldset>
-      <h2 class="fs-title">Notification Settings</h2>
-      <h3 class="fs-subtitle">Enter Your Email:</h3>
-
-
         <% if !session[:user_id] %>
+          <h2 class="fs-title">LotifyMe</h2>
+          <h3 class="fs-subtitle">Enter Your Email:</h3>
           <%= email_field_tag 'pick[email]', nil, placeholder: 'email' %>
           <%= submit_tag 'Create and account', class: "important action-button" %>
           <%= submit_tag 'Just send me an email', class: "no_important action-button"%>
         <% else %>
           <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
-          <%= submit_tag 'lotifyme', class: "action-button" %>
+          <%= submit_tag 'Done', class: "action-button" %>
         <% end %>
       <input type="button" name="previous" class="previous" value="Previous" />
     </fieldset>
