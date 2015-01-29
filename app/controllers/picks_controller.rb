@@ -39,9 +39,9 @@ class PicksController < ApplicationController
         else
           if !@user.active
             @pick.send_email
-            flash[:notice] = "We will send an email to #{@user.email} to notify you with your resoult. thanks for using LotifyMe"
+            flash[:notice] = "Your result will be e-mailed to  #{@user.email}. Thanks for using LotifyMe."
           else
-            flash[:notice] = "Pcik created, check you profile or create a new one"
+            flash[:notice] = "Pick created! Check you profile or create a new one."
           end
           respond_to do |format|
             format.json { render json: ActiveSupport::JSON.encode(@pick), status:200 }
@@ -55,7 +55,7 @@ class PicksController < ApplicationController
        respond_to do |format|
           format.json { render json: 'fail to create pick', status:400 }
             format.html {
-              flash[:error] = 'failed to create entry.. try again'
+              flash[:error] = 'Failed to create entry... please try again.'
               redirect_to root_path
             }
        end
