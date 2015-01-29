@@ -30,7 +30,8 @@ class Pick < ActiveRecord::Base
 	end
 
   def assign_draw_id
-    draw = Draw.find_by(draw_date: self.draw_date)
+    draws = Draw.where(game: self.game)
+    draw = draws.find_by(draw_date: self.draw_date)
     if draw
       self.draw_id = draw.id
     end
