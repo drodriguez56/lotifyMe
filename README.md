@@ -3,6 +3,8 @@
 Lottify-Me
 ===========
 
+www.lotifyme.co is your personal lottery companion.   We are a lottery notification app that makes searching and getting results much easier. If the draw was in the past, we tell you if you won, and if it's in the future we will tell you as soon as the draw happens if you won.  No more forgetting about lottery tickets, or spending time figuring out where to check for results --- and more time getting your lottery money and spending it.
+
 ===========
 DESCRIPTION
 ===========
