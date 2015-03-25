@@ -19,10 +19,9 @@ class Notifier < ActionMailer::Base
      mail(to: @user.email, subject:'Request recived')
   end
 
-  def email_for_present_draw_users(users)
-    @users = users
-    @users.each do |user|
-      mail(to: user.email, subject:'Todays Resoults')
+  def email_for_present_draw_users(user)
+    @user = user
+      mail(to: @user.email, subject:'Todays Resoults')
     end
   end
 
