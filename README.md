@@ -27,7 +27,7 @@ Pending tasks
 
  -  Change input numbers so it accepts single digits 1 vs 01
 
- -  Don't accept future draws that are more than a week on the future.
+ -  Accept only valid future dates on the display of calendar depending on lotery
 
  -  Change title on production app to lotifyme beta
 
