@@ -1,0 +1,30 @@
+<% today_picks_from_user = [] %>
+
+<% @user.picks.each do |pick| %>
+  <% if pick.draw_date == Date.today %>
+    <% today_picks_from_user << pick %>
+  <% end -%>
+<% end -%>
+
+<% if today_picks_from_user.length == 1 %>
+  <p>Your number for todays draw was: <%= @pick.number %></p>
+  <% if pick.result == 'JACKPOT' %>
+      <p>WOOOOOWWW YOU WON !!! JACKPOT , CONGRATS</p>
+  <% elsif pick.result == 'You did not win' %>
+      <p>Sorry, you didnt win but keep trying.</p>
+  <% else %>
+      <p><%= pick.result %>, CONGRATS</p>
+  <% end -%>
+<% else %>
+  <p>Your numbers for toays draw were:</p>
+  <% today_picks_from_user.each do |pick| %>
+    <p><%= pick.number %></p>
+    <% if pick.result == 'JACKPOT' %>
+        <p>WOOOOOWWW YOU WON !!! JACKPOT , CONGRATS</p>
+    <% elsif pick.result == 'You did not win' %>
+        <p>Sorry, you didnt win but keep trying.</p>
+    <% else %>
+        <p><%= pick.result %>, CONGRATS</p>
+    <% end -%>
+  <% end -%>
+<% end -%>
