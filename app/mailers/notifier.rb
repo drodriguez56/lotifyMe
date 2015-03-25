@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default from: "donotreply@lotifyme.co"
+  default from: "no-treply@lotifyme.co"
   layout 'mailer'
 
   def welcome_email(user)
