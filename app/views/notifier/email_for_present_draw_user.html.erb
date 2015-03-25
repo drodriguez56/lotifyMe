@@ -5,9 +5,9 @@
     <% today_picks_from_user << pick %>
   <% end -%>
 <% end -%>
-
 <% if today_picks_from_user.length == 1 %>
-  <p>Your number for todays draw was: <%= @pick.number %></p>
+<% pick = today_picks_from_user[0]%>
+  <p>Your number for todays draw was: <%= pick.number %></p>
   <% if pick.result == 'JACKPOT' %>
       <p>WOOOOOWWW YOU WON !!! JACKPOT , CONGRATS</p>
   <% elsif pick.result == 'You did not win' %>
