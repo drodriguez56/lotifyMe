@@ -19,9 +19,9 @@ class Notifier < ActionMailer::Base
      mail(to: @user.email, subject:'Request recived')
   end
 
-  def email_for_present_draw_user(user, lotery)
+  def email_for_present_draw_user(user, lottery)
     @user = user
-    @lotery = lotery
+    @lottery = lottery
       mail(to: @user.email, subject:'Todays Resoults')
   end
 
