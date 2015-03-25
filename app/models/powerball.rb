@@ -5,10 +5,15 @@ class Powerball < Draw
     response = Net::HTTP.get_response(uri)
     if response.code == "200"
       result = JSON.parse(response.body)
-      result["data"].each do |drawing|
-        draw = Powerball.new(number: drawing[9], draw_date: drawing[8], multiplier: drawing[10])
+      (0..100).each do |num|
+        draw = Powerball.new(number: result["data"][num][9], draw_date: result["data"][num][8], multiplier: result["data"][num][10])
         draw.save
       end
+
+      # result["data"].each do |drawing|
+      #   draw = Powerball.new(number: drawing[9], draw_date: drawing[8], multiplier: drawing[10])
+      #   draw.save
+      # end
     end
   end
 

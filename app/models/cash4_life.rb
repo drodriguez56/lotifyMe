@@ -4,10 +4,14 @@ class Cash4Life < Draw
     response = Net::HTTP.get_response(uri)
     if response.code == "200"
       result = JSON.parse(response.body)
-      result["data"].each do |drawing|
-        draw = Cash4Life.new(number: (drawing[9] + ' ' + drawing[10]), draw_date: drawing[8])
+       (0..50).each do |num|
+        draw = Cash4Life.new(number: (result["data"][num][9] + ' ' + result["data"][num][10]), draw_date: result["data"][num][8])
         draw.save
       end
+      # result["data"].each do |drawing|
+      #   draw = Cash4Life.new(number: (drawing[9] + ' ' + drawing[10]), draw_date: drawing[8])
+      #   draw.save
+      # end
     end
   end
 
