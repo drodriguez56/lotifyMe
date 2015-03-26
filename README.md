@@ -43,4 +43,8 @@ Pending tasks
 
  -  Fix nav bar display when user has username (**Done**)
 
-  -  Setup input numbers box to change depending on the amount of numbers needed to play. ex: pick10 = 10 numbers, powerball = 6 numbers
+ -  Setup input numbers box to change depending on the amount of numbers needed to play. ex: pick10 = 10 numbers, powerball = 6 numbers
+ 
+ -  Fix buttons on movil (**Done**)
+ 
+ - fix side togle bar that is not showing on iphone devices  
