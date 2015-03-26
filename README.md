@@ -48,3 +48,7 @@ Pending tasks
  -  Fix buttons on movil (**Done**)
  
  - fix side togle bar that is not showing on iphone devices  
+ 
+ - Display view to the user when finish uploading one pick to confirm information correct.
+ 
+ - Add option of creating more than one pick at a time for the same day of draw
