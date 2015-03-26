@@ -1,7 +1,7 @@
 <% today_picks_from_user = [] %>
 
 <% @user.picks.each do |pick| %>
-  <% if pick.draw_date == Date.today %>
+  <% if pick.draw_date == Date.today && pick.game == @lottery %>
     <% today_picks_from_user << pick %>
   <% end -%>
 <% end -%>
