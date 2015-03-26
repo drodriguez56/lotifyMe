@@ -403,3 +403,12 @@ li{
 .notice{
   font-weight: 200;
 }
+.beta{
+  color: red !important;
+  font-size: 0.7em !important;
+  letter-spacing: 1px !important;
+  position: relative;
+  top:10px !important;
+  left: -10px;
+  font-weight: 700 !important;
+}
