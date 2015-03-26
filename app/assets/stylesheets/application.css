@@ -148,7 +148,7 @@ a#username{
   width: 30px;
 }
 
-#msform .action-button {
+.action-button {
   width: 100px;
   background: rgb(71, 151, 255);
   font-weight: bold;
@@ -156,8 +156,8 @@ a#username{
   border: 0 none;
   border-radius: 1px;
   cursor: pointer;
-  padding: 10px 5px;
-  margin: 10px 5px;
+  padding: 10px 5px !important;
+  margin: 10px 5px !important;
 }
 .logo {
   height: 50px;
@@ -227,10 +227,6 @@ a#username{
 #msform input{
   min-width: 100% !important;
 }
-#msform .action-button {
-  width: 50%;
-  margin-left: 0px;
-}
 .previous{
   border-style: none !important;
   background-color: white !important;
@@ -249,9 +245,9 @@ a#username{
 li{
   padding: 1px !important;
 }
-.button.medium.default.radius.nav-button{
+/*.button.medium.default.radius.nav-button{
   background-color: #5da423;
-}
+}*/
 p{
   color:white;
 }
@@ -289,9 +285,9 @@ h1{
   height: auto;
   margin-top: -2em;
 }
-.button.medium.default.radius.nav-button{
+/*.button.medium.default.radius.nav-button{
   background-color: rgb(67,242,255);
-}
+}*/
 
 .pick-items {
   border-bottom-style: double;

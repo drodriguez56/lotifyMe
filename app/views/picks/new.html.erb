@@ -20,7 +20,7 @@
         </select>
       <h4 class="fs-title"> Draw Date</h4>
       <%= date_field_tag 'pick[draw_date]', nil, placeholder: 'date' %>
-      <input type="button" name="next" class="next action-button" value="Next" />
+      <input type="submit" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset>
     <div class="first-page">
@@ -39,8 +39,8 @@
           </ul>
         </div>
       </div>
-          <input type="button" name="next" class="next action-button" value="Next" />
-           <input type="button" name="previous" class="previous" value="Previous" />
+          <input type="submit" name="next" class="next action-button" value="Next" />
+           <input type="submit" name="previous" class="previous" value="Previous" />
     </fieldset>
 
     <fieldset>
@@ -54,7 +54,7 @@
           <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
           <%= submit_tag 'Done', class: "action-button" %>
         <% end %>
-      <input type="button" name="previous" class="previous" value="Previous" />
+      <input type="submit" name="previous" class="previous" value="Previous" />
     </fieldset>
 
     <% end %>
