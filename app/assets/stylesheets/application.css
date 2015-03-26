@@ -130,10 +130,13 @@ top-bar-section{
   height: 48px;
 }
 #username{
-  margin-right: 10px !important;
   color:white;
-  padding: 11.5px !important;
   background-color: rgba(83, 83, 83, 0.6);
+  font-size: 1.5em;
+}
+a#username{
+  pointer-events: none;
+   cursor: default;
 }
 #msform fieldset:not(:first-of-type) {
   display: none;
@@ -302,13 +305,13 @@ h3{
 .number-row{
   font-size: 18pt;
 }
-.left-off-canvas-menu
+/*.left-off-canvas-menu
 {
   background: none repeat scroll 0% 0% white !important;
-}
-ul.off-canvas-list li a{
+}*/
+/*ul.off-canvas-list li a{
   color: black !important;
-}
+}*/
 .exit_icon{
   height: 35px;
   width: auto;
@@ -349,15 +352,17 @@ ul.off-canvas-list li a{
 .set-width{
   width: 305px;
 }
-
 .exit-off-canvas{
-  height: 500%%;
+  height: 500%;
 }
 .left-off-canvas-menu{
-  height: 599%%;
+  height: 599%;
 }
 .off-canvas-menu{
   height: 500%;
+}
+.height{
+  height: 45px;
 }
 @media screen and (max-width: 600px) {
    .number-row{
@@ -378,6 +383,9 @@ ul.off-canvas-list li a{
 
 ul.off-canvas-list li a:hover {
       background: none;
+}
+li{
+  padding: 0 !important;
 }
 .error_message{
   color: white !important;
