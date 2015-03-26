@@ -21,7 +21,7 @@ Pending tasks
 
  -  Setup scheduler
 
- -  Write method that handles searching or winners after a draw and sends emails.
+ -  Write method that handles searching users after a draw and sends emails that apply (Done # needs testing)
 
  -  Reduce the amount of data pulled from lottos due to database storage. (done)
 
