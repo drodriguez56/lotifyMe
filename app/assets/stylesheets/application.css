@@ -149,16 +149,20 @@ a#username{
 }
 
 .action-button {
-  width: 100px;
   background: rgb(71, 151, 255);
   font-weight: bold;
   color: white;
   border: 0 none;
   border-radius: 1px;
   cursor: pointer;
-  padding: 10px 5px !important;
-  margin: 10px 5px !important;
+  padding: 10px 43% !important;
+  margin: 10px 0 !important;
+  font-size: 1em;
 }
+a.action-button:hover{
+  color: white;
+}
+
 .logo {
   height: 50px;
 }
@@ -228,8 +232,15 @@ a#username{
   min-width: 100% !important;
 }
 .previous{
+  position: relative;
   border-style: none !important;
-  background-color: white !important;
+  background-color: none!important;
+  color: rgb(51, 151, 218);
+  padding: 10px 38% !important;
+  top: 11px !important;
+  font-size: 0.8em;
+}
+a.previous:hover{
   color: rgb(51, 151, 218);
 }
 .important{
