@@ -7,7 +7,7 @@ task :send_mail_powerball => :environment do
     end
     if arr.uniq.length > 0
         arr.uniq.each do |user|
-          Notifier.email_for_present_draw_user(user, 'Powerball')
+          Notifier.email_for_present_draw_user(user, 'Powerball').deliver
         end
      end
   end
@@ -23,7 +23,7 @@ task :send_mail_mega_million => :environment do
     end
     if arr.uniq.length > 0
         arr.uniq.each do |user|
-          Notifier.email_for_present_draw_user(user, 'MegaMillion')
+          Notifier.email_for_present_draw_user(user, 'MegaMillion').deliver
         end
      end
   end
@@ -39,7 +39,7 @@ task :send_mail_ny_loto => :environment do
     end
     if arr.uniq.length > 0
         arr.uniq.each do |user|
-          Notifier.email_for_present_draw_user(user, 'NyLotto')
+          Notifier.email_for_present_draw_user(user, 'NyLotto').deliver
         end
      end
   end
@@ -55,7 +55,7 @@ task :send_mail_cash_4_life => :environment do
     end
     if arr.uniq.length > 0
         arr.uniq.each do |user|
-          Notifier.email_for_present_draw_user(user, 'Cash4Life')
+          Notifier.email_for_present_draw_user(user, 'Cash4Life').deliver
         end
      end
   end
