@@ -1,11 +1,10 @@
 <% today_picks_from_user = [] %>
 
 <% @user.picks.each do |pick| %>
-  <% if pick.draw_date == Date.today && pick.game == @lotery %>
+  <% if pick.draw_date == Date.today && pick.game == @lottery %>
     <% today_picks_from_user << pick %>
   <% end -%>
 <% end -%>
-<% p today_picks_from_user %>
 <% if today_picks_from_user.length == 1 %>
   <% pick = today_picks_from_user[0]%>
   Your number for todays draw was: <%= pick.number %>
