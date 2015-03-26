@@ -23,13 +23,13 @@ Pending tasks
 
  -  Write method that handles searching users after a draw and sends emails that apply (**Done # needs testing**)
 
- -  Reduce the amount of data pulled from lottos due to database storage. (**done**)
+ -  Reduce the amount of data pulled from lottos due to database storage. (**Done**)
 
  -  Change input numbers so it accepts single digits 1 vs 01
 
  -  Accept only valid future dates on the display of calendar depending on lotery
 
- -  Change title on production app to lotifyme beta
+ -  Change title on production app to lotifyme beta (**Done**)
 
  -  Write more descriptive emails.
 
