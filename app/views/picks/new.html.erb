@@ -6,7 +6,7 @@
   </ul>
   <div class="form-content">
     <%= form_tag(picks_path, method: "post") do %>
-    <fieldset>
+    <fieldset class = 'field-section'>
       <h2 class="fs-title">Lotto Info</h2>
       <h3 class="fs-subtitle">Please Provide Some Game Information</h3>
        <h3 class="fs-title"> Select the Game:</h3>
@@ -22,7 +22,7 @@
       <%= date_field_tag 'pick[draw_date]', nil, placeholder: 'date' %>
       <a href="#" class="next action-button">Next</a>
     </fieldset>
-    <fieldset>
+    <fieldset class = 'field-section'>
     <div class="first-page">
     <h2 class="fs-title">What are your Lotto Numbers?</h2>
       <div class="row">
@@ -43,13 +43,13 @@
           <a href="#" class="previous">Previous</a>
     </fieldset>
 
-    <fieldset>
+    <fieldset class = 'field-section'>
         <% if !session[:user_id] %>
           <h2 class="fs-title">LotifyMe</h2>
           <h3 class="fs-subtitle">Enter Your Email:</h3>
           <%= email_field_tag 'pick[email]', nil, placeholder: 'email' %>
-          <%= submit_tag 'Create and account', class: "important action-button" %>
-          <%= submit_tag 'Just send me an email', class: "no_important action-button"%>
+          <%= submit_tag 'Create and account', class: "important" %>
+          <%= submit_tag 'Just send me an email', class: "no_important"%>
         <% else %>
           <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
           <%= submit_tag 'Done', class: "action-button" %>
