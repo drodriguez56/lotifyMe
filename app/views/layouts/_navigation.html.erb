@@ -1,85 +1,64 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-<nav class="middle top-bar hide-for-small navi" data-topbar role="navigation">
-  <section class="middle tab-bar-section">
-   <a href="/"> <img src="<%= asset_path 'lotifyme.png' %>" class="logo"></img></a>
-  </section>
-
- <section class="top-bar-section">
-  <ul class="right">
-      <% if !session[:user_id] %>
-          <li><%= link_to 'Login', login_path %></li>
-          <li><%= link_to 'Sign Up', signup_path %></li>
-     <% else %>
-     <% @session_id = session[:user_id] %>
-        <% if User.find(@session_id).username %>
-          <li id='username'><%= User.find(@session_id).username %></li>
-        <% end %>
-          <li class='navrigth'><%= link_to 'My Profile', user_path(@session_id) %></li>
-          <li class='navrigth'><%= link_to 'Edit Profile', edit_user_path(@session_id) %></li>
-          <li><%= link_to 'Logout', logout_path %></li>
-          <%= User.find(@session_id).username %>
-      </a><li>
-        <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-          <li><%= link_to 'MY PROFILE', user_path(@session_id) %></li>
-          <li><%= link_to 'EDIT PROFILE', edit_user_path(@session_id) %></li>
-          <li><%= link_to 'LOGOUT', logout_path %></li>
-        </ul>
-     <% end %>
-   </ul>
-  </section>
-</nav>
-
-<nav class="tab-bar show-for-small">
-  <a class="left-off-canvas-toggle menu-icon" aria-expanded="false">
-    <span></span>
-  </a>
-  <section class="middle tab-bar-section">
+    <nav class="tab-bar show-for-small">
+      <a class="left-off-canvas-toggle menu-icon" aria-expanded="false">
+        <span></span>
+      </a>
+    </nav>
+    <section class="middle tab-bar-section">
     <a href="/"> <img src="<%= asset_path 'lotifyme.png' %>" class="logo2"></img></a>
   </section>
+  <aside class="left-off-canvas-menu">
+        <ul class="off-canvas-list">
+          <% if !session[:user_id] %>
+            <li><label class="first">blabla</label></li>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Login', login_path %></li>
+            <li><%= link_to 'Sign up', signup_path %></li>
+          <% else %>
+            <% @session_id = session[:user_id] %>
+            <li><label class="first"><%= User.find(@session_id).username %></label></li>
+            <li><%= link_to 'My picks', user_path(@session_id) %></li>
+            <li><%= link_to 'Edit profile', edit_user_path(@session_id) %></li>
+            <li><%= link_to 'Logout', logout_path %></li>
+          <% end %>
+        </ul>
+        <hr>
+        <ul class="off-canvas-list">
+          <li><label class="first">Learn</label></li>
+          <li><a href="/">Features</a></li>
+          <li><a href="/login">FAQ</a></li>
+        </ul>
+    </aside>
+    <nav class="top-bar hide-for-small height" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+        <h1><a href="/"><img src="<%= asset_path 'lotifyme.png' %>" class="logo2"></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <% if !session[:user_id] %>
+              <li><%= link_to 'Login', login_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to 'Sign Up', signup_path %></li>
+         <% else %>
+         <% @session_id = session[:user_id] %>
+            <% if User.find(@session_id).username %>
+              <li><a href="" id="username"><%= User.find(@session_id).username %></li></a>
+            <% end %>
+              <li class='navrigth'><%= link_to 'My Picks', user_path(@session_id) %></li>
+              <li class="divider"></li>
+              <li class='navrigth'><%= link_to 'Edit Profile', edit_user_path(@session_id) %></li>
+              <li class="divider"></li>
+              <li><%= link_to 'Logout', logout_path %></li>
+          </a><li>
+         <% end %>
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="business/services.html" class="">About</a>
+          <ul class="dropdown">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Team</a></li>
+          </ul>
+        </li>
+    </section>
 </nav>
-<aside class="left-off-canvas-menu">
-  <ul class="off-canvas-list">
-    <li class="set-width">
-     <% if !session[:user_id] %>
-        <li>
-          <div align="left"><img src="<%= asset_path 'key83.png' %>" class="key_icon"></img></div>
-          <div align="right" class="login_row"><%= link_to 'LOGIN', login_path %></div>
-        </li>
-
-        <li>
-          <div align="left"><img src="<%= asset_path 'create1.png' %>" class="create_icon"></img></div>
-          <div align="right" class="login_row"><%= link_to 'SIGN UP', signup_path %></div>
-        </li>
-
-        <li>
-          <div align="left"><img src="<%= asset_path 'home87.png' %>" class="home_icon"></img></div>
-          <div align="right" class="login_row"><%= link_to 'HOME', root_path %></div>
-        </li>
-      <% else %>
-      <% @session_id = session[:user_id] %>
-      <li class="active" >
-        <a href="/users/<%= session[:user_id] %>"><%= User.find(@session_id).username %></a>
-      </li>
-
-      <li>
-       <div align="left"><img src="<%= asset_path 'jumping28.png' %>" class="jumping_icon"></img></div>
-       <div align="right" class="login_row"> <%= link_to 'MY PROFILE', user_path(@session_id) %></div>
-      </li>
-
-      <li>
-        <div align="left"><img src="<%= asset_path 'tools6.png' %>" class="tool_icon"></img></div>
-        <div align="right" class="login_row"><%= link_to 'EDIT PROFILE', edit_user_path(@session_id) %></div>
-      </li>
-
-      <li>
-        <div align="left"><img src="<%= asset_path 'exit16.png' %>" class="exit_icon"></img></div>
-        <div align="right" class="login_row"><%= link_to 'LOGOUT', logout_path %></div>
-      </li>
-
-    <% end %>
-    </li>
-  </ul>
-</aside>
-
