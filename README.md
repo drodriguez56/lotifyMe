@@ -21,9 +21,9 @@ Pending tasks
 
  -  Setup scheduler
 
- -  Write method that handles searching users after a draw and sends emails that apply (Done # needs testing)
+ -  Write method that handles searching users after a draw and sends emails that apply (**Done # needs testing**)
 
- -  Reduce the amount of data pulled from lottos due to database storage. (done)
+ -  Reduce the amount of data pulled from lottos due to database storage. (**done**)
 
  -  Change input numbers so it accepts single digits 1 vs 01
 
@@ -33,7 +33,7 @@ Pending tasks
 
  -  Write more descriptive emails.
 
- -  Set logo on the tab of the browser
+ -  Set logo on the tab of the browser (**Done**)
 
  -  Fix login and signup from home
 
@@ -41,6 +41,6 @@ Pending tasks
 
  -  Improve user experience (design)
 
- -  Fix nav bar display when user has username
+ -  Fix nav bar display when user has username (**Done**)
 
   -  Setup input numbers box to change depending on the amount of numbers needed to play. ex: pick10 = 10 numbers, powerball = 6 numbers
