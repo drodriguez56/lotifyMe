@@ -19,7 +19,7 @@ A web-app that allows you to:
 Pending tasks
 ======
 
- -  Setup scheduler
+ -  Setup heroku scheduler
 
  -  Write method that handles searching users after a draw and sends emails that apply (**Done # needs testing**)
 
@@ -35,7 +35,7 @@ Pending tasks
 
  -  Set logo on the tab of the browser (**Done**)
 
- -  Fix login and signup from home
+ -  **Fix login and signup from home** (***most importsnt***)
 
  -  Setup security tokens on swift
 
@@ -52,3 +52,11 @@ Pending tasks
  - Display view to the user when finish uploading one pick to confirm information correct.
  
  - Add option of creating more than one pick at a time for the same day of draw
+ 
+ - Change display of picks on my picks list for user to know when a pick is pending for drawing
+ 
+ - Add footer of copyrights
+ 
+ - Create About, FAQ, Contact us and Team pages 
+ 
+ - Impruve mobile display
