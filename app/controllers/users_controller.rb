@@ -6,12 +6,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.find_or_create_by(email: user_params[:email])
-    if @user.update(user_params)
-      if @user.created_at.time.min - Time.now.min < 1 || !@user.active
-        Notifier.welcome_email(@user).deliver
-      end
+    @user = User.new(user_params)
+    if @user.save && @user.authenticate(user_params[:password])
       @user.active = true; @user.save
+      Notifier.welcome_email(@user).deliver
       respond_to do |format|
         format.json { render json: ActiveSupport::JSON.encode(@user), status:200, location: @user}
         format.html {
@@ -35,13 +33,6 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      if Time.now.min - @user.created_at.time.min < 1 || !@user.active
-        Notifier.welcome_email(@user).deliver
-      end
-      if !@user.active
-        @user.active = true; @user.save
-        session[:user_id] = @user.id
-      end
       flash[:success] = "Profile updated."
        respond_to do |format|
         format.json { render json: 'this', status:200 }

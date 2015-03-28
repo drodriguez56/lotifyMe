@@ -250,11 +250,11 @@ a.previous:hover{
   color: white;
   font-size: 1em;
 }
-.no_important{
+/*.no_important{
   background-color:rgba(51, 212, 255, 0.7) !important;
   color: white;
   font-size: 0.7em;
-}
+}*/
 .important:hover{
   box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(71, 151, 255);
   cursor: pointer;
