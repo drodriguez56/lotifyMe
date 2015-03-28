@@ -1,10 +1,10 @@
 class PicksController < ApplicationController
-  before_action :require_login, except: [:create, :index, :destroy]
+  before_action :require_login
   before_action :join_number
 
   def index
-    if User.find_by(email: params[:pick][:email])
-      @picks = User.find_by(email: params[:pick][:email]).picks
+    if User.find(session[:user_id])
+      @picks = User.find(session[:user_id]).picks
       respond_to do |format|
           format.json { render json: ActiveSupport::JSON.encode(@picks), status:200 }
         end
@@ -15,13 +15,9 @@ class PicksController < ApplicationController
     end
   end
   def create
-    @user = User.find_by(email: params[:pick][:email])
-    if !@user
-      @user = User.create(email: params[:pick][:email], password: (0...20).map { ('a'..'z').to_a[rand(26)] }.join)
-      session[:user_id] = @user.id
-    end
     @pick = Pick.new(pick_params)
     if @pick.save
+      @user = User.find(session[:user_id])
       user_picks_before_push = @user.picks.count
       @user.picks << @pick
       user_picks_after_push = @user.picks.count
@@ -30,33 +26,23 @@ class PicksController < ApplicationController
           format.json { render json: 'fail to create pick', status:400 }
           format.html {
             flash[:error] = 'You have already created this Pick Number, please try again.'
-              redirect_to root_path
+              redirect_to user_path(@user)
             }
         end
       else
-        if params[:commit]=="Create and account"
-          redirect_to edit_user_path(@user.id), locals: {email: params[:email]}
-        else
-          if !@user.active
-            @pick.send_email
-            flash[:notice] = "Your result will be e-mailed to  #{@user.email}. Thanks for using LotifyMe."
-          else
-            flash[:notice] = "Pick created! Check you profile or create a new one."
-          end
           respond_to do |format|
             format.json { render json: ActiveSupport::JSON.encode(@pick), status:200 }
             format.html {
-              redirect_to root_path
+              redirect_to user_path(@user)
             }
           end
-        end
       end
     else
        respond_to do |format|
           format.json { render json: 'fail to create pick', status:400 }
             format.html {
               flash[:error] = 'Failed to create entry... please try again.'
-              redirect_to root_path
+              redirect_to user_path(@user)
             }
        end
      end
