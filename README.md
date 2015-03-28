@@ -35,7 +35,7 @@ Pending tasks
 
  -  Set logo on the tab of the browser (**Done**)
 
- -  **Fix login and signup from home** (***most importsnt***)
+ -  **Fix login and signup from home (change user flow. first login os signup and then create pick is available)** (***most importsnt***)
 
  -  Setup security tokens on swift
 
