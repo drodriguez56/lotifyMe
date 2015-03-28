@@ -35,7 +35,8 @@ Pending tasks
 
  -  Set logo on the tab of the browser (**Done**)
 
- -  **Fix login and signup from home (change user flow. first login os signup and then create pick is available)** (***most importsnt***)
+ -  Fix login and signup from home (change user flow. first login os signup and then create pick is available) (**Done**) 
+ -  Fix damage to swift app code logic due to new user flow on creation of user an picks on API and web ()
 
  -  Setup security tokens on swift
 
