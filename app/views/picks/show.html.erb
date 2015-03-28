@@ -44,19 +44,9 @@
     </fieldset>
 
     <fieldset class = 'field-section'>
-        <% if !session[:user_id] %>
-          <h2 class="fs-title">LotifyMe</h2>
-          <h3 class="fs-subtitle">Enter Your Email:</h3>
-          <%= email_field_tag 'pick[email]', nil, placeholder: 'email' %>
-          <%= submit_tag 'Create and account', class: "important" %>
-          <%= submit_tag 'Just send me an email', class: "no_important"%>
-        <% else %>
-          <%= hidden_field_tag 'pick[email]',"#{User.find(session[:user_id]).email}"%>
-          <%= submit_tag 'Done', class: "action-button" %>
-        <% end %>
+        <%= submit_tag 'Done', class: "action-button" %>
         <a href="#" class="previous">Previous</a>
     </fieldset>
-
     <% end %>
   </div>
 </div>
