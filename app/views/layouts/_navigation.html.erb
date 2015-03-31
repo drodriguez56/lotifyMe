@@ -2,14 +2,14 @@
       <a class="left-off-canvas-toggle menu-icon" aria-expanded="false">
         <span></span>
       </a>
+      <section class="middle tab-bar-section logo-mobile">
+        <a href="/"> <img src="<%= asset_path 'lotifyme.png' %>" class="logo2"></img> <span class="beta">Beta</span></a>
+      </section>
     </nav>
-    <section class="middle tab-bar-section">
-    <a href="/"> <img src="<%= asset_path 'lotifyme.png' %>" class="logo2"></img> <span class="beta">Beta</span></a>
-  </section>
   <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
           <% if !session[:user_id] %>
-            <li><label class="first">blabla</label></li>
+            <li><label class="first">Welcome</label></li>
             <li><%= link_to 'Home', root_path %></li>
             <li><%= link_to 'Login', login_path %></li>
             <li><%= link_to 'Sign up', signup_path %></li>
@@ -37,28 +37,17 @@
       <section class="top-bar-section">
         <ul class="right">
           <% if !session[:user_id] %>
-              <li><%= link_to 'Login', login_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to 'Sign Up', signup_path %></li>
+              <li class = 'nav_list'><%= link_to 'Login', login_path %></li>
+              <li class = 'nav_list'><%= link_to 'Sign Up', signup_path %></li>
          <% else %>
          <% @session_id = session[:user_id] %>
             <% if User.find(@session_id).username %>
-              <li><a href="" id="username"><%= User.find(@session_id).username %></li></a>
+              <li class = 'nav_list'><a href="" id="username"><%= User.find(@session_id).username %></li></a>
             <% end %>
-              <li class='navrigth'><%= link_to 'My Picks', user_path(@session_id) %></li>
-              <li class="divider"></li>
-              <li class='navrigth'><%= link_to 'Edit Profile', edit_user_path(@session_id) %></li>
-              <li class="divider"></li>
+              <li class='navrigth nav_list'><%= link_to 'My Picks', user_path(@session_id) %></li>
+              <li class='navrigth nav_list'><%= link_to 'Edit Profile', edit_user_path(@session_id) %></li>
               <li><%= link_to 'Logout', logout_path %></li>
           </a><li>
          <% end %>
-        <li class="divider"></li>
-        <li class="has-dropdown">
-          <a href="#">About</a>
-          <ul class="dropdown">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Team</a></li>
-          </ul>
-        </li>
     </section>
 </nav>
