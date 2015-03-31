@@ -29,7 +29,7 @@ html,body{
 }
 nav{
   height: 100px !important;
-  background-color: rgba(0, 0, 0, 0.2) !important;
+  background-color: rgba(0, 0, 0, 0.0) !important;
 }
 .right .nav_list{
   margin-top: 50px;
@@ -41,6 +41,7 @@ nav{
 li.miltip{
   display: inline-block !important;
 }
+
 #progressbar {
   padding-top: 1em;
   overflow: hidden;
@@ -316,6 +317,32 @@ h1{
 /*.button.medium.default.radius.nav-button{
   background-color: rgb(67,242,255);
 }*/
+.edit-button{
+  width: 200px !important;
+  font-size: 1.5em;
+  font-family: font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  color: white;
+  background-color:
+  blue;
+  height: 50px;
+  border-radius: 5px !important;
+}
+.desc-field{
+  text-align: left;
+  font-size: 1.5em !important;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+}
+.imput-field{
+  height: 50px !important;
+  font-size: 2em !important;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+}
+.desc-create{
+  text-align: left;
+  font-size: 1.5em !important;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+}
+
 
 .pick-items {
   border-bottom-style: double;
@@ -400,6 +427,28 @@ h3{
       height: 60px;
     }
 }
+
+@media only screen and (max-width: 700px) {
+      .desc-field{
+        display: none;
+      }
+      .imput-field{
+        height: 90px !important;
+        font-size: 2em !important;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+      }
+      .edit-button{
+        width: 100% !important;
+        font-size: 2em;
+        font-family: font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        color: white;
+        background-color:
+        blue;
+        height: 100px;
+        border-radius: 0 !important;
+      }
+
+  }
 .trash-pic{
   margin-top: -20px !important;
 }

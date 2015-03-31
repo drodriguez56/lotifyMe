@@ -9,13 +9,13 @@
       </div>
     <% flash[:failure] = nil %>
     <% end %>
-    <p>Login Here</p>
+    <p class="desc-field">Login Here</p>
     <%= form_tag(controller: "sessions", action: "login", method: "get") %>
       <div class="field">
-      	<%= text_field_tag "user_input", nil, :placeholder => "Username or Email" %>
+      	<%= text_field_tag "user_input", nil, :placeholder => "Username or Email", class:"imput-field"  %>
       </div>
     	<div class="actions">
-      	<%= password_field_tag "password", nil, :placeholder => "Password" %>
+      	<%= password_field_tag "password", nil, :placeholder => "Password", class:"imput-field" %>
       </div>
       <div class="actions">
     	   <%= submit_tag "Login", class: "button medium default radius nav-button" %>
