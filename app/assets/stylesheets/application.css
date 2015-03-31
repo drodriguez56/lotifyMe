@@ -20,19 +20,25 @@ input{
   border-color: rgba(83, 83, 83, 0.2) !important;
   text-align: center;
 }
-html{
- font-family: 'Helvetica-Neue' !important;
-}
-body {
+html,body{
+  font-family: 'Helvetica-Neue' !important;
+  height: 100%;
+  width: 100%;
+  margin: 0;
   background-color: rgb(51, 151, 218);
 }
 nav{
-  color: rgb(51, 151, 218);
+  height: 100px !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
 }
-top-bar-section{
-  background-color: rgb(71, 151, 255);
+.right .nav_list{
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
-.miltip{
+.right a{
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+li.miltip{
   display: inline-block !important;
 }
 #progressbar {
@@ -267,9 +273,6 @@ a.previous:hover{
   width: 100px !important;
   margin: 0 auto;
 }
-li{
-  padding: 1px !important;
-}
 /*.button.medium.default.radius.nav-button{
   background-color: #5da423;
 }*/
@@ -396,14 +399,13 @@ h3{
     .pick-items{
       height: 60px;
     }
-
 }
 .trash-pic{
   margin-top: -20px !important;
 }
 
 ul.off-canvas-list li a:hover {
-      background: none;
+      background: none!important;
 }
 li{
   padding: 0 !important;
