@@ -14,12 +14,12 @@
 <div class="form-content">
 <center>
   <div class="row">
-    <p> Create an Account Here:</p>
+    <p class = 'desc-create'> Create an Account</p>
     <div class="field">
-      <%= f.text_field :email, placeholder: "Email" %>
+      <%= f.text_field :email, placeholder: "Email", class:"imput-field"   %>
     </div>
     <div class="field">
-      <%= f.password_field :password, placeholder: "Password" %>
+      <%= f.password_field :password, placeholder: "Password", class:"imput-field"   %>
     </div>
     <div class="actions">
       <%= submit_tag 'signup', class: "button medium default radius nav-button" %>

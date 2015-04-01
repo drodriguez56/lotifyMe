@@ -16,33 +16,33 @@
       <% email = nil if local_assigns[:email].nil? %>
       <% if @user.active %>
         <div class="field">
-          <p>Username</p>
-          <%= f.text_field :username, placeholder: "Name" %>
+          <p class = 'desc-field'>Username</p>
+          <%= f.text_field :username, placeholder: "Name" , class:"imput-field"%>
         </div>
       <% end %>
       <div class="field">
-        <p>Email</p>
+        <p class = 'desc-field'>Email</p>
         <% if email %>
           <%= f.text_field :email, value: email %>
         <% else %>
-          <%= f.text_field :email, placeholder: "Email" %>
+          <%= f.text_field :email, placeholder: "Email",class:"imput-field" %>
         <% end %>
       </div>
       <% if @user.active %>
         <div class="field">
-          <p>Phone</p>
-          <%= f.text_field :phone, placeholder: "Phone" %>
+          <p class = 'desc-field'>Phone</p>
+          <%= f.text_field :phone, placeholder: "Phone",class:"imput-field" %>
         </div>
       <% end %>
       <div class="field">
-        <p>Password</p>
-        <%= f.password_field :password, placeholder: "Password" %>
+        <p class = 'desc-field'>Password</p>
+        <%= f.password_field :password, placeholder: "Password",class:"imput-field" %>
       </div>
       <div class="actions">
         <% if @user.active %>
-         <%= submit_tag 'edit', class: "button medium default radius nav-button" %>
+         <%= submit_tag 'Save', class: "edit-button" %>
         <% else %>
-          <%= submit_tag 'create account', class: "button medium default radius nav-button" %>
+          <%= submit_tag 'create account', class: "edit-button" %>
         <% end -%>
       </div>
    </div>
