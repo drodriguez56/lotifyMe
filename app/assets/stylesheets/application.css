@@ -329,16 +329,10 @@ h1{
   height: auto;
   margin-top: -2em;
 }
-<<<<<<< HEAD
-/*.button.medium.default.radius.nav-button{
-  background-color: rgb(67,242,255);
-}*/
-=======
->>>>>>> Add changes on pick history styling
 .edit-button{
   width: 200px !important;
   font-size: 1.5em;
-  font-family: font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   color: white;
   background-color:
   blue;
@@ -349,7 +343,6 @@ h1{
   text-align: left;
   font-size: 1.5em !important;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
-<<<<<<< HEAD
 }
 .imput-field{
   height: 50px !important;
@@ -365,8 +358,6 @@ h1{
 
 .pick-items {
   border-bottom-style: double;
-=======
->>>>>>> Add changes on pick history styling
 }
 .imput-field{
   height: 50px !important;
