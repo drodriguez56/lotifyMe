@@ -31,6 +31,10 @@ nav{
   height: 100px !important;
   background-color: rgba(0, 0, 0, 0.0) !important;
 }
+p{
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+  color: white;
+}
 .right .nav_list{
   margin-top: 50px;
   background-color: rgba(0, 0, 0, 0) !important;
@@ -41,7 +45,24 @@ nav{
 li.miltip{
   display: inline-block !important;
 }
-
+.pick-num{
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+  font-size: 1em;
+  text-align: left;
+  margin-left: 20px;
+  font-weight: 700;
+}
+.pick-date{
+ font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+ text-align: left;
+ margin-left: 20px;
+ color: grey !important;
+}
+.pick-items{
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
 #progressbar {
   padding-top: 1em;
   overflow: hidden;
@@ -238,6 +259,11 @@ a.action-button:hover{
 #msform input{
   min-width: 100% !important;
 }
+.pending{
+  font-size: 0.7em;
+  color: grey;
+  font-weight: 300;
+}
 .previous{
   position: relative;
   border-style: none !important;
@@ -257,11 +283,6 @@ a.previous:hover{
   color: white;
   font-size: 1em;
 }
-/*.no_important{
-  background-color:rgba(51, 212, 255, 0.7) !important;
-  color: white;
-  font-size: 0.7em;
-}*/
 .important:hover{
   box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(71, 151, 255);
   cursor: pointer;
@@ -274,18 +295,12 @@ a.previous:hover{
   width: 100px !important;
   margin: 0 auto;
 }
-/*.button.medium.default.radius.nav-button{
-  background-color: #5da423;
-}*/
-p{
-  color:white;
-}
 .centered{
   text-align: center !important;
 }
 .user-picks{
   background-color: white;
-  width: 80%;
+  width: 95%;
   color: black;
   border: 0 none;
   border-radius: 20px;
@@ -314,9 +329,12 @@ h1{
   height: auto;
   margin-top: -2em;
 }
+<<<<<<< HEAD
 /*.button.medium.default.radius.nav-button{
   background-color: rgb(67,242,255);
 }*/
+=======
+>>>>>>> Add changes on pick history styling
 .edit-button{
   width: 200px !important;
   font-size: 1.5em;
@@ -331,6 +349,7 @@ h1{
   text-align: left;
   font-size: 1.5em !important;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+<<<<<<< HEAD
 }
 .imput-field{
   height: 50px !important;
@@ -346,7 +365,20 @@ h1{
 
 .pick-items {
   border-bottom-style: double;
+=======
+>>>>>>> Add changes on pick history styling
 }
+.imput-field{
+  height: 50px !important;
+  font-size: 2em !important;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+}
+.desc-create{
+  text-align: left;
+  font-size: 1.5em !important;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+}
+
 .pick-info{
   margin-top: -1em;
 }
@@ -356,13 +388,6 @@ h3{
 .number-row{
   font-size: 18pt;
 }
-/*.left-off-canvas-menu
-{
-  background: none repeat scroll 0% 0% white !important;
-}*/
-/*ul.off-canvas-list li a{
-  color: black !important;
-}*/
 .exit_icon{
   height: 35px;
   width: auto;
@@ -415,17 +440,42 @@ h3{
 .height{
   height: 45px;
 }
-@media screen and (max-width: 600px) {
-   .number-row{
-      font-size: 10pt !important;
-    }
-    .pick-info{
-      font-size: 9pt !important;
-      margin-top: -20px !important;
-    }
-    .pick-items{
-      height: 60px;
-    }
+
+@media only screen and (max-width: 700px) {
+  .number-row{
+    font-size: 12pt !important;
+  }
+  .pick-date{
+    font-size: 9pt !important;
+    margin-top: -20px !important;
+  }
+  .trash-pic{
+    position: relative;
+    top: 30px;
+    left: 20px;
+  }
+  .pick-items{
+    height: 80px;
+  }
+  .desc-field{
+    display: none;
+  }
+  .imput-field{
+    height: 90px !important;
+    font-size: 2em !important;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+  }
+  .edit-button{
+    width: 100% !important;
+    font-size: 2em;
+    font-family: font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: white;
+    background-color:
+    blue;
+    height: 100px;
+    border-radius: 0 !important;
+  }
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -450,7 +500,9 @@ h3{
 
   }
 .trash-pic{
-  margin-top: -20px !important;
+  margin-top: -50px !important;
+  margin-right: 40px;
+  float: right;
 }
 
 ul.off-canvas-list li a:hover {
