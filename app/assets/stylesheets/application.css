@@ -536,3 +536,30 @@ li{
   left: -10px;
   font-weight: 700 !important;
 }
+/* landing css*/
+.phone-frame{
+  width: 250px;
+}
+.phone{
+  position: relative;
+}
+.inner-phone{
+  position: absolute;
+  margin-left: 22px;
+  margin-top: 79px;
+  width: 208px;
+  height:367px;
+}
+.main-phrase{
+  font-weight: 700;
+  color: white;
+  letter-spacing: 4px;
+  font-size: 4em;
+  text-shadow: 1px 1px #E83E1F;
+  /*line-height: 95%;*/
+}
+.appstore{
+  width: 300px;
+}
+@media only screen and (max-width: 700px){
+}

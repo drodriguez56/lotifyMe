@@ -2,9 +2,9 @@
       <a class="left-off-canvas-toggle menu-icon" aria-expanded="false">
         <span></span>
       </a>
-      <section class="middle tab-bar-section logo-mobile">
+ <!--      <section class="middle tab-bar-section logo-mobile">
         <a href="/"> <img src="<%= asset_path 'lotifyme.png' %>" class="logo2"></img> <span class="beta">Beta</span></a>
-      </section>
+      </section> -->
     </nav>
   <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
@@ -30,13 +30,14 @@
     </aside>
     <nav class="top-bar hide-for-small height" data-topbar>
       <ul class="title-area">
-        <li class="name">
+<!--         <li class="name">
         <h1><a href="/"><img src="<%= asset_path 'lotifyme.png' %>" class="logo2"><span class='beta' >Beta</span></h1>
-        </li>
+        </li> -->
       </ul>
       <section class="top-bar-section">
         <ul class="right">
           <% if !session[:user_id] %>
+              <li class = 'nav_list'><%= link_to 'Home', root_path %></li>
               <li class = 'nav_list'><%= link_to 'Login', login_path %></li>
               <li class = 'nav_list'><%= link_to 'Sign Up', signup_path %></li>
          <% else %>
