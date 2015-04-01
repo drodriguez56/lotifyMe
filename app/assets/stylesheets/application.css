@@ -459,7 +459,7 @@ h3{
   .edit-button{
     width: 100% !important;
     font-size: 2em;
-    font-family: font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     color: white;
     background-color:
     blue;
@@ -468,28 +468,6 @@ h3{
   }
 
 }
-
-@media only screen and (max-width: 700px) {
-      .desc-field{
-        display: none;
-      }
-      .imput-field{
-        height: 90px !important;
-        font-size: 2em !important;
-        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
-      }
-      .edit-button{
-        width: 100% !important;
-        font-size: 2em;
-        font-family: font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-        color: white;
-        background-color:
-        blue;
-        height: 100px;
-        border-radius: 0 !important;
-      }
-
-  }
 .trash-pic{
   margin-top: -50px !important;
   margin-right: 40px;
