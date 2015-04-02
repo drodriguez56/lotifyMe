@@ -44,6 +44,36 @@ $( document ).ready(function() {
         previous_fs.css({'opacity': opacity});
         animating = false;
   });
+
+  $(".appstore-link").click(function(event){
+    event.preventDefault();
+    // $('.hide-if-app-click').hide(0);
+    // $('.phone-div').removeClass('large-6').addClass('large-12')
+    // $('.background-phone').animate({
+    //   opacity: 100
+    // }, 2000);
+
+    $('.appstore-link').animate({
+      opacity: 0
+    },500).hide(0)
+    $('.email-form-1').delay(500).show(0).animate({
+      opacity: 100
+    },2000)
+  });
+
+  $(".submit-email-1").click(function(event){
+    event.preventDefault();
+    $('.background-phone').animate({
+      opacity: 100
+    }, 2000);
+    $('.email-form-1').animate({
+      opacity: 0
+    },500).hide(0)
+    $('.appstore-link').animate({
+      opacity: 100
+    },500).show(0)
+
+  });
 });
 
 
