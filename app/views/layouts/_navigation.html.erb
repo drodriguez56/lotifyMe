@@ -2,9 +2,6 @@
       <a class="left-off-canvas-toggle menu-icon" aria-expanded="false">
         <span></span>
       </a>
- <!--      <section class="middle tab-bar-section logo-mobile">
-        <a href="/"> <img src="<%= asset_path 'lotifyme.png' %>" class="logo2"></img> <span class="beta">Beta</span></a>
-      </section> -->
     </nav>
   <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
@@ -27,12 +24,9 @@
           <li><a href="/">Features</a></li>
           <li><a href="/login">FAQ</a></li>
         </ul>
-    </aside>
-    <nav class="top-bar hide-for-small height" data-topbar>
+  </aside>
+  <nav class="top-bar hide-for-small height" data-topbar>
       <ul class="title-area">
-<!--         <li class="name">
-        <h1><a href="/"><img src="<%= asset_path 'lotifyme.png' %>" class="logo2"><span class='beta' >Beta</span></h1>
-        </li> -->
       </ul>
       <section class="top-bar-section">
         <ul class="right">
@@ -48,7 +42,7 @@
               <li class='navrigth nav_list'><%= link_to 'My Picks', user_path(@session_id) %></li>
               <li class='navrigth nav_list'><%= link_to 'Edit Profile', edit_user_path(@session_id) %></li>
               <li class='nav_list'><%= link_to 'Logout', logout_path %></li>
-          </a><li>
          <% end %>
+       </ul>
     </section>
 </nav>
