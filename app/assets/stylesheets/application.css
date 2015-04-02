@@ -516,29 +516,116 @@ li{
 }
 /* landing css*/
 .phone-frame{
-  width: 250px;
+  width: 280px;
+}
+.landing{
+  height: 100% !important;
 }
 .phone{
   position: relative;
 }
 .inner-phone{
   position: absolute;
-  margin-left: 22px;
-  margin-top: 79px;
-  width: 208px;
-  height:367px;
+  margin-left: 25px;
+  margin-top: 89px;
+  width: 233px;
+  height:410px;
 }
 .main-phrase{
   font-weight: 700;
   color: white;
   letter-spacing: 4px;
-  font-size: 4em;
+  font-size: 5em;
   text-shadow: 1px 1px #E83E1F;
   margin: 0;
   /*line-height: 95%;*/
 }
 .appstore{
-  width: 300px;
+  width: 250px;
+}
+.use-web-link{
+  width: 200px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: #E83E1F;
+  border-radius: 10px;
+}
+.web-link-text{
+  padding-top: 10px;
+  font-size: 0.8em;
+}
+.explain{
+  margin-top: 20px;
+}
+.get-email{
+  position: relative;
+  top: 150px;
+  width: 160px;
+  margin-left: 5px;
+}
+.background-phone{
+  position: relative;
+  top: -493px;
+  width: 234px;
+  left: 2px !important;
+  height:410px;
+  margin: 0 auto;
+  background-color: #FFB040;
+  opacity: 0;
+}
+.or{
+  font-size: 0.9em;
+  color: rgba(255,255,255,0.7);
+}
+.phone-div{
+  height:600px;
+}
+.phone-email{
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+  font-size: 1.2em;
+  border-radius: 10px !important;
+  border-style: none !important;
+  border-color: none !important;
+  border-width: 0 !important;
+}
+.email-1{
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+  font-size: 1.2em;
+  width: 300px !important;
+  margin:0 auto !important;
+  border-radius: 10px !important;
+  border-style: none !important;
+  border-color: none !important;
+  border-width: 0 !important;
+}
+.email-form-1{
+  opacity: 0;
+  display: none;
+}
+.submit-email-1{
+  /*position: absolute;*/
+  width: 60px;
+  height: 30px;
+  color: white;
+  background-color: #17A844;
+  border-style: none;
+  border-radius: 5px !important;
+  margin-top: 10px;
+}
+.submit-email{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  color: black;
+  background-color: #E83E1F;
+  border-style: none;
+  border-radius: 50% !important;
+  margin-top: -57px;
+  margin-left: 70px;
+}
+.phone-content{
+  padding-top: 50px;
+  color: black;
 }
 /*off canvas menu*/
 .left-off-canvas-menu{
