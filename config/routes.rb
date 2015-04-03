@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :picks, except: :new
-
+  match 'emails/create' => 'emails#create', :via => :post
   get  'login',  to: 'sessions#login'
   post 'login',  to: 'sessions#begin'
   get  'logout', to: 'sessions#end'

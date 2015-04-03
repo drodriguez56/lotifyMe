@@ -6,14 +6,18 @@
       <a class = 'appstore-link' href="#"><%= image_tag("appstore.png", class:"appstore") %></a>
       <div class='email-form-1'>
         <p>We are working hard on our IOS app, please leave us you e-mail and we will notify you when is ready</p>
-      <form class ='get-email-form-1' action="">
+        <%= form_tag('email/create', method: 'post', class:'get-email-form-1') do %>
+            <%= email_field(:email,nil ,class:'email-1',placeholder:'email') %>
+            <%= submit_tag("send", class:'submit-email-1') %>
+        <%end%>
+     <!--  <form class ='get-email-form-1' action="">
               <input class ='email-1' type="email" placeholder='email'></input>
               <input class = 'submit-email-1' type="submit" value='send'></input>
-          </form>
+          </form> -->
       </div>
       <p class= "or"> - or - </p>
       <div>
-      <a href="/signup"><div class = 'use-web-link'><p class='web-link-text'>Use it on Web</p></div></a>
+      <div class = 'use-web-link'><a href="/signup"><p class='web-link-text'>Use it on Web</p></a></div>
       <p class='explain'>It's simple, tell us your ticket number and we will notify you if you won and how much.</p>
       </div>
     </div>
@@ -23,13 +27,8 @@
       <%= image_tag("iphone-frame.png", class:"phone-frame") %>
       </div>
       <div class='background-phone'>
-        <p class='phone-content'> thank you</p>
-        <!-- <div class ='get-email'>
-          <form class ='get-email-form' action="">
-              <input class ='phone-email' type="email" placeholder='email'></input>
-              <input class = 'submit-email' type="submit" value='send'></input>
-          </form>
-        </div> -->
+        <p class='phone-content'> <span class='awesome'>AWESOME</span> <br> we will let you know as soon as we are on the stores</p>
+        <iframe class = 'gif' src="//giphy.com/embed/UOvh7Fw9fo7KM?html5=true" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
       </div>
     </div>
   </div>
