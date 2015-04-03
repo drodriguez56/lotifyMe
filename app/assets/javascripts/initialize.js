@@ -63,15 +63,29 @@ $( document ).ready(function() {
 
   $(".submit-email-1").click(function(event){
     event.preventDefault();
-    $('.background-phone').animate({
-      opacity: 100
-    }, 2000);
-    $('.email-form-1').animate({
-      opacity: 0
-    },500).hide(0)
-    $('.appstore-link').animate({
-      opacity: 100
-    },500).show(0)
+    var $target =  $(event.target);
+    var data = $('.email-1').val();
+    $.ajax({
+      url:"/emails/create",
+      type: 'POST',
+      data: {email:{email: data}}
+    }).done(function(response){
+      $(".email-1").removeClass("color-mail");
+      $(".email-1").val(" ")
+      if (response == '200'){
+        $('.background-phone').animate({
+            opacity: 100
+          }, 2000);
+          $('.email-form-1').animate({
+            opacity: 0
+          },500).hide(0);
+          $('.appstore-link').animate({
+            opacity: 100
+          },500).show(0);
+        }else{
+          $(".email-1").addClass("color-mail");
+        }
+    });
 
   });
 });

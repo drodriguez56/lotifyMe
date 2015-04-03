@@ -557,12 +557,6 @@ li{
 .explain{
   margin-top: 20px;
 }
-.get-email{
-  position: relative;
-  top: 150px;
-  width: 160px;
-  margin-left: 5px;
-}
 .background-phone{
   position: relative;
   top: -493px;
@@ -570,7 +564,8 @@ li{
   left: 2px !important;
   height:410px;
   margin: 0 auto;
-  background-color: #FFB040;
+  background-color: black;
+  /*background-color: #72FF97;*/
   opacity: 0;
 }
 .or{
@@ -579,14 +574,6 @@ li{
 }
 .phone-div{
   height:600px;
-}
-.phone-email{
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
-  font-size: 1.2em;
-  border-radius: 10px !important;
-  border-style: none !important;
-  border-color: none !important;
-  border-width: 0 !important;
 }
 .email-1{
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
@@ -597,6 +584,9 @@ li{
   border-style: none !important;
   border-color: none !important;
   border-width: 0 !important;
+}
+.great-email{
+  font-weight: 600;
 }
 .email-form-1{
   opacity: 0;
@@ -612,20 +602,17 @@ li{
   border-radius: 5px !important;
   margin-top: 10px;
 }
-.submit-email{
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  color: black;
-  background-color: #E83E1F;
-  border-style: none;
-  border-radius: 50% !important;
-  margin-top: -57px;
-  margin-left: 70px;
+.submit-email-1:hover{
+  cursor: pointer;
 }
 .phone-content{
-  padding-top: 50px;
-  color: black;
+  padding-top: 20px;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+}
+.awesome{
+  font-size: 2.5em;
 }
 /*off canvas menu*/
 .left-off-canvas-menu{
@@ -641,4 +628,14 @@ label{
   font-size: 1.5em !important;
   background-color: #B27113 !important;
   color: white !important;
+}
+.color-mail{
+  border-style: solid !important;
+  border-width: 2px !important;
+  border-color: red !important;
+}
+.gif{
+  width:234px;
+  top: -50px;
+  margin-bottom: 20px;
 }
