@@ -40,7 +40,7 @@ Pending tasks
 
  -  Setup security tokens on swift
 
- -  Improve user experience (design)
+ -  Improve user experience (design) (**on process**)
 
  -  Fix nav bar display when user has username (**Done**)
 
@@ -48,7 +48,7 @@ Pending tasks
  
  -  Fix buttons on movil (**Done**)
  
- - fix side togle bar that is not showing on iphone devices  
+ - fix side togle bar that is not showing on iphone devices (**Done**) 
  
  - Display view to the user when finish uploading one pick to confirm information correct.
  
@@ -60,4 +60,6 @@ Pending tasks
  
  - Create About, FAQ, Contact us and Team pages 
  
- - Impruve mobile display
+ - Impruve mobile experience
+ 
+ - create a input for storing emails of interested ios users (**Done**)
