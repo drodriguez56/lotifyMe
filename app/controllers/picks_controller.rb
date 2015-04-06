@@ -3,7 +3,12 @@ class PicksController < ApplicationController
   before_action :join_number
 
   def index
-    if User.find(session[:user_id])
+    if params[:pick][:email]
+        @user = User.find_by(email: params[:pick][:email])
+    else
+      @user = User.find(session[:user_id])
+    end
+    if @user
       @picks = User.find(session[:user_id]).picks
       respond_to do |format|
           format.json { render json: ActiveSupport::JSON.encode(@picks), status:200 }
@@ -18,9 +23,9 @@ class PicksController < ApplicationController
     @pick = Pick.new(pick_params)
     if params[:pick][:email]
         @user = User.find_by(email: params[:pick][:email])
-      else
-        @user = User.find(session[:user_id])
-      end
+    else
+      @user = User.find(session[:user_id])
+    end
     if @pick.save
       user_picks_before_push = @user.picks.count
       @user.picks << @pick
