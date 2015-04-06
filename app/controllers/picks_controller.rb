@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :require_login
+  before_action :require_login, except: [:create]
   before_action :join_number
 
   def index
@@ -16,8 +16,12 @@ class PicksController < ApplicationController
   end
   def create
     @pick = Pick.new(pick_params)
+    if params[:pick][:email]
+        @user = User.find_by(email: params[:pick][:email])
+      else
+        @user = User.find(session[:user_id])
+      end
     if @pick.save
-      @user = User.find(session[:user_id])
       user_picks_before_push = @user.picks.count
       @user.picks << @pick
       user_picks_after_push = @user.picks.count
