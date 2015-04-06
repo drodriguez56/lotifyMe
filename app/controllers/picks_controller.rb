@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :require_login, except: [:create]
+  before_action :require_login, except: [:create, :index]
   before_action :join_number
 
   def index
@@ -9,7 +9,7 @@ class PicksController < ApplicationController
       @user = User.find(session[:user_id])
     end
     if @user
-      @picks = User.find(session[:user_id]).picks
+      @picks = User.find(@user.id).picks
       respond_to do |format|
           format.json { render json: ActiveSupport::JSON.encode(@picks), status:200 }
         end
