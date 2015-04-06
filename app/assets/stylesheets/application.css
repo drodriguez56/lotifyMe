@@ -520,6 +520,7 @@ li{
 }
 .landing{
   height: 100% !important;
+  margin-top: 5%;
 }
 .phone{
   position: relative;
@@ -556,6 +557,7 @@ li{
 }
 .explain{
   margin-top: 20px;
+  font-size: 1.5em;
 }
 .background-phone{
   position: relative;
