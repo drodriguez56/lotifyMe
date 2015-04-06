@@ -1,19 +1,15 @@
 <div class = "landing">
   <div class='row'>
 
-    <div class="small-12 large-7 columns centered hide-if-app-click">
+    <div class="small-12 large-8 columns centered hide-if-app-click">
       <h1 class = 'main-phrase'>NEVER MISS A DRAW AGAIN</h1>
       <a class = 'appstore-link' href="#"><%= image_tag("appstore.png", class:"appstore") %></a>
       <div class='email-form-1'>
-        <p>We are working hard on our IOS app, please leave us you e-mail and we will notify you when is ready</p>
+        <p>We are working hard on our IOS app, please leave us yours e-mail and we will notify you when is ready</p>
         <%= form_tag('email/create', method: 'post', class:'get-email-form-1') do %>
             <%= email_field(:email,nil ,class:'email-1',placeholder:'email') %>
             <%= submit_tag("send", class:'submit-email-1') %>
         <%end%>
-     <!--  <form class ='get-email-form-1' action="">
-              <input class ='email-1' type="email" placeholder='email'></input>
-              <input class = 'submit-email-1' type="submit" value='send'></input>
-          </form> -->
       </div>
       <p class= "or"> - or - </p>
       <div>
@@ -21,7 +17,7 @@
       <p class='explain'>It's simple, tell us your ticket number and we will notify you if you won and how much.</p>
       </div>
     </div>
-    <div class="phone-div small-12 large-5 columns centered">
+    <div class="phone-div small-12 large-4 columns centered">
       <div class = 'phone'>
       <%= image_tag("frame-1-inner-phone.png", class:"inner-phone") %>
       <%= image_tag("iphone-frame.png", class:"phone-frame") %>
