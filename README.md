@@ -63,3 +63,4 @@ Pending tasks
  - Impruve mobile experience
  
  - create a input for storing emails of interested ios users (**Done**)
+ - create a testers signup for ios beta testing users
