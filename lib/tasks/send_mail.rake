@@ -1,5 +1,5 @@
 task :send_mail_powerball => :environment do
-  picks = Pick.where(game: 'Powerball', draw_date: Date.today) # make sure is today and not yesterday
+  picks = Pick.where(game: 'Powerball', draw_date: Date.yesterday)
   if picks.length > 0
     arr = []
     picks.each do |pick|
@@ -15,7 +15,7 @@ task :send_mail_powerball => :environment do
 end
 
 task :send_mail_mega_million => :environment do
-  picks = Pick.where(game: 'MegaMillion', draw_date: Date.today) # make sure is today and not yesterday
+  picks = Pick.where(game: 'MegaMillion', draw_date: Date.yesterday)
   if picks.length > 0
     arr = []
     picks.each do |pick|
@@ -31,7 +31,7 @@ task :send_mail_mega_million => :environment do
 end
 
 task :send_mail_ny_loto => :environment do
-  picks = Pick.where(game: 'NyLotto', draw_date: Date.today) # make sure is today and not yesterday
+  picks = Pick.where(game: 'NyLotto', draw_date: Date.yesterday)
   if picks.length > 0
     arr = []
     picks.each do |pick|
@@ -47,7 +47,7 @@ task :send_mail_ny_loto => :environment do
 end
 
 task :send_mail_cash_4_life => :environment do
-  picks = Pick.where(game: 'Cash4Life', draw_date: Date.today) # make sure is today and not yesterday
+  picks = Pick.where(game: 'Cash4Life', draw_date: Date.yesterday)
   if picks.length > 0
     arr = []
     picks.each do |pick|
