@@ -566,7 +566,7 @@ li{
   left: 2px !important;
   height:410px;
   margin: 0 auto;
-  background-color: black;
+  background-color: #212121;
   /*background-color: #72FF97;*/
   opacity: 0;
 }
@@ -611,7 +611,7 @@ li{
   padding-top: 20px;
   color: white;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 400;
 }
 .awesome{
   font-size: 2.5em;
@@ -638,6 +638,7 @@ label{
 }
 .gif{
   width:234px;
+  height:250px;
   top: -50px;
   margin-bottom: 20px;
 }
